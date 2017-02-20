@@ -339,10 +339,10 @@ function main(o, data) {
 }
 
 if (window.location.hash === "") {
-    d3.json("datos/presupuesto-por-secretarias-por-objeto.json", function(err, res) {
+    d3.json("datos/presupuesto-por-objeto-por-secretaria.json", function(err, res) {
         if (!err) {
             console.log(res);
-            var data = d3.nest().key(function(d) { return d.region; }).key(function(d) { return d.subregion; }).entries(res);
+            var data = d3.nest().key(function(d) { return d.region; }).entries(res);
             main({title: "Municipalidad de Córdoba. Presupuesto por Secretarías y Objeto del Gasto"}, {key: "Presupuesto 2017", values: data});
         }
     });

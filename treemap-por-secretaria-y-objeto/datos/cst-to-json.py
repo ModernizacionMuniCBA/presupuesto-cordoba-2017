@@ -8,8 +8,8 @@ p17objeto = "presupuesto-2017-por-objeto-del-gasto.csv"
 import csv
 import json
 
-fjson = []  # json final
-
+fjson1 = []  # json final para grafico basado en secretarias
+fjson2 = []  # json final para grafico basado en gastos de nivel 3
 
 with open(p17objeto) as csvfile:
     """ 
@@ -18,16 +18,7 @@ with open(p17objeto) as csvfile:
     """
     reader = csv.DictReader(csvfile, delimiter=';', quotechar='"')
     
-    """
-    ['Nivel', 'Nombre', 
-    'SCRETARIA DE ECONOMIA Y FINANZAS', 'SECRETARIA DE CULTURA', 'SECRETARIA DE SERVICIOS PUBLICOS',
-    'SECRETARIA DE GOBIERNOS, PARTICIPACION CIUDADANA Y\nDESARROLLO SOCIAL', 'SECRETARIA DE EDUCACION',
-    'TRIBUNAL DE CUENTAS', 'SECRETARIA DE SALUD', 'TOTAL', 'CONCEJO DELIBERANTE', 'DEPARTAMENTO EJECUTIVO',
-    'SECRETARIA GENERAL', 'SECRETARIA DE MODERNIZACION, COMUNICACION Y DESARROLLO ESTRATEGICO', 
-    'ADMINISTRACION GENERAL DE LA JUSTICIA ADMINISTRATIVA\nMUNICIPAL DE FALTAS',
-    'SECRETARIA DE PLANEAMIENTO E INFRAESTRUCTURA', 'SECRETARIA DE CONTROL, FISCALIZACION Y CONVIVENCIA CIUDADANA']
-    """
-
+    
     detalle = {}  # detalle de la linea actual dentro de la estructura
     for row in reader:
         
@@ -45,11 +36,21 @@ with open(p17objeto) as csvfile:
                     if k in ["Nivel", "Nombre", "Total"]:
                         continue
                     value = 0 if row[k] == "" else int(row[k])
-                    linea = {"key": detalle[3], "region": k , "subregion": detalle[2], "value": value}
-                    fjson.append(linea)
 
+                    # grafico por secretarías como nodos principal
+                    linea = {"key": detalle[3], "region": k , "subregion": detalle[2], "value": value}
+                    fjson1.append(linea)
+
+                    # grafico con gastos de nivel 3 como princial
+                    linea = {"key": k, "region": detalle[3], "value": value}
+                    fjson2.append(linea)
+
+    
 f = open("presupuesto-por-secretarias-por-objeto.json", "w")
-f.write(json.dumps(fjson, indent=4, sort_keys=True))
+f.write(json.dumps(fjson1, indent=4, sort_keys=True))
 f.close()
 
+f = open("presupuesto-por-objeto-por-secretaria.json", "w")
+f.write(json.dumps(fjson2, indent=4, sort_keys=True))
+f.close()
 
