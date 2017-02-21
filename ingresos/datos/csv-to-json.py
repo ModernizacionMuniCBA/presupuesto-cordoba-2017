@@ -35,7 +35,7 @@ with open(p17recursos) as csvfile:
             detalle[2] = detalle[1]
             detalle[3] = detalle[1]
             detalle[4] = detalle[1]
-        elif nivel_princ == 2:
+        elif nivel_princ == 2 and nivel == 3:
             nivel = 4
             detalle[4] = detalle[3]
 

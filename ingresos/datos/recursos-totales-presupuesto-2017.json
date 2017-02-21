@@ -392,22 +392,6 @@
         "value": 928961978
     },
     {
-        "key": "OTROS INGRESOS",
-        "rec0": "Rentas Generales",
-        "rec1": "INGRESOS DE CAPITAL",
-        "rec2": "DE OTRAS JURISDICCIONES",
-        "rec3": "OTROS INGRESOS",
-        "value": 390000000
-    },
-    {
-        "key": "OTROS INGRESOS",
-        "rec0": "Rentas Generales",
-        "rec1": "INGRESOS DE CAPITAL",
-        "rec2": "USO DEL CREDITO",
-        "rec3": "OTROS INGRESOS",
-        "value": 390000000
-    },
-    {
         "key": "Cr\u00e9ditos de Mediano Plazo",
         "rec0": "Rentas Generales",
         "rec1": "INGRESOS DE CAPITAL",

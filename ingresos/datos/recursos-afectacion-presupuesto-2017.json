@@ -546,20 +546,6 @@
         "value": 0
     },
     {
-        "key": "OTROS INGRESOS",
-        "rec1": "INGRESOS DE CAPITAL",
-        "rec2": "DE OTRAS JURISDICCIONES",
-        "rec3": "OTROS INGRESOS",
-        "value": 0
-    },
-    {
-        "key": "OTROS INGRESOS",
-        "rec1": "INGRESOS DE CAPITAL",
-        "rec2": "USO DEL CREDITO",
-        "rec3": "OTROS INGRESOS",
-        "value": 0
-    },
-    {
         "key": "Pr\u00e9stamos para Obras Diversas",
         "rec1": "INGRESOS DE CAPITAL",
         "rec2": "USO DEL CREDITO",
@@ -640,20 +626,6 @@
         "key": "Otros Usos del Cr\u00e9dito",
         "rec1": "INGRESOS DE CAPITAL",
         "rec2": "USO DEL CREDITO",
-        "rec3": "Otros Usos del Cr\u00e9dito",
-        "value": 0
-    },
-    {
-        "key": "Otros Usos del Cr\u00e9dito",
-        "rec1": "INGRESOS DE CAPITAL",
-        "rec2": "VENTA DE ACTIVO FIJO",
-        "rec3": "Otros Usos del Cr\u00e9dito",
-        "value": 0
-    },
-    {
-        "key": "Otros Usos del Cr\u00e9dito",
-        "rec1": "INGRESOS DE CAPITAL",
-        "rec2": "VENTA DE BIENES EN DESUSO",
         "rec3": "Otros Usos del Cr\u00e9dito",
         "value": 0
     },
