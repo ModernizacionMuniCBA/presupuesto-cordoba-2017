@@ -9,6 +9,7 @@ import json
 
 fjson1 = []  # json final para grafico de recursos de rentas del presupuesto 2017
 fjson2 = []  # json final para grafico de recursos de afectaciones del presupuesto 2017
+fjson3 = []  # json final para grafico de recursos totales presupuesto 2017
 
 with open(p17recursos) as csvfile:
     """ 
@@ -56,6 +57,25 @@ with open(p17recursos) as csvfile:
                         "rec3": detalle[3],
                         "value": afectacion}
             fjson2.append(linea)
+
+            if rentas > 0:
+                linea = {"key": detalle[4],
+                        "rec0": "Rentas Generales",
+                        "rec1": detalle[1],
+                        "rec2": detalle[2],
+                        "rec3": detalle[3],
+                        "value": rentas}
+                fjson3.append(linea)
+
+            if afectacion > 0:
+                linea = {"key": detalle[4],
+                        "rec0": "Afectación Específica",
+                        "rec1": detalle[1],
+                        "rec2": detalle[2],
+                        "rec3": detalle[3],
+                        "value": afectacion}
+                fjson3.append(linea)
+
     
 f = open("recursos-rentas-presupuesto-2017.json", "w")
 f.write(json.dumps(fjson1, indent=4, sort_keys=True))
@@ -63,4 +83,8 @@ f.close()
 
 f = open("recursos-afectacion-presupuesto-2017.json", "w")
 f.write(json.dumps(fjson2, indent=4, sort_keys=True))
+f.close()
+
+f = open("recursos-totales-presupuesto-2017.json", "w")
+f.write(json.dumps(fjson3, indent=4, sort_keys=True))
 f.close()
