@@ -87,7 +87,7 @@ window.addEventListener('message', function(e) {
 var defaults = {
     margin: {top: 24, right: 0, bottom: 0, left: 0},
     rootname: "TOP",
-    format: ",d",
+    format: "$,.3s",
     title: "",
     width: 960,
     height: 600
@@ -142,7 +142,7 @@ function main(o, data) {
   grandparent.append("text")
       .attr("x", 6)
       .attr("y", 6 - margin.top)
-      .attr("dy", ".75em");
+      .attr("dy", "0.6em");
   
   if (opts.title) {
     $("#chart").prepend("<p class='title'>" + opts.title + "</p>");
@@ -207,6 +207,7 @@ function main(o, data) {
         .datum(d.parent)
         .on("click", transition)
         .select("text")
+        .attr("style", "font-size: 1.2em")
         .text(name(d));
 
     var g1 = svg.insert("g", ".grandparent")
@@ -230,7 +231,7 @@ function main(o, data) {
         .attr("class", "child")
         .call(rect)
         .append("title")
-        .text(function(d) { return d.parent.key + " - " + d.key + " (" + formatNumber(d.value) + ")"; });
+        .text(function(d) { return d.parent.key + " - " + d.key + " (" + formatNumber(d.value).replace("G", " mil millones") + ")"; });
     
 
     /* texto de la dividion interna
@@ -253,7 +254,7 @@ function main(o, data) {
         .text(function(d) { return d.key; });
     t.append("tspan")
         .attr("dy", "1.0em")
-        .text(function(d) { return "$ " + formatNumber(d.value); });
+        .text(function(d) { return formatNumber(d.value).replace("G", " mil millones"); });
     t.call(text);
 
     g.selectAll("rect")
@@ -333,8 +334,8 @@ function main(o, data) {
 
   function name(d) {
     return d.parent
-        ? name(d.parent) + " / " + d.key + " $ " + formatNumber(d.value)
-        : d.key + " $ " + formatNumber(d.value);
+        ? "[volver] " + d.parent.key + " " + formatNumber(d.parent.value).replace("G", " mil millones") + " / " + d.key + " " + formatNumber(d.value).replace("G", " mil millones")
+        : d.key + " " + formatNumber(d.value).replace("G", " mil millones");
   }
 }
 
@@ -349,7 +350,7 @@ if (window.location.hash === "") {
               .key(function(d) { return d.rec4; })
               .key(function(d) { return d.rec5; })
               .entries(res);
-            main({title: "Municipalidad de Córdoba. Presupuesto por Secretarías y Objeto del Gasto"}, {key: "Presupuesto 2017", values: data});
+            main({title: "Municipalidad de Córdoba. Presupuesto por Secretarías y Objeto del Gasto"}, {key: "Presupuesto 2017 ", values: data});
         }
     });
 }
