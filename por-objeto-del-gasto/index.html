@@ -6,7 +6,7 @@ Generic treemap, based on http://bost.ocks.org/mike/treemap/
 <html>
 <head>
 <meta charset="utf-8">
-<title>Municipalidad de Córdoba. Presupuesto por Secretarías y Objeto del Gasto</title>
+<title>Municipalidad de Córdoba. Presupuesto por Objeto del Gasto</title>
 <style>
 
 #chart {
@@ -339,10 +339,16 @@ function main(o, data) {
 }
 
 if (window.location.hash === "") {
-    d3.json("datos/presupuesto-por-secretarias-por-objeto.json", function(err, res) {
+    d3.json("datos/presupuesto-por-objeto-del-gasto.json", function(err, res) {
         if (!err) {
             console.log(res);
-            var data = d3.nest().key(function(d) { return d.region; }).key(function(d) { return d.subregion; }).entries(res);
+            var data = d3.nest()
+              .key(function(d) { return d.rec1; })
+              .key(function(d) { return d.rec2; })
+              .key(function(d) { return d.rec3; })
+              .key(function(d) { return d.rec4; })
+              .key(function(d) { return d.rec5; })
+              .entries(res);
             main({title: "Municipalidad de Córdoba. Presupuesto por Secretarías y Objeto del Gasto"}, {key: "Presupuesto 2017", values: data});
         }
     });

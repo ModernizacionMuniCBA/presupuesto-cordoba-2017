@@ -123,6 +123,7 @@ Nivel;Nombre;Total;Departamento Ejecutivo;Gobierno;Economia;Servicios Publicos;G
 ;;;;;;;;;;;;;;;;
 3;06      Transferencias;270622674;23442050;88367186;1000000;100000000;100000;35000000;;;3000000;;500000;3301438;;15912000
 4;01      Transferencias Para Financiar Erogaciones Corrientes;215800488;23442050;50182000;1000000;100000000;100000;34475000;0;0;3000000;0;300000;3301438;0;0
+5;01      Transferencias Para Financiar Erogaciones Corrientes;1000000;;;1000000;;;;;;;;;;;
 5;01      Becas;60878438;2840000;20662000;;;100000;34475000;;;;;;2801438;;
 5;02      Subsidios A Instituciones;104880000;60000;4020000;;100000000;;;;;;;300000;500000;;
 5;03      Subsidios Personales;23500000;;23500000;;;;;;;;;;;;
@@ -131,6 +132,7 @@ Nivel;Nombre;Total;Departamento Ejecutivo;Gobierno;Economia;Servicios Publicos;G
 5;12      Aportes Al Esyop - Ordenanza 12.479;12739550;12739550;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;
 4;02      Transferencias Para Financiar Erogaciones De Capital;54297186;0;38185186;0;0;0;0;0;0;0;0;200000;0;0;15912000
+5;02      Transferencias Para Financiar Erogaciones De Capital;15912000;0;;0;0;0;0;0;0;0;0;;0;0;15912000
 5;01      Subsidios A Instituciones;38385186;;38185186;;;;;;;;;200000;;;
 4;03      Deudas De Ejercicios Vencidos No Incluidas En Residuos Pasivos A Clasificar;525000;;;;;;525000;;;;;;;;
 ;;;;;;;;;;;;;;;;
@@ -216,4 +218,4 @@ Nivel;Nombre;Total;Departamento Ejecutivo;Gobierno;Economia;Servicios Publicos;G
 ;;;;;;;;;;;;;;;;
 3;15      Credito Adicional Erogaciones De Capital;100000000;;;100000000;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;
-2;Total General Neto;20088528457;;;;;;;;;;;;;;
+;Total General Neto;20088528457;;;;;;;;;;;;;;
