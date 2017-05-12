@@ -1,7 +1,10 @@
 # Presupuesto Córdoba 2017
 Visualización del Presupuesto 2017 de la Municipalidad de Córdoba.  
 
-![screen1](img/screen1.png) ![screen2](img/screen2.png)  
+<p align="center">
+  <img src="img/screen1.png" width="350"/>
+  <img src="img/screen2.png" width="350"/>
+</p>
 
 Por un lado estan los ingresos previstos y por otro la forma en que planificamos gastarlo.  
 Cada partida especifica cual es su _objeto_, su _finalidad_ y su _función_. Son diferentes formas de describir adonde apunta un gasto. Se entiende mejor ptobando las visualizaciones.  
