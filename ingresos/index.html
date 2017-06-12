@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+2<!DOCTYPE html>
 <!--
 Generic treemap, based on http://bost.ocks.org/mike/treemap/
 
@@ -105,23 +105,23 @@ function main(o, data) {
   var width = opts.width - margin.left - margin.right,
       height = opts.height - margin.top - margin.bottom - theight,
       transitioning;
-  
+
   var color = d3.scale.category20c();
-  
+
   var x = d3.scale.linear()
       .domain([0, width])
       .range([0, width]);
-  
+
   var y = d3.scale.linear()
       .domain([0, height])
       .range([0, height]);
-  
+
   var treemap = d3.layout.treemap()
       .children(function(d, depth) { return depth ? null : d._children; })
       .sort(function(a, b) { return a.value - b.value; })
       .ratio(height / width * 0.5 * (1 + Math.sqrt(5)))
       .round(false);
-  
+
   var svg = d3.select("#chart").append("svg")
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.bottom + margin.top)
@@ -133,17 +133,17 @@ function main(o, data) {
 
   var grandparent = svg.append("g")
       .attr("class", "grandparent");
-  
+
   grandparent.append("rect")
       .attr("y", -margin.top)
       .attr("width", width)
       .attr("height", margin.top);
-  
+
   grandparent.append("text")
       .attr("x", 6)
       .attr("y", 6 - margin.top)
       .attr("dy", ".75em");
-  
+
   if (opts.title) {
     $("#chart").prepend("<p class='title'>" + opts.title + "</p>");
   }
@@ -152,7 +152,7 @@ function main(o, data) {
   } else {
     root = data;
   }
-    
+
   initialize(root);
   accumulate(root);
   layout(root);
@@ -231,7 +231,7 @@ function main(o, data) {
         .call(rect)
         .append("title")
         .text(function(d) { return d.parent.key + " - " + d.key + " (" + formatNumber(d.value) + ")"; });
-    
+
 
     /* texto de la dividion interna
     children.append("text")
@@ -308,10 +308,10 @@ function main(o, data) {
         .attr("font-size", function(d) {
           var diff = this.getComputedTextLength() - (x(d.x + d.dx) - x(d.x));
           var fsize = "1.0em";
-          if (diff < 0){ fsize = "1.0em"; } else 
-          if (diff > 50){ fsize = "0.7em"; } else 
-          if (diff < 150){ fsize = "0.5em"; } else 
-                         { fsize = "0.4em"; } 
+          if (diff < 0){ fsize = "1.0em"; } else
+          if (diff > 50){ fsize = "0.7em"; } else
+          if (diff < 150){ fsize = "0.5em"; } else
+                         { fsize = "0.4em"; }
           return fsize;
           })
         .style("opacity", function(d) { return this.getComputedTextLength() < x(d.x + d.dx) - x(d.x) ? 1 : 0.7; });
