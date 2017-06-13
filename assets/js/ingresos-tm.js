@@ -33,19 +33,19 @@ function dibujarD3(catIngresos) {
 
         }
 
-        function addCommas(nStr)
-        {
-            nStr += '';
-            x = nStr.split('.');
-            x1 = x[0];
-            x2 = x.length > 1 ? ',' + x[1] : '';
-            var rgx = /(\d+)(\d{3})/;
-            while (rgx.test(x1)) {
-                x1 = x1.replace(rgx, '$1' + '.' + '$2');
-            }
-            return x1 + x2;
-        }
 
+        function getTooltipWidth(){
+          var wWidth = $( window ).width();
+          if (wWidth < 480){
+            return $( window ).width()-50;
+          }else if(wWidth < 768){
+            return 500;
+          }else if(wWidth < 1200){
+            return 700;
+          }else{
+            return 700;
+          }
+        }
         // console.log(data);
         $("#ingresos-title").html(titles[catIngresos]);
         var visualization = d3plus.viz()
@@ -53,6 +53,7 @@ function dibujarD3(catIngresos) {
           .legend({"size": 30})
           .labels({"align": "left", "valign": "top"})
           .tooltip(true)
+          .tooltip({"large":getTooltipWidth(), "small":getTooltipWidth()})
           .data(res)
           .type("tree_map")
           .id(dataID[catIngresos])
@@ -62,7 +63,7 @@ function dibujarD3(catIngresos) {
               "number": function(number, key) {
   		          var formatted = d3plus.number.format(number, key)
   		          if (key.key === "valor") {
-  		        	     return "$" + formatted.replace("B", " Mm") + "\n$"+(addCommas(number));
+  		        	     return "$" + formatted.replace("B", " Mm");
   		          }
   		          else {
   		            return formatted

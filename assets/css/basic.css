@@ -78,6 +78,10 @@ body {
 #ingresos-title, #objetos-title{
 	font-weight: 400;
 }
+
+.blank-space{
+	height: 100px;
+}
 /* Extra small devices (phones, less than 768px) */
 /* No media query since this is the default in Bootstrap */
 /* Small devices (tablets, 768px and up) */

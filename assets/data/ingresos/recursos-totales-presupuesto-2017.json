@@ -1,6 +1,6 @@
 [
     {
-        "key": "Contribuci\u00f3n que incide sobre los Inmuebles $2131036673", 
+        "key": "Contribuci\u00f3n que incide sobre los Inmuebles", 
         "rec0": "Rentas Generales", 
         "rec1": "INGRESOS CORRIENTES", 
         "rec2": "DE JURISDICCION MUNICIPAL", 
@@ -8,7 +8,7 @@
         "valor": 2131036673
     }, 
     {
-        "key": "Derechos de Catastro $12511302", 
+        "key": "Derechos de Catastro", 
         "rec0": "Rentas Generales", 
         "rec1": "INGRESOS CORRIENTES", 
         "rec2": "DE JURISDICCION MUNICIPAL", 
@@ -16,7 +16,7 @@
         "valor": 12511302
     }, 
     {
-        "key": "Contribuci\u00f3n que incide sobre la Energ\u00eda El\u00e9ctrica $420000000", 
+        "key": "Contribuci\u00f3n que incide sobre la Energ\u00eda El\u00e9ctrica", 
         "rec0": "Rentas Generales", 
         "rec1": "INGRESOS CORRIENTES", 
         "rec2": "DE JURISDICCION MUNICIPAL", 
@@ -24,7 +24,7 @@
         "valor": 420000000
     }, 
     {
-        "key": "Contribuci\u00f3n que incide sobre la Construcci\u00f3n de Obras Privadas $117492059", 
+        "key": "Contribuci\u00f3n que incide sobre la Construcci\u00f3n de Obras Privadas", 
         "rec0": "Rentas Generales", 
         "rec1": "INGRESOS CORRIENTES", 
         "rec2": "DE JURISDICCION MUNICIPAL", 
@@ -32,7 +32,7 @@
         "valor": 117492059
     }, 
     {
-        "key": "Contribuci\u00f3n para la Financiaci\u00f3n del Desarrollo Local y Regional de Obras de Gas Natural y Otras de Inter\u00e9s General $75000000", 
+        "key": "Contribuci\u00f3n para la Financiaci\u00f3n del Desarrollo Local y Regional de Obras de Gas Natural y Otras de Inter\u00e9s General", 
         "rec0": "Afectaci\u00f3n Espec\u00edfica", 
         "rec1": "INGRESOS CORRIENTES", 
         "rec2": "DE JURISDICCION MUNICIPAL", 
@@ -40,7 +40,7 @@
         "valor": 75000000
     }, 
     {
-        "key": "Contribuci\u00f3n que incide sobre los Inmuebles para la Construcci\u00f3n de Obras de Desague Pluvial $386891013", 
+        "key": "Contribuci\u00f3n que incide sobre los Inmuebles para la Construcci\u00f3n de Obras de Desague Pluvial", 
         "rec0": "Rentas Generales", 
         "rec1": "INGRESOS CORRIENTES", 
         "rec2": "DE JURISDICCION MUNICIPAL", 
@@ -48,7 +48,7 @@
         "valor": 386891013
     }, 
     {
-        "key": "Contribuci\u00f3n para la Financiaci\u00f3n del Desarrollo de la Infraestructura Sanitaria y Cloacal $100000000", 
+        "key": "Contribuci\u00f3n para la Financiaci\u00f3n del Desarrollo de la Infraestructura Sanitaria y Cloacal", 
         "rec0": "Afectaci\u00f3n Espec\u00edfica", 
         "rec1": "INGRESOS CORRIENTES", 
         "rec2": "DE JURISDICCION MUNICIPAL", 
@@ -56,7 +56,7 @@
         "valor": 100000000
     }, 
     {
-        "key": "Derecho de Conexi\u00f3n a Redes Distribuidoras de Gas $27476554", 
+        "key": "Derecho de Conexi\u00f3n a Redes Distribuidoras de Gas", 
         "rec0": "Rentas Generales", 
         "rec1": "INGRESOS CORRIENTES", 
         "rec2": "DE JURISDICCION MUNICIPAL", 
@@ -64,7 +64,7 @@
         "valor": 27476554
     }, 
     {
-        "key": "Contribuci\u00f3n que incide sobre la Actividad Comercial, Industrial y de Servicios $5200000000", 
+        "key": "Contribuci\u00f3n que incide sobre la Actividad Comercial, Industrial y de Servicios", 
         "rec0": "Rentas Generales", 
         "rec1": "INGRESOS CORRIENTES", 
         "rec2": "DE JURISDICCION MUNICIPAL", 
@@ -72,7 +72,7 @@
         "valor": 5200000000
     }, 
     {
-        "key": "Contribuci\u00f3n que incide sobre la Ocupaci\u00f3n o Utilizaci\u00f3n de Espacios del Dominio P\u00fablico $54000000", 
+        "key": "Contribuci\u00f3n que incide sobre la Ocupaci\u00f3n o Utilizaci\u00f3n de Espacios del Dominio P\u00fablico", 
         "rec0": "Rentas Generales", 
         "rec1": "INGRESOS CORRIENTES", 
         "rec2": "DE JURISDICCION MUNICIPAL", 
@@ -80,7 +80,7 @@
         "valor": 54000000
     }, 
     {
-        "key": "Contribuci\u00f3n que incide sobre la Ocupaci\u00f3n o Utilizaci\u00f3n de Espacios del Dominio P\u00fablico $5400000", 
+        "key": "Contribuci\u00f3n que incide sobre la Ocupaci\u00f3n o Utilizaci\u00f3n de Espacios del Dominio P\u00fablico", 
         "rec0": "Afectaci\u00f3n Espec\u00edfica", 
         "rec1": "INGRESOS CORRIENTES", 
         "rec2": "DE JURISDICCION MUNICIPAL", 
@@ -88,7 +88,7 @@
         "valor": 5400000
     }, 
     {
-        "key": "Contribuci\u00f3n que incide sobre los Mercados $1275211", 
+        "key": "Contribuci\u00f3n que incide sobre los Mercados", 
         "rec0": "Rentas Generales", 
         "rec1": "INGRESOS CORRIENTES", 
         "rec2": "DE JURISDICCION MUNICIPAL", 
@@ -96,7 +96,7 @@
         "valor": 1275211
     }, 
     {
-        "key": "Municipalidad de C\u00f3rdoba - \"Mercado de Abasto Ordenanza N\u00b0 11.088\" $2151478", 
+        "key": "Municipalidad de C\u00f3rdoba - \"Mercado de Abasto Ordenanza N\u00b0 11.088\"", 
         "rec0": "Rentas Generales", 
         "rec1": "INGRESOS CORRIENTES", 
         "rec2": "DE JURISDICCION MUNICIPAL", 
@@ -104,7 +104,7 @@
         "valor": 2151478
     }, 
     {
-        "key": "Fondo de Promoci\u00f3n y Competitividad \u2013 \u201cOrdenanza N\u00ba 11.232\" $15000000", 
+        "key": "Fondo de Promoci\u00f3n y Competitividad \u2013 \u201cOrdenanza N\u00ba 11.232\"", 
         "rec0": "Afectaci\u00f3n Espec\u00edfica", 
         "rec1": "INGRESOS CORRIENTES", 
         "rec2": "DE JURISDICCION MUNICIPAL", 
@@ -112,7 +112,7 @@
         "valor": 15000000
     }, 
     {
-        "key": "Contribuci\u00f3n que incide sobre los Prestatarios del Servicio de Transporte Colectivo $1494226", 
+        "key": "Contribuci\u00f3n que incide sobre los Prestatarios del Servicio de Transporte Colectivo", 
         "rec0": "Rentas Generales", 
         "rec1": "INGRESOS CORRIENTES", 
         "rec2": "DE JURISDICCION MUNICIPAL", 
@@ -120,7 +120,7 @@
         "valor": 1494226
     }, 
     {
-        "key": "Contribuci\u00f3n que incide sobre la Habilitaci\u00f3n y Transferencia del Servicio P\u00fablico de Taxi $59789167", 
+        "key": "Contribuci\u00f3n que incide sobre la Habilitaci\u00f3n y Transferencia del Servicio P\u00fablico de Taxi", 
         "rec0": "Rentas Generales", 
         "rec1": "INGRESOS CORRIENTES", 
         "rec2": "DE JURISDICCION MUNICIPAL", 
@@ -128,7 +128,7 @@
         "valor": 59789167
     }, 
     {
-        "key": "Contribuci\u00f3n que incide sobre los Automotores $929671649", 
+        "key": "Contribuci\u00f3n que incide sobre los Automotores", 
         "rec0": "Rentas Generales", 
         "rec1": "INGRESOS CORRIENTES", 
         "rec2": "DE JURISDICCION MUNICIPAL", 
@@ -136,7 +136,7 @@
         "valor": 929671649
     }, 
     {
-        "key": "Contribuci\u00f3n que incide sobre los Cementerios $27013061", 
+        "key": "Contribuci\u00f3n que incide sobre los Cementerios", 
         "rec0": "Rentas Generales", 
         "rec1": "INGRESOS CORRIENTES", 
         "rec2": "DE JURISDICCION MUNICIPAL", 
@@ -144,7 +144,7 @@
         "valor": 27013061
     }, 
     {
-        "key": "Contribuci\u00f3n que incide sobre los Espect\u00e1culos y Diversiones P\u00fablicas $45293609", 
+        "key": "Contribuci\u00f3n que incide sobre los Espect\u00e1culos y Diversiones P\u00fablicas", 
         "rec0": "Rentas Generales", 
         "rec1": "INGRESOS CORRIENTES", 
         "rec2": "DE JURISDICCION MUNICIPAL", 
@@ -152,7 +152,7 @@
         "valor": 45293609
     }, 
     {
-        "key": "Contribuci\u00f3n de Mejoras - Obras por Contrataci\u00f3n y/o Administraci\u00f3n a Cargo de Propietarios Beneficiados $127836", 
+        "key": "Contribuci\u00f3n de Mejoras - Obras por Contrataci\u00f3n y/o Administraci\u00f3n a Cargo de Propietarios Beneficiados", 
         "rec0": "Rentas Generales", 
         "rec1": "INGRESOS CORRIENTES", 
         "rec2": "DE JURISDICCION MUNICIPAL", 
@@ -160,7 +160,7 @@
         "valor": 127836
     }, 
     {
-        "key": "Multas $74100000", 
+        "key": "Multas", 
         "rec0": "Rentas Generales", 
         "rec1": "INGRESOS CORRIENTES", 
         "rec2": "DE JURISDICCION MUNICIPAL", 
@@ -168,7 +168,7 @@
         "valor": 74100000
     }, 
     {
-        "key": "Tasas de Actuaci\u00f3n Administrativa $118300000", 
+        "key": "Tasas de Actuaci\u00f3n Administrativa", 
         "rec0": "Rentas Generales", 
         "rec1": "INGRESOS CORRIENTES", 
         "rec2": "DE JURISDICCION MUNICIPAL", 
@@ -176,7 +176,7 @@
         "valor": 118300000
     }, 
     {
-        "key": "Ingresos por Infracciones de Tr\u00e1nsito $90907910", 
+        "key": "Ingresos por Infracciones de Tr\u00e1nsito", 
         "rec0": "Rentas Generales", 
         "rec1": "INGRESOS CORRIENTES", 
         "rec2": "DE JURISDICCION MUNICIPAL", 
@@ -184,7 +184,7 @@
         "valor": 90907910
     }, 
     {
-        "key": "Fondo de Mejora del Sistema de Transporte Automotor de la Ciudad de C\u00f3rdoba $722907", 
+        "key": "Fondo de Mejora del Sistema de Transporte Automotor de la Ciudad de C\u00f3rdoba", 
         "rec0": "Rentas Generales", 
         "rec1": "INGRESOS CORRIENTES", 
         "rec2": "DE JURISDICCION MUNICIPAL", 
@@ -192,7 +192,7 @@
         "valor": 722907
     }, 
     {
-        "key": "Derechos Conexi\u00f3n Cloacas $39000000", 
+        "key": "Derechos Conexi\u00f3n Cloacas", 
         "rec0": "Rentas Generales", 
         "rec1": "INGRESOS CORRIENTES", 
         "rec2": "DE JURISDICCION MUNICIPAL", 
@@ -200,7 +200,7 @@
         "valor": 39000000
     }, 
     {
-        "key": "Ingreso por Emisi\u00f3n de Carnet de Conducir $76526434", 
+        "key": "Ingreso por Emisi\u00f3n de Carnet de Conducir", 
         "rec0": "Rentas Generales", 
         "rec1": "INGRESOS CORRIENTES", 
         "rec2": "DE JURISDICCION MUNICIPAL", 
@@ -208,7 +208,7 @@
         "valor": 76526434
     }, 
     {
-        "key": "Aforo por Inscripci\u00f3n a Concursos para la Administraci\u00f3n P\u00fablica $442780", 
+        "key": "Aforo por Inscripci\u00f3n a Concursos para la Administraci\u00f3n P\u00fablica", 
         "rec0": "Afectaci\u00f3n Espec\u00edfica", 
         "rec1": "INGRESOS CORRIENTES", 
         "rec2": "DE JURISDICCION MUNICIPAL", 
@@ -216,7 +216,7 @@
         "valor": 442780
     }, 
     {
-        "key": "Ingresos por estadia de vehiculos demorados y elementos o bienes incautados $5000000", 
+        "key": "Ingresos por estadia de vehiculos demorados y elementos o bienes incautados", 
         "rec0": "Rentas Generales", 
         "rec1": "INGRESOS CORRIENTES", 
         "rec2": "DE JURISDICCION MUNICIPAL", 
@@ -224,7 +224,7 @@
         "valor": 5000000
     }, 
     {
-        "key": "Ingresos por Colocaciones Financieras $48100000", 
+        "key": "Ingresos por Colocaciones Financieras", 
         "rec0": "Rentas Generales", 
         "rec1": "INGRESOS CORRIENTES", 
         "rec2": "DE JURISDICCION MUNICIPAL", 
@@ -232,7 +232,7 @@
         "valor": 48100000
     }, 
     {
-        "key": "Ingresos Eventuales $26677062", 
+        "key": "Ingresos Eventuales", 
         "rec0": "Rentas Generales", 
         "rec1": "INGRESOS CORRIENTES", 
         "rec2": "DE JURISDICCION MUNICIPAL", 
@@ -240,7 +240,7 @@
         "valor": 26677062
     }, 
     {
-        "key": "Fondo solidario de inclusi\u00f3n social \u2013 FO.S.I.S. $294000000", 
+        "key": "Fondo solidario de inclusi\u00f3n social \u2013 FO.S.I.S.", 
         "rec0": "Rentas Generales", 
         "rec1": "INGRESOS CORRIENTES", 
         "rec2": "DE JURISDICCION MUNICIPAL", 
@@ -248,7 +248,7 @@
         "valor": 294000000
     }, 
     {
-        "key": "Ingresos Estacionamiento Medido Ord. 10.804 $15000000", 
+        "key": "Ingresos Estacionamiento Medido Ord. 10.804", 
         "rec0": "Afectaci\u00f3n Espec\u00edfica", 
         "rec1": "INGRESOS CORRIENTES", 
         "rec2": "DE JURISDICCION MUNICIPAL", 
@@ -256,7 +256,7 @@
         "valor": 15000000
     }, 
     {
-        "key": "Ingresos Cuenta Especial CPC Ord. 10.020 $2232000", 
+        "key": "Ingresos Cuenta Especial CPC Ord. 10.020", 
         "rec0": "Afectaci\u00f3n Espec\u00edfica", 
         "rec1": "INGRESOS CORRIENTES", 
         "rec2": "DE JURISDICCION MUNICIPAL", 
@@ -264,7 +264,7 @@
         "valor": 2232000
     }, 
     {
-        "key": "Ingresos Cuenta Direccion de Deporte Ord. 9.311 $5000000", 
+        "key": "Ingresos Cuenta Direccion de Deporte Ord. 9.311", 
         "rec0": "Afectaci\u00f3n Espec\u00edfica", 
         "rec1": "INGRESOS CORRIENTES", 
         "rec2": "DE JURISDICCION MUNICIPAL", 
@@ -272,7 +272,7 @@
         "valor": 5000000
     }, 
     {
-        "key": "Ingresos Cuenta Secretaria de Cultura Ord. 11.549 $421200", 
+        "key": "Ingresos Cuenta Secretaria de Cultura Ord. 11.549", 
         "rec0": "Afectaci\u00f3n Espec\u00edfica", 
         "rec1": "INGRESOS CORRIENTES", 
         "rec2": "DE JURISDICCION MUNICIPAL", 
@@ -280,7 +280,7 @@
         "valor": 421200
     }, 
     {
-        "key": "Ingresos Cuenta Especial Ambiente Ord 10.607 $14224", 
+        "key": "Ingresos Cuenta Especial Ambiente Ord 10.607", 
         "rec0": "Afectaci\u00f3n Espec\u00edfica", 
         "rec1": "INGRESOS CORRIENTES", 
         "rec2": "DE JURISDICCION MUNICIPAL", 
@@ -288,7 +288,7 @@
         "valor": 14224
     }, 
     {
-        "key": "Ingresos Playas Estacionamiento Municipal $5000000", 
+        "key": "Ingresos Playas Estacionamiento Municipal", 
         "rec0": "Afectaci\u00f3n Espec\u00edfica", 
         "rec1": "INGRESOS CORRIENTES", 
         "rec2": "DE JURISDICCION MUNICIPAL", 
@@ -296,7 +296,7 @@
         "valor": 5000000
     }, 
     {
-        "key": "Fondo de Apoyo a la Infrestructura Deportiva - Ord. 12.438 $2000000", 
+        "key": "Fondo de Apoyo a la Infrestructura Deportiva - Ord. 12.438", 
         "rec0": "Afectaci\u00f3n Espec\u00edfica", 
         "rec1": "INGRESOS CORRIENTES", 
         "rec2": "DE JURISDICCION MUNICIPAL", 
@@ -304,7 +304,7 @@
         "valor": 2000000
     }, 
     {
-        "key": "Coparticipaci\u00f3n de Impuestos Nacionales y Provinciales $4399868358", 
+        "key": "Coparticipaci\u00f3n de Impuestos Nacionales y Provinciales", 
         "rec0": "Rentas Generales", 
         "rec1": "INGRESOS CORRIENTES", 
         "rec2": "DE OTRAS JURISDICCIONES", 
@@ -312,7 +312,7 @@
         "valor": 4399868358
     }, 
     {
-        "key": "Fondo Federal Solidario $233176838", 
+        "key": "Fondo Federal Solidario", 
         "rec0": "Afectaci\u00f3n Espec\u00edfica", 
         "rec1": "INGRESOS CORRIENTES", 
         "rec2": "DE OTRAS JURISDICCIONES", 
@@ -320,7 +320,7 @@
         "valor": 233176838
     }, 
     {
-        "key": "Fondo de Financiamiento de la Descentralizaci\u00f3n Provincial $471150000", 
+        "key": "Fondo de Financiamiento de la Descentralizaci\u00f3n Provincial", 
         "rec0": "Rentas Generales", 
         "rec1": "INGRESOS CORRIENTES", 
         "rec2": "DE OTRAS JURISDICCIONES", 
@@ -328,7 +328,7 @@
         "valor": 471150000
     }, 
     {
-        "key": "Aportes - \"Programa Federal  de Emergencia Habitacional\" $9453000", 
+        "key": "Aportes - \"Programa Federal  de Emergencia Habitacional\"", 
         "rec0": "Afectaci\u00f3n Espec\u00edfica", 
         "rec1": "INGRESOS CORRIENTES", 
         "rec2": "DE OTRAS JURISDICCIONES", 
@@ -336,7 +336,7 @@
         "valor": 9453000
     }, 
     {
-        "key": "Acuerdo Marco Secretaria de Ambiente - Ordenanza N\u00b0 11.158 $397400", 
+        "key": "Acuerdo Marco Secretaria de Ambiente - Ordenanza N\u00b0 11.158", 
         "rec0": "Afectaci\u00f3n Espec\u00edfica", 
         "rec1": "INGRESOS CORRIENTES", 
         "rec2": "DE OTRAS JURISDICCIONES", 
@@ -344,7 +344,7 @@
         "valor": 397400
     }, 
     {
-        "key": "Programa Federal de Integraci\u00f3n Socio - Comunitaria Ordenanza N\u00ba 11.853 $6151950", 
+        "key": "Programa Federal de Integraci\u00f3n Socio - Comunitaria Ordenanza N\u00ba 11.853", 
         "rec0": "Afectaci\u00f3n Espec\u00edfica", 
         "rec1": "INGRESOS CORRIENTES", 
         "rec2": "DE OTRAS JURISDICCIONES", 
@@ -352,7 +352,7 @@
         "valor": 6151950
     }, 
     {
-        "key": "Convenio de Equidad y Ordenamiento Fiscal - Ordenanza N\u00ba 12.537 $741505700", 
+        "key": "Convenio de Equidad y Ordenamiento Fiscal - Ordenanza N\u00ba 12.537", 
         "rec0": "Rentas Generales", 
         "rec1": "INGRESOS CORRIENTES", 
         "rec2": "DE OTRAS JURISDICCIONES", 
@@ -360,7 +360,7 @@
         "valor": 741505700
     }, 
     {
-        "key": "Programa de Financiamiento de Obras Viales Urbanas, Periurbanas, Caminos de Producci\u00f3n, Accesos a Pueblos y Obras de Seguridad $822516984", 
+        "key": "Programa de Financiamiento de Obras Viales Urbanas, Periurbanas, Caminos de Producci\u00f3n, Accesos a Pueblos y Obras de Seguridad", 
         "rec0": "Rentas Generales", 
         "rec1": "INGRESOS CORRIENTES", 
         "rec2": "DE OTRAS JURISDICCIONES", 
@@ -368,7 +368,7 @@
         "valor": 822516984
     }, 
     {
-        "key": "Programa Mejoramiento Barrial $229291907", 
+        "key": "Programa Mejoramiento Barrial", 
         "rec0": "Rentas Generales", 
         "rec1": "INGRESOS CORRIENTES", 
         "rec2": "DE OTRAS JURISDICCIONES", 
@@ -376,7 +376,7 @@
         "valor": 229291907
     }, 
     {
-        "key": "Programa Casa del Futuro $6985988", 
+        "key": "Programa Casa del Futuro", 
         "rec0": "Rentas Generales", 
         "rec1": "INGRESOS CORRIENTES", 
         "rec2": "DE OTRAS JURISDICCIONES", 
@@ -384,7 +384,7 @@
         "valor": 6985988
     }, 
     {
-        "key": "Programa Techo Digno $928961978", 
+        "key": "Programa Techo Digno", 
         "rec0": "Rentas Generales", 
         "rec1": "INGRESOS CORRIENTES", 
         "rec2": "DE OTRAS JURISDICCIONES", 
@@ -392,7 +392,7 @@
         "valor": 928961978
     }, 
     {
-        "key": "Cr\u00e9ditos de Mediano Plazo $390000000", 
+        "key": "Cr\u00e9ditos de Mediano Plazo", 
         "rec0": "Rentas Generales", 
         "rec1": "INGRESOS DE CAPITAL", 
         "rec2": "USO DEL CREDITO", 
@@ -400,7 +400,7 @@
         "valor": 390000000
     }, 
     {
-        "key": "REMANENTE DE EJERCICIOS ANTERIORES $1434000000", 
+        "key": "REMANENTE DE EJERCICIOS ANTERIORES", 
         "rec0": "Rentas Generales", 
         "rec1": "REMANENTE DE EJERCICIOS ANTERIORES", 
         "rec2": "REMANENTE DE EJERCICIOS ANTERIORES", 

@@ -44,7 +44,7 @@ with open(p17recursos) as csvfile:
             rentas = int(row["RENTAS GENERALES"])
             afectacion = int(row["AFECTACION ESPECIFICA"])
 
-            linea = {"key": detalle[4] + " $" + str(rentas),
+            linea = {"key": detalle[4],
                         "rec1": detalle[1],
                         "rec2": detalle[2],
                         "rec3": detalle[3],
@@ -52,7 +52,7 @@ with open(p17recursos) as csvfile:
 
             fjson1.append(linea)
 
-            linea = {"key": detalle[4] + " $" + str(afectacion),
+            linea = {"key": detalle[4],
                         "rec1": detalle[1],
                         "rec2": detalle[2],
                         "rec3": detalle[3],
@@ -60,7 +60,7 @@ with open(p17recursos) as csvfile:
             fjson2.append(linea)
 
             if rentas > 0:
-                linea = {"key": detalle[4] + " $" + str(rentas),
+                linea = {"key": detalle[4],
                         "rec0": "Rentas Generales",
                         "rec1": detalle[1],
                         "rec2": detalle[2],
@@ -69,7 +69,7 @@ with open(p17recursos) as csvfile:
                 fjson3.append(linea)
 
             if afectacion > 0:
-                linea = {"key": detalle[4] + " $" + str(afectacion),
+                linea = {"key": detalle[4],
                         "rec0": "Afectación Específica",
                         "rec1": detalle[1],
                         "rec2": detalle[2],
