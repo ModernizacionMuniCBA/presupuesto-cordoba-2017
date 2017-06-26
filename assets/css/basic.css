@@ -86,6 +86,15 @@ body {
 /* No media query since this is the default in Bootstrap */
 /* Small devices (tablets, 768px and up) */
 
+.divider{
+	background-color: #DEDEDE;
+	height: 1px;
+	width: 100%;
+	margin-top: 50px;
+	margin-bottom: 30px;
+}
+
+
 @media(min-width:768px){
 	.navbar-muni.navbar-fixed-top .navbar-collapse .navbar-nav>li>a{
 		background-color: #00A665;

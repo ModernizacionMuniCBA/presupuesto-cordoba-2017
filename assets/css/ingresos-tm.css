@@ -1,6 +1,3 @@
-#ingresos-tm{
-  height: 500px;
-}
-#objetos-tm{
+#ingresos-tm, #objetos-tm, #finalidad-tm{
   height: 500px;
 }

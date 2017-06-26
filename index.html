@@ -65,15 +65,37 @@
             <h3 id="ingresos-title">Recursos totales del Presupuesto 2017</h3>
             <div id="ingresos-tm"></div>
           </div>
-          <!-- <div class="col-sm-12">
-            <h3>Presupuesto por Secretarías y Objeto del Gasto</h3>
-            <div id="objetos-tm"></div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="divider"></div>
+            <h2>Gastos previstos</h2>
+            <div class="col-sm-3 delay-01s">
+              <select class="form-control input-tamano" id="obj1" name="obj1" onchange="dibujarD3_secretaria(this.value);">
+                <option value="0" selected="">Por Finalidad por Secretaría</option>
+                <option value="1">Por Secretarías por Finalidad</option>
+                <!-- <option value="2">Por Objeto por Secretaría</option> -->
+                <option value="3">Por Secretarías por Objeto</option>
+              </select>
+              </div>
           </div>
           <div class="col-sm-12">
-            <h3>Ingresos - Recursos totales del presupuesto 2017</h3>
-            <div id="ingresos-tm"></div>
-          </div> -->
+            <h3 id="finalidad-title">Presupuesto por Secretarías y Finalidad y función</h3>
+            <div id="finalidad-tm"></div>
+          </div>
         </div>
+        <!-- <div class="row">
+          <div class="col-sm-12">
+            <div class="divider"></div>
+            <h2>Gastos por Objeto</h2>
+
+          </div>
+          <div class="col-sm-12">
+            <h3 id="objetos-title">Presupuesto </h3>
+            <div id="objetos-tm"></div>
+          </div>
+        </div> -->
+
         <div class="blank-space"></div>
     </div><!-- /.container -->
 
@@ -86,6 +108,7 @@
     <script src="assets/js/d3plus.js"></script>
 
     <script src="assets/js/ingresos-tm.js"></script>
-    <script src="assets/js/objetos-tm.js"></script>
+    <script src="assets/js/finalidad-tm.js"></script>
+    <!-- <script src="assets/js/objetos-tm.js"></script> -->
   </body>
 </html>
