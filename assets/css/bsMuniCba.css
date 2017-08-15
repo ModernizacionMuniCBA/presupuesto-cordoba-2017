@@ -1,0 +1,373 @@
+/*
+    Author     : Gaston F. Ramirez
+*/
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  /*margin-bottom: 500px;*/
+  background-color: #FFF;
+  margin: 0;
+  min-height: 100%;
+  font-family: "Lato", sans-serif;
+}
+.push-footer{
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -142px;
+}
+
+.push-footer:after {
+  content: "";
+  display: block;
+}
+
+a:hover, a:focus{
+  color: #23CF5F;
+  text-decoration: none;
+}
+
+.hide{
+  display: none;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+}
+
+.nav-expander.is-open{
+  display: none;
+}
+
+/* Fonts */
+
+@font-face {
+  font-family: Gotham Rounded;
+  font-weight: 600;
+  src: url("../fonts/Gotham-Rounded-Medium.otf");
+}
+
+@font-face {
+  font-family: Gotham Rounded;
+  font-weight: 700;
+  src: url("../fonts/Gotham-Rounded-Bold.otf");
+}
+
+
+.navbar-gaMuniCba{
+  background-color: #FFF;
+  width: 100%;
+  height: 75px;
+  z-index: 999;
+  border: 0;
+  border-bottom: 1px solid #EEEEEE;
+}
+.navbar-gaMuniCba .navbar-header{
+  width: 100%;
+  margin-bottom: -30px;
+}
+.navbar-gaMuniCba .navbar-brand{
+  width: 60px;
+  height: 60px;
+  padding: 0;
+  margin-top: 7.5px;
+  margin-left: 15px;
+}
+.menuLogo{
+  width: 50px;
+  display: inline-block;
+}
+.sqGA{
+  width: 100px;
+  height: 100px;
+  background-color: #23CF5F;
+  display: inline-block;
+  color: #FFF;
+  overflow: hidden;
+}
+.logoGA{
+  font-size: 1.05em;
+  line-height: 1em;
+  margin-left: 10px;
+  padding-top: 30px;
+  margin: 0px;
+  padding-left: 10px;
+  font-family: "Gotham Rounded", sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding-bottom: 3px;
+  background-color: #23CF5F;
+}
+.logoGA.abierto{
+  font-size: 1em;
+  line-height: 0.9em;
+  padding-left: 10px;
+  padding-top: 0px;
+  margin: 0px;
+  font-family: "Gotham Rounded", sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding-bottom: 60px;
+  margin-bottom: 11px;
+  background-color: #23CF5F;
+  padding-top: 1px;
+}
+.logoGABar{
+  height: 3px;
+  width: 12px;
+  background-color: #FFF;
+  margin-top: 0px;
+  margin-left: 10px;
+}
+.presupuesto-muniCba .logoGA{
+  font-size: 1.25em;
+  padding-left: 5px;
+}
+.presupuesto-muniCba .logoGABar{
+  margin-left: 5px;
+}
+
+.navbar-gaMuniCba .nav.navbar-nav.navbar-right li a{
+  text-transform: uppercase;
+  font-weight: 100;
+  font-size: 1.15em;
+  margin-top: 60px;
+  margin-left: 5px;
+  padding: 5px;
+}
+
+
+/*-------------------------------*/
+/*       Hamburger-Cross         */
+/*-------------------------------*/
+
+.hamburger {
+  background: transparent;
+  border: none;
+  display: block;
+  height: 32px;
+  margin-right: -10px;
+  position: relative;
+  top: 20px;
+  width: 32px;
+  z-index: 999;
+  padding: 10px;
+}
+
+.hamburger.is-open{
+  top: 15px;
+}
+
+.hamburger:hover { outline: none; }
+
+.hamburger:focus { outline: none; }
+
+.hamburger:active { outline: none; }
+
+.hamburger.is-closed:before {
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-transition: all 0.35s ease-in-out;
+  color: #ffffff;
+  content: '';
+  display: block;
+  font-size: 14px;
+  line-height: 32px;
+  opacity: 0;
+  text-align: center;
+  width: 30px;
+}
+
+.hamburger.is-closed .hamb-top {
+  -webkit-transition: all 0.35s ease-in-out;
+  background-color: rgba(35,207,95, 0.7);
+  top: 5px;
+  width: 32px;
+}
+
+.hamburger.is-closed .hamb-middle {
+  background-color: rgba(35,207,95, 0.7);
+  margin-top: -2px;
+  top: 50%;
+  width: 32px;
+}
+
+.hamburger.is-closed .hamb-bottom {
+  -webkit-transition: all 0.35s ease-in-out;
+  background-color: rgba(35,207,95, 0.7);
+  bottom: 5px;
+  width: 32px;
+}
+
+.hamburger.is-closed .hamb-top, .hamburger.is-closed .hamb-middle, .hamburger.is-closed .hamb-bottom, .hamburger.is-open .hamb-top, .hamburger.is-open .hamb-middle, .hamburger.is-open .hamb-bottom {
+  height: 4px;
+  left: 0;
+  position: absolute;
+  width: 32px;
+  margin-left: 10px;
+}
+
+.hamburger.is-open .hamb-top {
+  -webkit-transform: rotate(45deg);
+  -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.73, 1, 0.28, 0.08);
+  background-color: #23CF5F;
+  margin-top: -2px;
+  top: 50%;
+}
+
+.hamburger.is-open .hamb-middle {
+  background-color: #23CF5F;
+  display: none;
+}
+
+.hamburger.is-open .hamb-bottom {
+  -webkit-transform: rotate(-45deg);
+  -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.73, 1, 0.28, 0.08);
+  background-color: #23CF5F;
+  margin-top: -2px;
+  top: 50%;
+}
+
+.hamburger.is-open:before {
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-transition: all 0.35s ease-in-out;
+  color: #23CF5F;
+  content: '';
+  display: block;
+  font-size: 14px;
+  line-height: 32px;
+  opacity: 0;
+  text-align: center;
+  width: 100px;
+}
+
+.hamburger.is-open:hover before {
+  -webkit-transform: translate3d(-100px, 0, 0);
+  -webkit-transition: all 0.35s ease-in-out;
+  display: block;
+  opacity: 1;
+}
+
+
+.nav-buscar {
+    float: left;
+    background-color: #23CF5F;
+    height: 90px;
+    display: none;
+}
+.fa-search.fa-4x{
+  font-size: 3em;
+}
+.cerrar.fa-3x{
+  font-size: 2em;
+}
+.nav-buscar .form-control{
+  background-color: #23CF5F;
+  color: #FFFFFF;
+  height: 40px;
+  font-size: 1.1em;
+  margin-top: 25px;
+  font-style: italic;
+  font-weight: 100;
+  border: none;
+  box-shadow: none;
+  border-bottom: 1px solid #FFFFFF;
+  border-radius: 0px;
+}
+.nav-buscar .btn-default{
+  background-color: #23CF5F;
+  color: #FFFFFF;
+  height: 60px;
+  width: 60px;
+  border:0;
+  margin-top: 15px;
+}
+.nav-buscar .btn-default:active,
+.nav-buscar .btn-default:focus{
+  background-color: #23CF5F;
+  color: #2CBE99;
+  outline: none;
+  box-shadow: none;
+}
+
+.nav-buscar ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #FFFFFF;
+}
+.nav-buscar :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #FFFFFF;
+   opacity:  1;
+}
+.nav-buscar ::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #FFFFFF;
+   opacity:  1;
+}
+.nav-buscar :-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    #FFFFFF;
+}
+.nav-buscar ::-ms-input-placeholder { /* Microsoft Edge */
+   color:    #FFFFFF;
+}
+
+
+nav ul li a,
+nav ul li a:after,
+nav ul li a:before {
+  transition: all .5s;
+}
+/* stroke */
+.stroke ul li a,{
+  position: relative;
+}
+.stroke ul li a:after{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '.';
+  color: transparent;
+  background: #23CF5F;
+  height: 3px;
+  margin-top: -10px;
+}
+.stroke ul li a:hover:after {
+  width: 100%;
+}
+
+
+
+
+/*		4. Botones		*/
+.btn.btn-muniCba {
+    color: #fff;
+    background-color: #23CF5F;
+    border-color: #1BA34B;
+}
+
+.btn.btn-muniCba:hover{
+	background-color: #1BA34B;
+}
+.btn-muniCba.active,
+.btn-muniCba:active,
+.open>.dropdown-toggle.btn-muniCba {
+    color: #fff;
+    background-color: #1BA34B;
+    border-color: #1BA34B;
+}
+
+.btn.btn-muniCba.inverso {
+    color: #1BA34B;
+    background-color: #EEEEEE;
+    border-color: #1BA34B;
+}
+
+.btn.btn-muniCba.inverso:hover{
+	background-color: #DADADA;
+}
+.btn-muniCba.inverso.active,
+.btn-muniCba.inverso:active,
+.open>.dropdown-toggle.btn-muniCba.inverso {
+    color: #009162;
+    background-color: #FFF;
+    border-color: #1BA34B;
+}

@@ -1,0 +1,69 @@
+.infografia{
+  height: 600px;
+  background-color: #1BA34B;
+  color: #FFF;
+  display: inline-block;
+  width: 100%;
+}
+
+.infografia h1{
+  margin-top: 40px;
+  margin-left: 20px;
+}
+
+div.link-infografia{
+  height: 200px;
+  border-bottom: 1px solid #d0d0d0;
+  display: inline-block;
+  width: 100%;
+  color: #2CBE99;
+  background-color: #FFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+div.link-infografia:hover{
+  color: #229578;
+  background-color: #EEEEEE;
+}
+div.link-infografia h2{
+  /*line-height: 150px;*/
+  font-weight: 900;
+  font-size: 2.25em;
+
+  /*font-family: "Gotham Rounded", sans-serif;*/
+  display: block;
+}
+
+div.text-infografia{
+  height: 200px;
+  /*border-bottom: 1px solid #e7e7e7;*/
+  display: inline-block;
+  width: 100%;
+  color: #1BA34B;
+  background-color: #FFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+div.text-infografia:hover{
+  background-color: #EEEEEE;
+}
+div.text-infografia h2{
+  /*line-height: 150px;*/
+  font-weight: 900;
+  font-size: 2.25em;
+  /*font-family: "Gotham Rounded", sans-serif;*/
+  display: block;
+}
+
+
+.no-padding{
+  padding: 0;
+}
+.padding{
+  padding: 0px 30px;
+}
