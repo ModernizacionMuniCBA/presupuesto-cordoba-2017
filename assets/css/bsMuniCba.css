@@ -136,6 +136,11 @@ a:hover, a:focus{
   padding: 5px;
 }
 
+.navbar-default .navbar-nav>li>a:focus,
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>li>a.active{
+  color:#000;
+}
 
 /*-------------------------------*/
 /*       Hamburger-Cross         */
@@ -333,7 +338,9 @@ nav ul li a:before {
 .stroke ul li a:hover:after {
   width: 100%;
 }
-
+.stroke ul li a.active:after {
+  width: 100%;
+}
 
 
 
@@ -370,4 +377,211 @@ nav ul li a:before {
     color: #009162;
     background-color: #FFF;
     border-color: #1BA34B;
+}
+
+
+
+
+
+a.nav-expander {
+  background: #FFFFFF;;
+  color: #FFFFFF;
+  display: block;
+  transition: right 0.3s ease-in-out 0s;
+  z-index: 12;
+  transition: right 0.3s ease-in-out 0s;
+  -webkit-transition: right 0.3s ease-in-out 0s;
+  -moz-transition: right 0.3s ease-in-out 0s;
+  -o-transition: right 0.3s ease-in-out 0s;
+  right: 30px;
+}
+a.nav-expander.is-closed{
+  height: 32px;
+}
+a.nav-expander.is-open{
+  height: 50px;
+  border: 0.1px solid #999;
+}
+a.nav-expander:hover {
+  cursor: pointer;
+}
+
+a.nav-expander.fixed {
+  position: fixed;
+}
+
+.nav-expanded a.nav-expander.fixed {
+    right: 22em;
+    background: #FFF;
+    padding: 0px 30px;
+}
+
+nav.nav-side {
+  background: #FFFFFF;
+  border-left: 1px solid #999999;
+  display: block;
+  height: 100%;
+  overflow: auto;
+  position: fixed;
+  right: -20em;
+  font-size: 15px;
+  top: 0;
+  width: 20em;
+  z-index: 2000;
+
+  transition: right 0.3s ease-in-out 0s;
+  -webkit-transition: right 0.3s ease-in-out 0s;
+  -moz-transition: right 0.3s ease-in-out 0s;
+  -o-transition: right 0.3s ease-in-out 0s;
+
+}
+.nav-expanded nav {
+  right: 0;
+}
+
+body.nav-expanded {
+  margin-left: 0em;
+  transition: right 0.4s ease-in-out 0s;
+  -webkit-transition: right 0.4s ease-in-out 0s;
+  -moz-transition: right 0.4s ease-in-out 0s;
+  -o-transition: right 0.4s ease-in-out 0s;
+}
+
+#nav-close {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  padding-right: 10px;
+}
+
+.main-menu {
+  padding-top: 12px;
+}
+
+.main-menu li {
+  border-bottom: 1px solid #999999;
+  margin-left: 20px;
+  font-size: 18px;
+  padding: 12px;
+}
+
+.main-menu a {
+  color: #6D6D6D;
+  text-decoration: none;
+}
+
+.main-menu a:hover,
+.main-menu a.active{
+  color: #2CBE99;
+  text-decoration: none;
+}
+
+.main-menu li .sub-nav {
+  border-bottom: 0px;
+  padding: 4px;
+}
+
+.main-menu a .caret {
+	width: 0;
+	height: 0;
+	display: inline-block;
+	vertical-align: top;
+	border-top: 4px solid #4f5963;
+	border-right: 4px solid transparent;
+	border-left: 4px solid transparent;
+	content: "";
+    margin-top: 8px;
+}
+
+.main-menu a:hover .caret {
+	border-top-color: #4f5963;
+}
+
+.main-menu  a > li.open > .caret {
+	border-top: none;
+	border-bottom: 4px solid #4f5963;
+	border-right: 4px solid transparent;
+	border-left: 4px solid transparent;
+}
+
+.main-menu a:hover > li.open > .caret {
+	border-bottom-color: #4f5963;
+}
+
+.icon:before {
+  font-family: 'FontAwesome';
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
+  text-transform: none;
+  content: '\f105';
+}
+
+.main-menu a > li > span.icon {
+  float: right;
+  margin: 0.1em 1.7em -0.1em 0;
+  opacity: 0;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+
+}
+
+.main-menu a:hover > li > span.icon {
+  float: right;
+  margin: 0.1em 0.8em -0.1em 0;
+  opacity: 1;
+}
+
+.global-margin {
+    margin: 50px;
+}
+
+.logo-loading {
+    position: relative;
+}
+
+
+.logo-loading .bottom, .logo-loading .top {
+    background: white;
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    right: 0;
+    -webkit-animation: logo-loading 1.2s cubic-bezier(.2,.65,.2,1) 3;
+    animation: logo-loading 1.2s cubic-bezier(.2,.65,.2,1) 3;
+}
+.logo-loading .bottom{
+  height: 58px;
+}
+.logo-loading .top {
+  height: 42px;
+}
+
+.logo-loading .bottom {
+    top: 42px;
+}
+.logo-loading .top {
+    -webkit-animation-delay: .25s;
+    animation-delay: .25s;
+}
+@keyframes logo-loading{
+  0%{
+    background:#fff;
+    -webkit-transform:translate(-100%);
+    transform:translate(-100%)
+    }
+  40%{
+    background:#fff;
+    -webkit-transform:translate(0);
+    transform:translate(0)
+    }
+  80%,to{
+    background:#fff;
+    -webkit-transform:translate(100%);
+    transform:translate(100%)
+  }
 }
