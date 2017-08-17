@@ -191,40 +191,9 @@
   <!-- <script src="jquery.js"></script> -->
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/menuController.js"></script>
 
-  <!-- 3 -->
 
 
-  <script>
-  $(document).ready(function(){
-
-    //Navigation Menu Slider
-    $('#nav-expander').on('click',function(e){
-      e.preventDefault();
-      $('body').toggleClass('nav-expanded');
-      $(this).toggleClass('is-closed is-open');
-    });
-    $('#nav-close').on('click',function(e){
-      e.preventDefault();
-      $('body').removeClass('nav-expanded');
-      $('#nav-expander').toggleClass('is-closed is-open');
-    });
-
-    $('.a-buscar').on('click',function(e){
-      e.preventDefault();
-      $('.nav-buscar').slideToggle();
-      if($('#nav-expander').hasClass('is-open')){
-        $('body').removeClass('nav-expanded');
-        $('#nav-expander').toggleClass('is-closed is-open');
-      }
-    });
-    // $(".top").on("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd",
-    //    function(e){
-    //       // do something here
-    //       $(this).off(e);
-    //       $(".sqGA").removeClass('logo-loading');
-    //    });
-  });
-  </script>
 </body>
 </html>

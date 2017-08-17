@@ -4,6 +4,9 @@ body{
   background-color: #EEEEEE;
 }
 
+.footer-gaMuniCba{
+  height: 100px;
+}
 .no-padding {
     padding-right: 0 !important;
     padding-left: 0 !important;
@@ -81,6 +84,9 @@ body{
   padding: 50px 15px;
 }
 
+.ingresos .ingresos-body{
+  padding: 0 50px;
+}
 /* INGRESOS, GASTOS, DEUDAS*/
 .ingresos .bg-overlay,
 .gastos .bg-overlay,
@@ -130,4 +136,97 @@ body{
   color: #FFFFFF;
   margin: 0;
   text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
+
+#ingresosGraph{
+  height: 500px;
+  margin-bottom: 25px;
+}
+
+#ingresosGraph .d3plus_share{
+  /*transform: translate(0,0)!important;*/
+}
+
+hr {
+  height: 1px;
+  width:100%;
+  display:block; /* for use on default inline elements like span */
+  margin: 10px 0;
+  overflow: hidden;
+  background-color: #aaa;
+}
+
+.tableContainer h2{
+  text-align: center;
+}
+
+.tableContainer h2.corrientes{
+  color:#C83560;
+}
+.tableContainer h2.capital{
+  color:#1F5693;
+}
+
+
+.ingresos .definicion{
+  margin-top: 40px;
+}
+
+
+.nav.nav-tabs{
+  border: none;
+}
+
+.nav-tabs.blue>li>a {
+    margin-right: -1px;
+    line-height: 1.42857143;
+    border: 1px solid #286fbd;
+    border-radius: 0;
+}
+.nav-tabs.blue>li.active>a,
+.nav-tabs.blue>li.active>a:focus,
+.nav-tabs.blue>li.active>a:hover,
+.nav-tabs.blue>li>a:focus,
+.nav-tabs.blue>li>a:hover {
+    color: #FFF;
+    cursor: pointer;
+    background-color: #1F5693;
+    border: 1px solid #286fbd;
+}
+
+.nav-tabs.blue>li>a.first {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.nav-tabs.blue>li>a.last {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.nav-tabs.pink>li>a {
+    margin-right: -1px;
+    line-height: 1.42857143;
+    border: 1px solid #cf486f;
+    color: #cf486f;
+    border-radius: 0;
+}
+.nav-tabs.pink>li.active>a,
+.nav-tabs.pink>li.active>a:focus,
+.nav-tabs.pink>li.active>a:hover,
+.nav-tabs.pink>li>a:focus,
+.nav-tabs.pink>li>a:hover {
+    color: #FFF;
+    cursor: pointer;
+    background-color: #C83560;
+    border: 1px solid #cf486f;
+}
+
+.nav-tabs.pink>li>a.first {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.nav-tabs.pink>li>a.last {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
