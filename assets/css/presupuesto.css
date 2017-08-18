@@ -130,13 +130,6 @@ body{
     ),
     url('../images/tramas/trama2.png');
 }
-.ingresos.afectacion .img-ingresos{
-  background: linear-gradient(
-    rgba(0, 0, 0, 0.3),
-    rgba(0, 0, 0, 0.8)
-    ),
-    url('../images/tramas/trama1.png');
-}
 .gastos .img-gastos{
   background: linear-gradient(
     rgba(0, 0, 0, 0.3),
@@ -149,7 +142,7 @@ body{
       rgba(0, 0, 0, 0.3),
       rgba(0, 0, 0, 0.8)
     ),
-    url('../images/tramas/trama4.png');
+    url('../images/tramas/trama1.png');
 }
 
 .ingresos .img-ingresos h1,
