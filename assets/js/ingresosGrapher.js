@@ -54,4 +54,21 @@ function dibujarD3() {
     });
 }
 
+function llenarTablas(){
+  $.getJSON( "assets/data/ingresos/recursos-totales-presupuesto-2017-tabla.json", function( data ) {
+  var items = [];
+  console.log(data);
+  $.each( data, function( key, val ) {
+    if(val.key_0 == "1"){
+      $("#tbody-ingresos-corrientes-propios").append('<tr class="nivel-'+val.nivel+'"><th scope="row">'+val.key+'</th><td>'+val.concepto+'</td><td>$'+val.valor.toLocaleString("es-AR")+'</td></tr>');
+    }else if(val.key_0 == "2"){
+    }
+    // console.log(val.concepto);
+    // console.log(val);
+    // items.push( "<li id='" + key + "'>" + val + "</li>" );
+  });
+});
+}
+
 dibujarD3();
+llenarTablas();

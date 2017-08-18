@@ -339,6 +339,7 @@ hr {
   display: inline;
   text-align: center;
   margin-top: 25px;
+  margin-bottom: 25px;
 }
 .nav-clasificacion .nav-tabs{
   display: inline-block;
@@ -347,4 +348,27 @@ hr {
 }
 .nav-clasificacion .nav-tabs li{
   width:50%;
+}
+
+
+.table-striped>tbody>tr:nth-of-type(odd).nivel-1 {
+    background-color: #1F5693;
+    font-weight: 600;
+    color: #FFF;
+}
+.table-striped>tbody>tr:nth-of-type(odd){
+    background-color: #FFF;
+}
+.table-striped>tbody>tr:nth-of-type(even){
+    background-color: #e3e3e3;
+}
+.table-striped>tbody>tr.nivel-2 {
+    background-color: #95bde8;
+}
+.table.table-striped{
+  border: 1px solid #ddd;
+}
+.table.table-striped tbody th{
+  font-weight: 300;
+  text-align: right;
 }
