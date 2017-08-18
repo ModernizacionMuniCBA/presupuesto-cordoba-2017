@@ -39,10 +39,10 @@ function dibujarD3() {
           .format("es_ES")
           .format({
               "number": function(number, key) {
-  		          var formatted = d3plus.number.format(number, key)
+  		          var formatted = d3plus.number.format(number, key);
   		          if (key.key === "valor") {
-  		        	    //  return "$" + formatted.replace("B", " Mm");
-                    return "$" + number;
+                    var formatted = number.toLocaleString("es-AR")
+                    return "$" + formatted;
   		          }
   		          else {
   		            return formatted
