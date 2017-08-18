@@ -375,3 +375,8 @@ hr {
   font-weight: 300;
   text-align: right;
 }
+
+#propios ul li,
+#no-propios ul li{
+  margin-left: 30px;
+}
