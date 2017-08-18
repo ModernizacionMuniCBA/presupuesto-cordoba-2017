@@ -65,7 +65,7 @@ body{
   background-color: #EEEEEE;
 }
 .home div.link-infografia h2{
-  font-weight: 900;
+  font-weight: 500;
   font-size: 2.25em;
   display: block;
 }
@@ -85,7 +85,7 @@ body{
   background-color: #EEEEEE;
 }
 .home div.text-infografia h2{
-  font-weight: 900;
+  font-weight: 500;
   font-size: 2.25em;
   display: block;
 }
@@ -148,7 +148,6 @@ body{
 .ingresos .img-ingresos h1,
 .gastos .img-gastos h1,
 .deudas .img-deudas h1{
-  font-family: Raleway, sans-serif;
   font-weight: 900;
   font-size: 5em;
   color: #FFFFFF;
