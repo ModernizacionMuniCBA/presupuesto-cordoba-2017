@@ -67,6 +67,7 @@ function tripletToBase64 (num) {
   return lookup[num >> 18 & 0x3F] + lookup[num >> 12 & 0x3F] + lookup[num >> 6 & 0x3F] + lookup[num & 0x3F]
 }
 
+
 function encodeChunk (uint8, start, end) {
   var tmp
   var output = []
@@ -10681,7 +10682,6 @@ var buckets = require("../../util/buckets.coffee"),
 // Sets color range of data, if applicable
 //-------------------------------------------------------------------
 module.exports = function(vars) {
-
   if ( vars.dev.value ) print.time("getting color data range")
 
   if (vars.color.domain.value) {
@@ -26256,6 +26256,7 @@ var events = require("../../../client/pointer.coffee"),
 
 // Enter SVG Elements
 module.exports = function(vars) {
+  console.log(vars);
 
   if ( vars.dev.value ) print.time("creating SVG elements");
 
@@ -35663,6 +35664,7 @@ module.exports = function() {
           if (vars.dev.value) {
             print.groupEnd();
             print.timeEnd("total draw time");
+            finishedDrawing(); //AGREGADO PARA ESCONDER LOADER CUANDO HAY UN GRAFICO
             print.log("\n");
           }
         }

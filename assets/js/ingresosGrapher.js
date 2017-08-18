@@ -49,6 +49,7 @@ function dibujarD3() {
   		          }
   		        }
   				})
+          .dev(true) //Uso esto como callback para el loader cuando hay viz
           .draw();
     }
     });
