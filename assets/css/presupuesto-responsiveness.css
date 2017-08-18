@@ -1,0 +1,43 @@
+@media (min-width: 375px) {
+
+}
+/* Media Queries */
+/*Small devices (landscape phones, 424px and up)*/
+@media (min-width: 424px) {
+
+}
+/*Small devices (landscape phones, 544px and up)*/
+@media (min-width: 544px) {
+
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+  .ingresos .img-ingresos h1,
+  .gastos .img-gastos h1,
+  .deudas .img-deudas h1{
+    font-size: 4em;
+  }
+}
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+  .ingresos .img-ingresos h1,
+  .gastos .img-gastos h1,
+  .deudas .img-deudas h1{
+    font-size: 5em;
+  }
+}
+
+/*Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+
+}
+
+@media (min-width: 1400px) {
+
+}
+
+@media (min-width: 992px) {
+
+}
