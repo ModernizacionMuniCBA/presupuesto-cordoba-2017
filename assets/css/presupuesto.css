@@ -285,6 +285,8 @@ hr {
   height: 100px;
   /*border: 1px solid #aaa;*/
   border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   background: #1F5693;
   display: flex;
   justify-content: center;
