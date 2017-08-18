@@ -356,7 +356,6 @@ hr {
 }
 .table-striped>tbody>tr:nth-of-type(odd).nivel-1 {
     background-color: #1F5693;
-    font-weight: 600;
     color: #FFF;
 }
 .table-striped>tbody>tr:nth-of-type(odd){
@@ -367,6 +366,7 @@ hr {
 }
 .table-striped>tbody>tr.nivel-2 {
     background-color: #95bde8;
+    font-weight: 600;
 }
 .table.table-striped{
   border: 1px solid #ddd;

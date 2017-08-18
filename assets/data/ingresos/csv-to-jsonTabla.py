@@ -24,13 +24,22 @@ with open(p17recursos) as csvfile:
         partes_nivel = row["Nivel"].split(".")
         nivel = len(partes_nivel)
         nombre = row["Concepto"].strip()
-
-        if nivel <= 3:
+        if nivel == 1:
             if row["Nivel"] != "0":
                 linea = {"key": row["Nivel"],
                         "key_0":partes_nivel[0],
                         "concepto": nombre,
                         "nivel": nivel,
+                        "subnivel": "",
+                        "valor": int(row["TOTAL "])}
+                fjson1.append(linea)
+        if nivel >1 and nivel <= 3:
+            if row["Nivel"] != "0":
+                linea = {"key": row["Nivel"],
+                        "key_0":partes_nivel[0],
+                        "concepto": nombre,
+                        "nivel": nivel,
+                        "subnivel": partes_nivel[1],
                         "valor": int(row["TOTAL "])}
 
                 fjson1.append(linea)
