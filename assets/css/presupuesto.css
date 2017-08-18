@@ -22,6 +22,16 @@ body{
 
 
 
+/* FONTS */
+
+@font-face {
+  font-family: League Gothic;
+  font-weight: 600;
+  src: url("../fonts/League-Gothic.otf");
+}
+
+
+
 /*  HOME  */
 
 .home .infografia{
@@ -113,6 +123,13 @@ body{
     ),
     url('../images/tramas/trama2.png');
 }
+.ingresos.afectacion .img-ingresos{
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.8)
+    ),
+    url('../images/tramas/trama1.png');
+}
 .gastos .img-gastos{
   background: linear-gradient(
     rgba(0, 0, 0, 0.3),
@@ -131,11 +148,17 @@ body{
 .ingresos .img-ingresos h1,
 .gastos .img-gastos h1,
 .deudas .img-deudas h1{
+  font-family: Raleway, sans-serif;
   font-weight: 900;
   font-size: 5em;
   color: #FFFFFF;
   margin: 0;
   text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
+.ingresos .d3plus_label{
+  font-family: Raleway, sans-serif;
+  font-weight: 300;
 }
 
 
@@ -156,16 +179,28 @@ hr {
   overflow: hidden;
   background-color: #aaa;
 }
-
+.tableContainer{
+  margin-top: 30px;
+  display: none;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.tableContainer.active{
+  display: inline;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
 .tableContainer h2{
   text-align: center;
 }
 
 .tableContainer h2.corrientes{
-  color:#C83560;
+  color:#1F5693;
 }
 .tableContainer h2.capital{
-  color:#1F5693;
+  color:#C83560;
 }
 
 
@@ -229,4 +264,60 @@ hr {
 .nav-tabs.pink>li>a.last {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
+}
+
+
+.button-ingresos{
+  width: 100%;
+  height: 100px;
+  /*border: 1px solid #aaa;*/
+  border-radius: 5px;
+  background: #1F5693;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1.5em;
+  color: #fff;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.button-ingresos.pink{
+  background: #C83560;
+  color: #fff;
+}
+.button-ingresos.blue{
+  background: #1F5693;
+  color: #fff;
+}
+.button-ingresos.orange{
+  background: #CE5637;
+  color: #fff;
+}
+.button-ingresos:hover{
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.button-ingresos.pink:hover{
+  background: #d45c7f;
+  color: #8c2543;
+}
+.button-ingresos.blue:hover{
+  background: #286fbd;
+  color: #fff;
+}
+.button-ingresos.orange:hover{
+  background: #d87960;
+  color: #943b24;
+}
+
+.ingresos g.d3plus_title.sub text,
+.ingresos #d3plus_back_button{
+  font-size: 16px!important;
+  padding-top: 2px;
+  font-weight: 400!important;
+  font-family: Rubik, sans-serif;
 }

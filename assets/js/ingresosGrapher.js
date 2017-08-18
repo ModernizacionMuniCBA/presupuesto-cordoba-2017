@@ -28,7 +28,7 @@ function dibujarD3() {
           .background("#EEEEEE")
           .container("#ingresosGraph")
           .legend({"size": 30})
-          .labels({"align": "left", "valign": "top"})
+          // .labels({"align": "left", "valign": "top"})
           .tooltip(true)
           .tooltip({"children":0})
           // .tooltip({"large":getTooltipWidth(), "small":getTooltipWidth()})
