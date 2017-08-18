@@ -151,20 +151,27 @@
             </a>
           </div>
           <div class="col-xs-4">
-            <a href="afectacion-especifica.html">
+            <a href="#afectacion" aria-controls="afectacion" role="tab" data-toggle="tab">
               <div class="button-ingresos orange">
                 Rentas Generales y Afectación Específica
               </div>
             </a>
           </div>
           <div class="tab-content">
-            <div class="col-xs-12 tableContainer" role="tabpanel" class="tab-pane" id="corrientes">
+            <div class="col-xs-12 tableContainer tab-pane" role="tabpanel" id="corrientes">
               <h2 class="corrientes blue">Ingresos Corrientes</h2>
+              <p class="definicion">Definicion de ingresos corrientes. Definicion de ingresos corrientes. Definicion de ingresos corrientes. Definicion de ingresos corrientes. Definicion de ingresos corrientes. Definicion de ingresos corrientes. Definicion de ingresos corrientes. Definicion de ingresos corrientes. Definicion de ingresos corrientes. Definicion de ingresos corrientes. Definicion de ingresos corrientes. Definicion de ingresos corrientes. Definicion de ingresos corrientes. Definicion de ingresos corrientes. Definicion de ingresos corrientes. Definicion de ingresos corrientes. </p>
+
               <!-- Nav tabs -->
-              <ul class="nav nav-tabs blue" role="tablist">
-                <li role="presentation" class="active"><a href="#propios" aria-controls="propios" role="tab" data-toggle="tab" class="first">Propios</a></li>
-                <li role="presentation"><a href="#no-propios" aria-controls="no-propios" role="tab" data-toggle="tab" class="last">No Propios</a></li>
-              </ul>
+              <div class="row">
+                <div class="col-xs-12 col-xs-offset-0 col-sm-4 col-sm-offset-4 nav-clasificacion">
+                  <h4>Clasificación:</h4>
+                  <ul class="nav nav-tabs blue" role="tablist">
+                    <li role="presentation" class="active"><a href="#propios" aria-controls="propios" role="tab" data-toggle="tab" class="first">Propios</a></li>
+                    <li role="presentation"><a href="#no-propios" aria-controls="no-propios" role="tab" data-toggle="tab" class="last">No Propios</a></li>
+                  </ul>
+                </div>
+              </div>
 
               <!-- Tab panes -->
               <div class="tab-content">
@@ -172,8 +179,11 @@
                 <div role="tabpanel" class="tab-pane" id="no-propios">No Propios</div>
               </div>
             </div>
-            <div class="col-xs-12 tableContainer" role="tabpanel" class="tab-pane" id="capital">
+            <div class="col-xs-12 tableContainer tab-pane" role="tabpanel" id="capital">
               <h2 class="capital">Ingresos de Capital</h2>
+            </div>
+            <div class="col-xs-12 tableContainer tab-pane" role="tabpanel" id="afectacion">
+              <h2 class="afectacion">Rentas Generales y Afectación Específica</h2>
             </div>
           </div>
         </div>

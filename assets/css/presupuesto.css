@@ -201,6 +201,9 @@ hr {
 .tableContainer h2.capital{
   color:#C83560;
 }
+.tableContainer h2.afectacion{
+  color:#CE5637;
+}
 
 
 .ingresos .definicion{
@@ -319,4 +322,17 @@ hr {
   padding-top: 2px;
   font-weight: 400!important;
   font-family: Rubik, sans-serif;
+}
+
+.nav-clasificacion{
+  display: inline;
+  text-align: center;
+}
+.nav-clasificacion .nav-tabs{
+  display: inline-block;
+  margin: 0 auto;
+  width:100%;
+}
+.nav-clasificacion .nav-tabs li{
+  width:50%;
 }
