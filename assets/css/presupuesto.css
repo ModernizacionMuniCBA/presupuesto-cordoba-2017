@@ -350,7 +350,10 @@ hr {
   width:50%;
 }
 
-
+.titulo-tabla{
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
 .table-striped>tbody>tr:nth-of-type(odd).nivel-1 {
     background-color: #1F5693;
     font-weight: 600;
