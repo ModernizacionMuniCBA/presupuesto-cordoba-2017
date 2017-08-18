@@ -23687,15 +23687,24 @@ module.exports = function(vars) {
             var zoomDir = zoomDirection(d.d3plus_data || d, vars)
             var pointer = typeof vars.mouse.viz === "function" ||
                           typeof vars.mouse.viz[events.click] === "function" ||
-                          (vars.zoom.value && (vars.types[vars.type.value].zoom ||
+                          (vars.zoom.value  && (vars.types[vars.type.value].zoom ||
                                               (d.d3plus.threshold && d.d3plus.merged) ||
                                               zoomDir === 1 ||
                                               (zoomDir === -1 && vars.history.states.length && !vars.tooltip.value.long)));
 
-            d3.select(this)
-              .style("cursor", pointer ? "pointer" : "auto")
-              .transition().duration(vars.timing.mouseevents)
-              .call(transform,true)
+            console.log(zoomDir);
+            if(zoomDir < 0){
+              d3.select(this)
+                .style("cursor", "normal")
+                .transition().duration(vars.timing.mouseevents)
+                .call(transform,true)
+            }else{
+              d3.select(this)
+                .style("cursor", pointer ? "pointer" : "auto")
+                .transition().duration(vars.timing.mouseevents)
+                .call(transform,true)
+            }
+
 
             d3.select(this).selectAll(".d3plus_data")
               .transition().duration(vars.timing.mouseevents)
@@ -23756,8 +23765,7 @@ module.exports = function(vars) {
                           typeof vars.mouse.viz[events.click] === "function" ||
                           (vars.zoom.value && (vars.types[vars.type.value].zoom ||
                                               (d.d3plus.threshold && d.d3plus.merged) ||
-                                              zoomDir === 1 ||
-                                              (zoomDir === -1 && vars.history.states.length && !vars.tooltip.value.long)));
+                                              zoomDir === 1));
 
 
             d3.select(this).style("cursor", pointer ? "pointer" : "auto");
@@ -23994,7 +24002,7 @@ module.exports = function(vars) {
           else if (depth_delta === -1 && vars.zoom.value &&
                    vars.history.states.length && !vars.tooltip.value.long) {
 
-            vars.history.back()
+            // vars.history.back()
 
           }
           else if (vars.types[vars.type.value].zoom && vars.zoom.value) {
@@ -26536,7 +26544,7 @@ module.exports = function(params) {
         var text = vars.format.value(vars.format.locale.value.ui.expand)
       }
       else if (zoom === -1 && vars.zoom.value && vars.history.states.length && !vars.tooltip.value.long) {
-        var text = vars.format.value(vars.format.locale.value.ui.collapse)
+        // var text = vars.format.value(vars.format.locale.value.ui.collapse)
       }
       else if (!vars.small && length == "short" && (vars.tooltip.html.value || vars.tooltip.value.long) && (vars.focus.value.length !== 1 || vars.focus.value[0] != id)) {
         var text = vars.format.locale.value.ui.moreInfo
