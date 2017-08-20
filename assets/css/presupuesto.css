@@ -5,6 +5,49 @@ body{
 }
 
 
+#afectacion a{
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+#afectacion a:hover,
+#afectacion a:focus{
+  color:#CE5637;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+
+#capital a{
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+#capital a:hover,
+#capital a:focus{
+  color:#C83560;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+#corrientes a{
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+#corrientes a:hover,
+#corrientes a:focus{
+  /*color:#1F5693;*/
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
 .footer-gaMuniCba{
   height: 100px;
 }
@@ -257,7 +300,7 @@ hr {
 .nav-tabs.pink>li.active>a:hover,
 .nav-tabs.pink>li>a:focus,
 .nav-tabs.pink>li>a:hover {
-    color: #FFF;
+    color: #FFF!important;
     cursor: pointer;
     background-color: #C83560;
     border: 1px solid #cf486f;
@@ -330,21 +373,6 @@ hr {
   font-family: Rubik, sans-serif;
 }
 
-.nav-clasificacion{
-  display: inline;
-  text-align: center;
-  margin-top: 25px;
-  margin-bottom: 25px;
-}
-.nav-clasificacion .nav-tabs{
-  display: inline-block;
-  margin: 0 auto;
-  width:100%;
-}
-.nav-clasificacion .nav-tabs li{
-  width:50%;
-}
-
 .titulo-tabla{
   margin-top: 30px;
   margin-bottom: 10px;
@@ -371,10 +399,51 @@ hr {
   text-align: right;
 }
 
+
+.nav-clasificacion{
+  display: inline;
+  text-align: center;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+.nav-clasificacion .nav-tabs{
+  display: inline-block;
+  margin: 0 auto;
+  width:100%;
+}
+#corrientes .nav-clasificacion .nav-tabs li{
+  width:50%;
+}
+
+#capital .nav-clasificacion .nav-tabs li{
+  width:33.3333333%;
+}
+
+
 #propios ul li,
 #no-propios ul li{
   margin-left: 30px;
 }
+
+
+#afectacion-especifica-j,
+#afectacion-especifica-jm{
+  height: 500px;
+}
+#afectacion-especifica-propios{
+  height: 750px;
+}
+#afectacion-especifica-no_propios{
+  height: 500px;
+}
+#afectacion-especifica-propios,
+#afectacion-especifica-no_propios{
+  width: 100%;
+}
+
+
+
+
 
 
 /* LOADER */

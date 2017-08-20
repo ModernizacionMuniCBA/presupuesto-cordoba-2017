@@ -1,4 +1,4 @@
-function dibujarD3() {
+function dibujarD3_ing() {
   $("#ingresosGraph").empty();
   d3.json("assets/data/ingresos/recursos-rentas-presupuesto-2017.json", function(err, res) {
     if (!err) {
@@ -55,7 +55,7 @@ function dibujarD3() {
     });
 }
 
-function llenarTablas(){
+function llenarTablas_ing(){
   $.getJSON( "assets/data/ingresos/recursos-totales-presupuesto-2017-tabla.json", function( data ) {
   var items = [];
   console.log(data);
@@ -79,5 +79,5 @@ function llenarTablas(){
 });
 }
 
-dibujarD3();
-llenarTablas();
+dibujarD3_ing();
+llenarTablas_ing();

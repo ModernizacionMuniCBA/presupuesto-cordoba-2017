@@ -164,7 +164,7 @@
             </a>
           </div>
           <div class="tab-content">
-            <div class="col-xs-12 tableContainer tab-pane" role="tabpanel" id="corrientes">
+            <div class="col-xs-12 tableContainer tab-panel" role="tabpanel" id="corrientes">
               <h2 class="corrientes blue">Ingresos Corrientes</h2>
               <p class="definicion">
                 Los Ingresos Corrientes son aquellos ingresos que la Municipalidad percibe en su normal funcionamiento diario, como cobro de <a href="#">tasas</a>, <a href="#">contribuciones</a> o <a href="#">derechos</a>.
@@ -188,6 +188,7 @@
               <!-- Tab panes -->
               <div class="tab-content">
                 <div role="tabpanel" class="tab-pane active" id="propios">
+                  <h4>Ingresos corrientes propios</h4>
                   Entre los principales ingresos corrientes de jurisdicción municipal (PROPIOS) de la municipalidad se pueden mencionar:
                   <br/><br/>
                   <ul>
@@ -226,6 +227,7 @@
                   </div>
                 </div>
                 <div role="tabpanel" class="tab-pane" id="no-propios">
+                  <h4>Ingresos corrientes no propios</h4>
                   Entre los principales ingresos corrientes de otras jurisdicciones (NO PROPIOS) a la Municipalidad se pueden observar:
                   <br/><br/>
                   <ul>
@@ -267,9 +269,123 @@
             </div>
             <div class="col-xs-12 tableContainer tab-pane" role="tabpanel" id="capital">
               <h2 class="capital">Ingresos de Capital</h2>
+              <p class="definicion">
+                Los Ingresos de Capital son aquellos ingresos extraordinarios por parte de la Municipalidad. Estos pueden venir por la adquisición de <a href="#">créditos o préstamos</a>, ventas de <a href="#">activos físicos</a> y venta de <a href="#">bienes en desuso</a> o bien por transferencias de <a href="#">otros niveles de gobierno</a> para financiar obras o inversiones de capital.
+                <br/>
+                <br/>
+                Los ingresos de capital se pueden clasificar en: <strong>Uso del crédito</strong>, <strong>venta de activo fijo</strong> y <strong>venta de bienes en desuso</strong>.
+              </p>
+
+              <!-- Nav tabs -->
+              <div class="row">
+                <div class="col-xs-12 col-xs-offset-0 col-sm-6 col-sm-offset-3 nav-clasificacion">
+                  <h4>Clasificación:</h4>
+                  <ul class="nav nav-tabs pink" role="tablist">
+                    <li role="presentation" class="active"><a href="#credito" aria-controls="credito" role="tab" data-toggle="tab" class="first">Uso del crédito</a></li>
+                    <li role="presentation"><a href="#activos" aria-controls="activos" role="tab" data-toggle="tab">Activo fijo</a></li>
+                    <li role="presentation"><a href="#desuso" aria-controls="desuso" role="tab" data-toggle="tab" class="last">Bienes en desuso</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Tab panes -->
+              <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="credito">
+                  <h4>Uso del Crédito</h4>
+                  <!-- Entre los principales ingresos corrientes de jurisdicción municipal (PROPIOS) de la municipalidad se pueden mencionar: -->
+                  <br/>
+                  <h3 class="titulo-tabla">Datos:</h3>
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th style="width: 10%;"></th>
+                          <th style="width: 70%;">Concepto</th>
+                          <th style="width: 20%;">Total</th>
+                        </tr>
+                      </thead>
+                      <tbody id="tbody-ingresos-capital-credito">
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="activos">
+                  <h4>Venta de Activo Fijo</h4>
+                  <!-- Corresponden a ingresos por la venta de propiedades, tierras, bienes de capital, etc., de propiedad del Estado Municipal, como así también de aquellos bienes que por diversas razones se encuentran en desuso por parte del municipio. -->
+                  <br/>
+
+                  <h3 class="titulo-tabla">Datos:</h3>
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th style="width: 10%;"></th>
+                          <th style="width: 70%;">Concepto</th>
+                          <th style="width: 20%;">Total</th>
+                        </tr>
+                      </thead>
+                      <tbody id="tbody-ingresos-capital-activos">
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="desuso">
+                  <h4>Venta de Bienes en Desuso</h4>
+                  <!-- Entre los principales ingresos corrientes de otras jurisdicciones (NO PROPIOS) a la Municipalidad se pueden observar: -->
+                  <br/>
+
+                  <h3 class="titulo-tabla">Datos:</h3>
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th style="width: 10%;"></th>
+                          <th style="width: 70%;">Concepto</th>
+                          <th style="width: 20%;">Total</th>
+                        </tr>
+                      </thead>
+                      <tbody id="tbody-ingresos-capital-desuso">
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+
             </div>
-            <div class="col-xs-12 tableContainer tab-pane" role="tabpanel" id="afectacion">
+            <div class="col-xs-12 tableContainer tab-pane active" role="tabpanel" id="afectacion">
               <h2 class="afectacion">Rentas Generales y Afectación Específica</h2>
+
+              <p class="definicion">
+                Normalmente la mayoría de los recursos ingresan al Municipio con “<strong>libre disponibilidad</strong>”,
+                es decir son aquellos que el Estado utiliza para cumplir con sus finalidades predefinidas
+                en el
+                <a href="https://gobiernoabierto.cordoba.gob.ar/plan-de-metas/plan-de-metas-2016-2019" target="_blank">plan de
+                 gobierno</a> y que son variadas como por ejemplo pagar salarios y realizar obras
+                para la Ciudad. Estos recursos ingresan al municipio bajo la denominación de Rentas Generales
+                (para el año 2017 alcanza el 97,6%).
+                <br/>
+                <br/>
+                Luego, hay otro grupo de ingresos que tienen asignado una “<strong>afectación específica</strong>”, o sea que no pueden
+                ser gastados en algo que no sea el destino establecido por la ley, en este caso la Ordenanza que le dió
+                origen.
+              </p>
+              <div class="col-xs-12 col-md-4 col-xs-offset-0 col-md-offset-1">
+                <h3 class="text-center">Afectación Específica por Jurisdiscción</h3>
+                <div id="afectacion-especifica-j"></div>
+              </div>
+              <div class="col-xs-12 col-md-4 col-xs-offset-0 col-md-offset-2">
+                <h3 class="text-center">Afectación Específica de todas las jurisdicciones:</h3>
+                <div id="afectacion-especifica-jm"></div>
+              </div>
+              <div class="col-xs-12">
+                <h3 class="text-center">Afectación Específica - Ingresos Propios</h3>
+                <div id="afectacion-especifica-propios"></div>
+              </div>
+              <div class="col-xs-12">
+                <h3 class="text-center">Afectación Específica - Ingresos Propios</h3>
+                <div id="afectacion-especifica-no_propios"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -291,7 +407,7 @@
   <script src="assets/js/d3.js"></script>
   <script src="assets/js/d3plus.js"></script>
   <script src="assets/js/ingresosGrapher.js"></script>
-  <!-- <script src="assets/js/ingresosGrapher.js"></script> -->
+  <script src="assets/js/afectacionEspecifica.js"></script>
 
 </body>
 </html>

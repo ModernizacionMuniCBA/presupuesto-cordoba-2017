@@ -27,6 +27,9 @@ body {
 a:hover, a:focus{
   color: #23CF5F;
   text-decoration: none;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .hide{
@@ -140,6 +143,9 @@ a:hover, a:focus{
 .navbar-default .navbar-nav>li>a:hover,
 .navbar-default .navbar-nav>li>a.active{
   color:#000;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 /*-------------------------------*/
@@ -474,6 +480,9 @@ body.nav-expanded {
 .main-menu a.active{
   color: #2CBE99;
   text-decoration: none;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .main-menu li .sub-nav {
