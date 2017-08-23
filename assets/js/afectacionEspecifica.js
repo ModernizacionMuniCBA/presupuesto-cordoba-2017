@@ -13,7 +13,7 @@ function dibujarD3_AE() {
         var visualization = d3plus.viz()
           .container("#afectacion-especifica-j")
           .background("#EEEEEE")
-          .legend({"size": 30})
+           .legend({"size": 50})
           // .labels({"align": "left", "valign": "top"})
           .tooltip(true)
           .tooltip({"children":0})
@@ -96,9 +96,9 @@ function dibujarD3_AE() {
               .type("bar")
               .id(["key"])
               .x("valor")
-              .x({"stacked": false, "value": "valor"})
+              .x({"stacked": false, "value": "valor", "grid":false, "label": false, "scale": "discrete"})
               .y("Nombre")
-              .y({"scale": "discrete"}) // Manually set Y-axis to be discrete
+              .y({"scale": "discrete", "grid":false, "label": false}) // Manually set Y-axis to be discrete
               .format("es_ES")
               .format({
                   "number": function(number, key) {
@@ -135,9 +135,9 @@ function dibujarD3_AE() {
                 .type("bar")
                 .id(["key"])
                 .x("valor")
-                .x({"stacked": false, "value": "valor"})
+                .x({"scale": "discrete", "stacked": false, "value": "valor", "grid":false, "label": false})
                 .y("Nombre")
-                .y({"scale": "discrete"}) // Manually set Y-axis to be discrete
+                .y({"scale": "discrete", "grid":false,  "label": false}) // Manually set Y-axis to be discrete
                 .format("es_ES")
                 .format({
                     "number": function(number, key) {
@@ -155,6 +155,6 @@ function dibujarD3_AE() {
           }
           });
 }
-
+$('a[href="#afectacion"]').on('shown.bs.tab', function (e) {
 dibujarD3_AE();
-// llenarTablas();
+})

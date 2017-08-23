@@ -225,6 +225,8 @@
                       </tbody>
                     </table>
                   </div>
+                  <a href="#" class="btn btn-default blue">Descargar Excel</a>
+                  <a href="#" class="btn btn-default blue">Descargar CSV</a>
                 </div>
                 <div role="tabpanel" class="tab-pane" id="no-propios">
                   <h4>Ingresos corrientes no propios</h4>
@@ -264,10 +266,13 @@
                       </tbody>
                     </table>
                   </div>
+                  <a href="#" class="btn btn-default blue">Descargar Excel</a>
+                  <a href="#" class="btn btn-default blue">Descargar CSV</a>
+
                 </div>
               </div>
             </div>
-            <div class="col-xs-12 tableContainer tab-pane" role="tabpanel" id="capital">
+            <div class="col-xs-12 tableContainer tab-pane active" role="tabpanel" id="capital">
               <h2 class="capital">Ingresos de Capital</h2>
               <p class="definicion">
                 Los Ingresos de Capital son aquellos ingresos extraordinarios por parte de la Municipalidad. Estos pueden venir por la adquisición de <a href="#">créditos o préstamos</a>, ventas de <a href="#">activos físicos</a> y venta de <a href="#">bienes en desuso</a> o bien por transferencias de <a href="#">otros niveles de gobierno</a> para financiar obras o inversiones de capital.
@@ -278,82 +283,85 @@
 
               <!-- Nav tabs -->
               <div class="row">
-                <div class="col-xs-12 col-xs-offset-0 col-sm-6 col-sm-offset-3 nav-clasificacion">
+                <div class="col-xs-12 col-xs-offset-0 col-sm-6 col-sm-offset-3 nav-clasificacion nav-3">
                   <h4>Clasificación:</h4>
-                  <ul class="nav nav-tabs pink" role="tablist">
-                    <li role="presentation" class="active"><a href="#credito" aria-controls="credito" role="tab" data-toggle="tab" class="first">Uso del crédito</a></li>
-                    <li role="presentation"><a href="#activos" aria-controls="activos" role="tab" data-toggle="tab">Activo fijo</a></li>
-                    <li role="presentation"><a href="#desuso" aria-controls="desuso" role="tab" data-toggle="tab" class="last">Bienes en desuso</a></li>
+                  <ul class="nav nav-tabs pink disabled" role="tablist">
+                    <li role="presentation" class="active"><a class="first">Uso del crédito</a></li>
+                    <li role="presentation" class="active"><a>Activo fijo</a></li>
+                    <li role="presentation" class="active"><a class="last">Bienes en desuso</a></li>
                   </ul>
                 </div>
               </div>
 
-              <!-- Tab panes -->
-              <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="credito">
-                  <h4>Uso del Crédito</h4>
-                  <!-- Entre los principales ingresos corrientes de jurisdicción municipal (PROPIOS) de la municipalidad se pueden mencionar: -->
-                  <br/>
-                  <h3 class="titulo-tabla">Datos:</h3>
-                  <div class="table-responsive">
-                    <table class="table table-striped">
-                      <thead>
-                        <tr>
-                          <th style="width: 10%;"></th>
-                          <th style="width: 70%;">Concepto</th>
-                          <th style="width: 20%;">Total</th>
-                        </tr>
-                      </thead>
-                      <tbody id="tbody-ingresos-capital-credito">
-                      </tbody>
-                    </table>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <h3>Ingresos de capital: Usos de crédito</h3>
+                      <p>
+                        Se refiere a las operaciones financieras que realiza el Estado Municipal para obtener financiamiento, pudiendo ser este de corto, mediano o largo plazo.
+                        <br />
+                        <br />
+                        La posibilidad de acceder a préstamos constituye un elemento muy importante en la administración fiscal. Utilizado racionalmente, el crédito permite llevar adelante un universo de proyectos que de otro modo no sería posible que el Estado encara.
+                      </p>
+                    </div>
                   </div>
-                </div>
-                <div role="tabpanel" class="tab-pane" id="activos">
-                  <h4>Venta de Activo Fijo</h4>
-                  <!-- Corresponden a ingresos por la venta de propiedades, tierras, bienes de capital, etc., de propiedad del Estado Municipal, como así también de aquellos bienes que por diversas razones se encuentran en desuso por parte del municipio. -->
-                  <br/>
+                  <div class="row">
+                    <div class="col-xs-12 nav-clasificacion nav-center">
+                      <ul class="nav nav-tabs pink" role="tablist">
+                        <li role="presentation" class="active"><a href="#cortoPlazo" aria-controls="cortoPlazo" role="tab" data-toggle="tab" class="first">Corto Plazo</a></li>
+                        <li role="presentation"><a href="#largoPlazo" aria-controls="largoPlazo" role="tab" data-toggle="tab" class="last">Largo Plazo</a></li>
+                      </ul>
+                    </div>
+                    <div class="tab-content">
+                      <div role="tabpanel" class="tab-pane active" id="cortoPlazo">
+                        <div class="col-xs-12">
+                          <p>
+                            Es el endeudamiento que se asume y se cancela dentro del mismo año. Sus montos son relativamente pequeños. Se instrumenta a través de la emisión de “Letras”, por un monto autorizado en el Presupuesto.
+                          </p>
+                        </div>
+                      </div>
+                      <div role="tabpanel" class="tab-pane" id="largoPlazo">
+                        <div class="col-xs-12">
+                          <p>
+                            Es el endeudamiento que se asume con el compromiso de cancelarlo en más de un año de plazo. Tiene por finalidad financiar los proyectos de mayor envergadura, que serán incorporados al patrimonio de todos los cordobeses y cuyos beneficios serán gozados a lo largo de mucho tiempo.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <div class="divider"></div>
+                    </div>
+                    <div class="col-xs-12">
+                      <h3>Ingresos de capital: Venta de activos físicos y/o bienes en desuso</h3>
+                      <p>
+                        Corresponden a ingresos por la venta de propiedades, tierras, bienes de capital, etc., de propiedad del Estado Municipal, como así también de aquellos bienes que por diversas razones se encuentran en desuso por parte del municipio.
+                      </p>
+                    </div>
+                    <div class="col-xs-12">
+                      <div class="divider"></div>
+                    </div>
+                    <div class="col-xs-12">
+                      <h3>Ingresos de capital: Venta de bienes en desuso</h3>
+                      <p>
+                        Los bienes en desuso son bienes de propiedad estatal que por diversas circunstancias.
+                      </p>
+                    </div>
+                  </div>
 
-                  <h3 class="titulo-tabla">Datos:</h3>
-                  <div class="table-responsive">
-                    <table class="table table-striped">
-                      <thead>
-                        <tr>
-                          <th style="width: 10%;"></th>
-                          <th style="width: 70%;">Concepto</th>
-                          <th style="width: 20%;">Total</th>
-                        </tr>
-                      </thead>
-                      <tbody id="tbody-ingresos-capital-activos">
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-                <div role="tabpanel" class="tab-pane" id="desuso">
-                  <h4>Venta de Bienes en Desuso</h4>
-                  <!-- Entre los principales ingresos corrientes de otras jurisdicciones (NO PROPIOS) a la Municipalidad se pueden observar: -->
-                  <br/>
 
-                  <h3 class="titulo-tabla">Datos:</h3>
-                  <div class="table-responsive">
-                    <table class="table table-striped">
-                      <thead>
-                        <tr>
-                          <th style="width: 10%;"></th>
-                          <th style="width: 70%;">Concepto</th>
-                          <th style="width: 20%;">Total</th>
-                        </tr>
-                      </thead>
-                      <tbody id="tbody-ingresos-capital-desuso">
-                      </tbody>
-                    </table>
-                  </div>
+                </div>
+                <div class="col-md-6">
+                  ACA VA LA TABLA
                 </div>
               </div>
 
 
+
             </div>
-            <div class="col-xs-12 tableContainer tab-pane active" role="tabpanel" id="afectacion">
+            <div class="col-xs-12 tableContainer tab-pane" role="tabpanel" id="afectacion">
               <h2 class="afectacion">Rentas Generales y Afectación Específica</h2>
 
               <p class="definicion">
