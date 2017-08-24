@@ -142,26 +142,28 @@
           <div class="col-xs-12">
             <h3>Ver mas información</h3>
           </div>
-          <div class="col-xs-12 col-md-4">
-            <a href="#corrientes" aria-controls="corrientes" role="tab" data-toggle="tab">
-              <div class="button-ingresos blue">
-                Ingresos Corrientes
-              </div>
-            </a>
-          </div>
-          <div class="col-xs-12 col-md-4">
-            <a href="#capital" aria-controls="capital" role="tab" data-toggle="tab">
-              <div class="button-ingresos pink">
-                Ingresos de Capital
-              </div>
-            </a>
-          </div>
-          <div class="col-xs-12 col-md-4">
-            <a href="#afectacion" aria-controls="afectacion" role="tab" data-toggle="tab">
-              <div class="button-ingresos orange">
-                Rentas Generales y Afectación Específica
-              </div>
-            </a>
+          <div class="nav-tabs">
+            <div class="col-xs-12 col-md-4">
+              <a href="#corrientes" aria-controls="corrientes" role="tab" data-toggle="tab">
+                <div class="button-ingresos blue">
+                  Ingresos Corrientes
+                </div>
+              </a>
+            </div>
+            <div class="col-xs-12 col-md-4">
+              <a href="#capital" aria-controls="capital" role="tab" data-toggle="tab">
+                <div class="button-ingresos pink">
+                  Ingresos de Capital
+                </div>
+              </a>
+            </div>
+            <div class="col-xs-12 col-md-4">
+              <a href="#afectacion" aria-controls="afectacion" role="tab" data-toggle="tab">
+                <div class="button-ingresos orange">
+                  Rentas Generales y Afectación Específica
+                </div>
+              </a>
+            </div>
           </div>
           <div class="tab-content">
             <div class="col-xs-12 tableContainer tab-panel" role="tabpanel" id="corrientes">
@@ -179,7 +181,7 @@
                 <div class="col-xs-12 col-xs-offset-0  col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 nav-clasificacion">
                   <h4>Clasificación:</h4>
                   <ul class="nav nav-tabs blue" role="tablist">
-                    <li role="presentation" class="active"><a id="propiosTab" href="#propios" aria-controls="propios" role="tab" data-toggle="tab" class="first">Propios</a></li>
+                    <li role="presentation" class="active"><a id="tabpropios" href="#propios" aria-controls="propios" role="tab" data-toggle="tab" class="first">Propios</a></li>
                     <li role="presentation"><a href="#no-propios" aria-controls="no-propios" role="tab" data-toggle="tab" class="last">No Propios</a></li>
                   </ul>
                 </div>
@@ -309,19 +311,19 @@
                   <div class="row">
                     <div class="col-xs-12 nav-clasificacion nav-center">
                       <ul class="nav nav-tabs plazos pink" role="tablist">
-                        <li role="presentation" class="active"><a href="#cortoPlazo" aria-controls="cortoPlazo" role="tab" data-toggle="tab" class="first">Corto Plazo</a></li>
-                        <li role="presentation"><a href="#largoPlazo" aria-controls="largoPlazo" role="tab" data-toggle="tab" class="last">Largo Plazo</a></li>
+                        <li role="presentation" class="active"><a href="#cortoplazo" aria-controls="cortoplazo" role="tab" data-toggle="tab" class="first">Corto Plazo</a></li>
+                        <li role="presentation"><a  href="#largoplazo" aria-controls="largoPlazo" role="tab" data-toggle="tab" class="last">Largo Plazo</a></li>
                       </ul>
                     </div>
                     <div class="tab-content">
-                      <div role="tabpanel" class="tab-pane active" id="cortoPlazo">
+                      <div role="tabpanel" class="tab-pane active" id="cortoplazo">
                         <div class="col-xs-12">
                           <p>
                             Es el endeudamiento que se asume y se cancela dentro del mismo año. Sus montos son relativamente pequeños. Se instrumenta a través de la emisión de “Letras”, por un monto autorizado en el Presupuesto.
                           </p>
                         </div>
                       </div>
-                      <div role="tabpanel" class="tab-pane" id="largoPlazo">
+                      <div role="tabpanel" class="tab-pane" id="largoplazo">
                         <div class="col-xs-12">
                           <p>
                             Es el endeudamiento que se asume con el compromiso de cancelarlo en más de un año de plazo. Tiene por finalidad financiar los proyectos de mayor envergadura, que serán incorporados al patrimonio de todos los cordobeses y cuyos beneficios serán gozados a lo largo de mucho tiempo.
@@ -438,7 +440,7 @@
   <script src="assets/js/d3.js"></script>
   <script src="assets/js/d3plus.js"></script>
   <script src="assets/js/ingresosGrapher.js"></script>
-  <script src="assets/js/afectacionEspecifica.js"></script>
+  <!-- <script src="assets/js/afectacionEspecifica.js"></script> -->
 
 </body>
 </html>
