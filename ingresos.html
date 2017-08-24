@@ -176,10 +176,10 @@
 
               <!-- Nav tabs -->
               <div class="row">
-                <div class="col-xs-12 col-xs-offset-0 col-sm-4 col-sm-offset-4 nav-clasificacion">
+                <div class="col-xs-12 col-xs-offset-0  col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 nav-clasificacion">
                   <h4>Clasificación:</h4>
                   <ul class="nav nav-tabs blue" role="tablist">
-                    <li role="presentation" class="active"><a href="#propios" aria-controls="propios" role="tab" data-toggle="tab" class="first">Propios</a></li>
+                    <li role="presentation" class="active"><a id="propiosTab" href="#propios" aria-controls="propios" role="tab" data-toggle="tab" class="first">Propios</a></li>
                     <li role="presentation"><a href="#no-propios" aria-controls="no-propios" role="tab" data-toggle="tab" class="last">No Propios</a></li>
                   </ul>
                 </div>
@@ -272,7 +272,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-xs-12 tableContainer tab-pane active" role="tabpanel" id="capital">
+            <div class="col-xs-12 tableContainer tab-pane" role="tabpanel" id="capital">
               <h2 class="capital">Ingresos de Capital</h2>
               <p class="definicion">
                 Los Ingresos de Capital son aquellos ingresos extraordinarios por parte de la Municipalidad. Estos pueden venir por la adquisición de <a href="#">créditos o préstamos</a>, ventas de <a href="#">activos físicos</a> y venta de <a href="#">bienes en desuso</a> o bien por transferencias de <a href="#">otros niveles de gobierno</a> para financiar obras o inversiones de capital.
@@ -283,18 +283,18 @@
 
               <!-- Nav tabs -->
               <div class="row">
-                <div class="col-xs-12 col-xs-offset-0 col-sm-6 col-sm-offset-3 nav-clasificacion nav-3">
+                <div class="col-xs-12 col-xs-offset-0 col-sm-12 col-sm-offset-0 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 nav-clasificacion nav-3">
                   <h4>Clasificación:</h4>
-                  <ul class="nav nav-tabs pink disabled" role="tablist">
-                    <li role="presentation" class="active"><a class="first">Uso del crédito</a></li>
-                    <li role="presentation" class="active"><a>Activo fijo</a></li>
-                    <li role="presentation" class="active"><a class="last">Bienes en desuso</a></li>
+                  <ul class="row nav nav-tabs pink disabled" role="tablist">
+                    <li role="presentation" class="col-xs-12 col-sm-4 active no-padding"><a class="first">Uso del crédito</a></li>
+                    <li role="presentation" class="col-xs-12 col-sm-4 active no-padding"><a>Activo fijo</a></li>
+                    <li role="presentation" class="col-xs-12 col-sm-4 active no-padding"><a class="last">Bienes en desuso</a></li>
                   </ul>
                 </div>
               </div>
 
               <div class="row">
-                <div class="col-md-6">
+                <div class="col-xs-12 col-md-6">
                   <div class="row">
                     <div class="col-xs-12">
                       <h3>Ingresos de capital: Usos de crédito</h3>
@@ -308,7 +308,7 @@
                   </div>
                   <div class="row">
                     <div class="col-xs-12 nav-clasificacion nav-center">
-                      <ul class="nav nav-tabs pink" role="tablist">
+                      <ul class="nav nav-tabs plazos pink" role="tablist">
                         <li role="presentation" class="active"><a href="#cortoPlazo" aria-controls="cortoPlazo" role="tab" data-toggle="tab" class="first">Corto Plazo</a></li>
                         <li role="presentation"><a href="#largoPlazo" aria-controls="largoPlazo" role="tab" data-toggle="tab" class="last">Largo Plazo</a></li>
                       </ul>
@@ -353,8 +353,22 @@
 
 
                 </div>
-                <div class="col-md-6">
-                  ACA VA LA TABLA
+                <div class="col-xs-12 col-md-6">
+                  <div class="table-responsive">
+                    <table class="table table-striped pink">
+                      <thead>
+                        <tr>
+                          <th style="width: 10%;"></th>
+                          <th style="width: 70%;">Concepto</th>
+                          <th style="width: 20%;">Total</th>
+                        </tr>
+                      </thead>
+                      <tbody id="tbody-ingresos-capital">
+                      </tbody>
+                    </table>
+                  </div>
+                  <a href="#" class="btn btn-default blue">Descargar Excel</a>
+                  <a href="#" class="btn btn-default blue">Descargar CSV</a>
                 </div>
               </div>
 
@@ -388,11 +402,19 @@
               </div>
               <div class="col-xs-12">
                 <h3 class="text-center">Afectación Específica - Ingresos Propios</h3>
-                <div id="afectacion-especifica-propios"></div>
+                <div class="table-responsive">
+                  <div class="graphContainer">
+                    <div id="afectacion-especifica-propios"></div>
+                  </div>
+                </div>
               </div>
               <div class="col-xs-12">
                 <h3 class="text-center">Afectación Específica - Ingresos No Propios</h3>
-                <div id="afectacion-especifica-no_propios"></div>
+                <div class="table-responsive">
+                  <div class="graphContainer">
+                    <div id="afectacion-especifica-no_propios"></div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -411,6 +433,7 @@
   <script src="assets/js/bootstrap.min.js"></script>
   <!-- <script src="assets/js/d3.v3.min.js"></script> -->
   <script src="assets/js/loader.js"></script>
+  <script src="assets/js/menuController.js"></script>
 
   <script src="assets/js/d3.js"></script>
   <script src="assets/js/d3plus.js"></script>

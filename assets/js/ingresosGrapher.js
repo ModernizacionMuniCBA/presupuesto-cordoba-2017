@@ -71,6 +71,7 @@ function llenarTablas_ing(){
         $("#tbody-ingresos-corrientes-no-propios").append('<tr class="nivel-'+val.nivel+'"><th scope="row">'+val.key+'</th><td>'+val.concepto+'</td><td>$'+val.valor.toLocaleString("es-AR")+'</td></tr>');
       }
     }else if(val.key_0 == "2"){
+      $("#tbody-ingresos-capital").append('<tr class="nivel-'+val.nivel+'"><th scope="row">'+val.key+'</th><td>'+val.concepto+'</td><td>$'+val.valor.toLocaleString("es-AR")+'</td></tr>');
     }
     // console.log(val.concepto);
     // console.log(val);
@@ -81,3 +82,7 @@ function llenarTablas_ing(){
 
 dibujarD3_ing();
 llenarTablas_ing();
+
+$(window).on('resize', function(){
+  dibujarD3_ing();
+});

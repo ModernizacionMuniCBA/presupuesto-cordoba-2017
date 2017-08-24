@@ -158,3 +158,7 @@ function dibujarD3_AE() {
 $('a[href="#afectacion"]').on('shown.bs.tab', function (e) {
 dibujarD3_AE();
 })
+
+$(window).on('resize', function(){
+  dibujarD3_AE();
+});

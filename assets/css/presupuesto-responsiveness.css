@@ -1,5 +1,11 @@
 @media (min-width: 375px) {
-
+  .plazos li{
+    width: auto;
+  }
+  #propiosTab{
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
 }
 /* Media Queries */
 /*Small devices (landscape phones, 424px and up)*/
@@ -17,6 +23,26 @@
   .gastos .img-gastos h1,
   .deudas .img-deudas h1{
     font-size: 4em;
+  }
+  .nav-tabs.pink>li>a.first {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 0px;
+  }
+  .nav-tabs.pink>li>a.last {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 0px;
+  }
+  .nav-tabs.pink.disabled>li>a.first {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 5px;
+  }
+  .nav-tabs.pink.disabled>li>a.last {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
   }
 }
 

@@ -319,20 +319,40 @@ hr {
   background-color: transparent;
 }
 
-
+.plazos li{
+  width: 50%;
+}
+#propiosTab{
+  padding-top: 23px;
+  padding-bottom: 22px;
+}
+.nav-tabs.pink.disabled>li>a.first {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 0px;
+}
+.nav-tabs.pink.disabled>li>a.last {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 0px;
+}
 .nav-tabs.pink>li>a.first {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
+  border-top-right-radius: 0px;
 }
 .nav-tabs.pink>li>a.last {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 0px;
 }
 
-
+.graphContainer{
+  min-width: 1000px;
+}
 .button-ingresos{
   width: 100%;
-  height: 100px;
+  min-height: 100px;
   /*border: 1px solid #aaa;*/
   border-radius: 5px;
   margin-top: 10px;
@@ -415,6 +435,22 @@ hr {
     background-color: #95bde8;
     font-weight: 600;
 }
+
+.table-striped.pink>tbody>tr:nth-of-type(odd).nivel-1 {
+    background-color: #9F2B4B;
+    color: #FFF;
+}
+.table-striped.pink>tbody>tr:nth-of-type(odd){
+    background-color: #FFF;
+}
+.table-striped.pink>tbody>tr:nth-of-type(even){
+    background-color: #e3e3e3;
+}
+.table-striped.pink>tbody>tr.nivel-2 {
+    background-color: #d9718d;
+    font-weight: 600;
+}
+
 .table.table-striped{
   border: 1px solid #ddd;
 }
@@ -441,10 +477,6 @@ hr {
 }
 #corrientes .nav-clasificacion .nav-tabs li{
   width:50%;
-}
-
-.nav-3.nav-clasificacion .nav-tabs li{
-  width:33.3333333%;
 }
 
 
@@ -638,5 +670,5 @@ hr {
       height: 1px;
       width: 100%;
       background-color: #ccc;
-      
+
     }
