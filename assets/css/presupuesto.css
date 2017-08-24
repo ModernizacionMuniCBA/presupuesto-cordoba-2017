@@ -387,6 +387,18 @@ hr {
   color: #fff;
   border-color:#1F5693;
 }
+
+.btn-default.pink{
+  background: #C83560;
+  color: #fff;
+  border-color:#C83560;
+}
+.btn-default.pink:hover{
+  background: #9F2B4B;
+  color: #fff!important;
+  border-color:#9F2B4B;
+}
+
 .button-ingresos.orange{
   background: #CE5637;
   color: #fff;
