@@ -47,7 +47,7 @@
       <a href="index.html"><li>Inicio <span class="icon"></span></li></a>
       <a href="ingresos.html"><li>Ingresos <span class="icon"></span></li></a>
       <a href="gastos.html" class="active"><li>Gastos <span class="icon"></span></li></a>
-      <a href="deudas.html"><li>Deudas <span class="icon"></span></li></a>
+      <a href="deudas.html"><li>Deuda <span class="icon"></span></li></a>
     </ul>
   </nav>
 
@@ -97,7 +97,7 @@
             </li>
             <li>
               <a href="deudas.html">
-                Deudas
+                Deuda
               </a>
             </li>
 
@@ -124,10 +124,113 @@
   <div class="container-fluid inFContainer gastos">
     <div class="row">
       <div class="col-xs-12 img-gastos">
+        <div class="bg-overlay"></div>
         <h1>Gastos</h1>
       </div>
       <div class="col-xs-12 gastos-body">
-        <!-- <h1>Ingresos</h1> -->
+        <div class="row">
+          <div class="col-xs-12">
+
+            <p class="definicion">
+              El gasto público es el total de gastos realizados por el Estado Municipal, tanto en la adquisición de bienes y servicios, en bienes de capital, en obras de infraestructura, como así también en la prestación de subsidios o transferencias.
+            </p>
+          </div>
+          <div class="nav-tabs">
+            <div class="col-xs-12 col-xs-offset-0 col-md-4 col-md-offset-2">
+              <a href="#en-que" aria-controls="en-que" role="tab" data-toggle="tab">
+                <div class="button-ingresos sky">
+                  ¿En qué se gasta?
+                </div>
+              </a>
+            </div>
+            <div class="col-xs-12 col-md-4">
+              <a href="#para-que" aria-controls="para-que" role="tab" data-toggle="tab">
+                <div class="button-ingresos green">
+                  ¿Para qué se gasta?
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="tab-content">
+            <div class="col-xs-12 tableContainer tab-panel active" role="tabpanel" id="en-que">
+              <h2 class="sky">¿En qué se gasta?</h2>
+              <p class="definicion">
+                Resulta útil clasificar las transacciones que realiza el Municipio por su naturaleza, es decir,
+                responder a la pregunta <i>¿En qué se gasta la Municipalidad de Córdoba?</i>. Para ello dividiremos a
+                los gastos en Corrientes y de Capital, que conforman la clasificación económica del gasto.
+              </p>
+              <div class="col-xs-12 col-md-8">
+                <h3 class="text-center">VISUALIZACION POR clasificación económica del gasto</h3>
+              </div>
+              <div class="col-xs-12 col-md-4">
+                <h3 class="text-center">TABLA POR FINALIDAD?</h3>
+              </div>
+              <!-- Nav tabs -->
+              <div class="row">
+                <div class="col-xs-12 col-xs-offset-0  col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 nav-clasificacion">
+                  <h4>Clasificación:</h4>
+                  <ul class="nav nav-tabs sky" role="tablist">
+                    <li role="presentation" class="active"><a href="#gastos_corrientes" aria-controls="gastos_corrientes" role="tab" data-toggle="tab" class="first">Gastos Corrientes</a></li>
+                    <li role="presentation"><a href="#gastos_capital" aria-controls="gastos_capital" role="tab" data-toggle="tab" class="last">Gastos de Capital</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="gastos_corrientes">
+                  <h4>Gastos Corrientes</h4>
+                  <p>
+                    Los Gastos Corrientes son los pagos que se deben realizar en forma indispensable para el correcto
+                    y normal desenvolvimiento de la prestación de los servicios públicos y de la administración
+                    de la municipalidad en general, como por ejemplo: gastos de consumo (reparación de edificios,
+                    renovación de bienes muebles, etc.) o gastos de servicios (sueldos, salarios, gastos bancarios,
+                    intereses de la deuda, etc.). Estos gastos se caracterizan por ser repetitivos en el tiempo, no son
+                    extraordinarios o aislados.
+                  </p>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="gastos_capital">
+                  <h4>Gastos de Capital</h4>
+                  <p>
+                    Los Gastos de Capital son todas aquellas erogaciones del gobierno que significan un incremento del
+                    patrimonio público o un incremento de la riqueza de la sociedad. Pueden ser erogaciones destinadas
+                    a la adquisición de un bien de capital o de un <a href="#">bien público</a>, a la producción o a la construcción de
+                    bienes materiales o inmateriales, o <a href="#">inversiones financieras</a> que sirven como instrumentos para la
+                    producción de bienes y servicios.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 tableContainer tab-pane" role="tabpanel" id="para-que">
+              <h2 class="green">¿Para qué se gasta?</h2>
+
+              <p class="definicion">
+                La finalidad hace referencia a los propósitos esenciales a los que se asigna el gasto municipal. Qué
+                proporción del gasto se gasta en administración general, sanidad, servicios especiales urbanos, cultura
+                y educación, desarrollo económico, bienestar social, deuda pública y gastos a clasificar.
+              </p>
+              <div class="col-xs-12 col-md-8">
+                <h3 class="text-center">VISUALIZACION POR FINALIDAD</h3>
+              </div>
+              <div class="col-xs-12 col-md-4">
+                <h3 class="text-center">TABLA POR FINALIDAD?</h3>
+              </div>
+              <p class="definicion">
+                Luego, la Municipalidad para cumplir con cada una de estas finalidades necesita la realización de diferentes
+                funciones, es decir, necesita llevar a cabo un conjunto de acciones que permite alcanzar las metas de cada
+                finalidad. Es por ello que esta clasificación del gasto se denomina "<strong>Clasificador Finalidad–Función</strong>".<br /><br />
+                Las erogaciones que realizan los organismos públicos para adquirir bienes y servicios, o las transferencias
+                de recursos a los diferentes <a href="#">agentes económicos</a> forman en conjunto el Gasto Público. Todas estas transacciones
+                tienen lugar con el fin de llevar adelante las acciones que tienen que ver con la provisión de bienes y
+                servicios públicos, las <a href="https://gobiernoabierto.cordoba.gob.ar/plan-de-metas/plan-de-metas-2016-2019" target="_blank">metas</a> que se impone el Estado y las políticas que pone en ejecución.
+              </p>
+              <div class="col-xs-12">
+                <h3 class="text-center">VISUALIZACION POR FINALIDAD-FUNCION</h3>
+              </div>
+              <div class="col-xs-12">
+                <h3 class="text-center">TABLA POR FINALIDAD-FUNCION</h3>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

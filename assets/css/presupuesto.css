@@ -143,8 +143,9 @@ body{
   font-size: 1.3em;
 }
 
-.ingresos .ingresos-body{
-
+.ingresos .ingresos-body,
+.gastos .gastos-body,
+.deudas .deudas-body{
   padding: 0 50px;
 }
 /* INGRESOS, GASTOS, DEUDAS*/
@@ -196,6 +197,7 @@ body{
   font-size: 3em;
   color: #FFFFFF;
   margin: 0;
+  text-align: center;
   text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
 }
 
@@ -253,8 +255,17 @@ hr {
   color:#CE5637;
 }
 
+.tableContainer h2.green{
+  color:#71a649;
+}
 
-.ingresos .definicion{
+.tableContainer h2.sky{
+  color:#479c9c;
+}
+
+
+
+.definicion{
   margin-top: 40px;
 }
 
@@ -285,6 +296,33 @@ hr {
   border-bottom-left-radius: 5px;
 }
 .nav-tabs.blue>li>a.last {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.nav-tabs.sky>li>a {
+    margin-right: -1px;
+    line-height: 1.42857143;
+    border: 1px solid #4FAEAD;
+    border-radius: 0;
+    color:#479c9c;
+}
+.nav-tabs.sky>li.active>a,
+.nav-tabs.sky>li.active>a:focus,
+.nav-tabs.sky>li.active>a:hover,
+.nav-tabs.sky>li>a:focus,
+.nav-tabs.sky>li>a:hover {
+    color: #FFF;
+    cursor: pointer;
+    background-color: #4FAEAD;
+    border: 1px solid #83c7c6;
+}
+
+.nav-tabs.sky>li>a.first {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.nav-tabs.sky>li>a.last {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
@@ -369,15 +407,57 @@ hr {
   -moz-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
+.button-ingresos:hover{
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
 
 .button-ingresos.pink{
   background: #C83560;
   color: #fff;
 }
+.button-ingresos.pink:hover{
+  background: #d45c7f;
+  color: #8c2543;
+}
+
 .button-ingresos.blue{
   background: #1F5693;
   color: #fff;
 }
+.button-ingresos.blue:hover{
+  background: #286fbd;
+  color: #fff;
+}
+
+.button-ingresos.orange{
+  background: #CE5637;
+  color: #fff;
+}
+.button-ingresos.orange:hover{
+  background: #d87960;
+  color: #943b24;
+}
+
+.button-ingresos.sky{
+  background: #4FAEAD;
+  color: #fff;
+}
+.button-ingresos.sky:hover{
+  background: #83c7c6;
+  color: #1f4444;
+}
+
+.button-ingresos.green{
+  background: #7EB354;
+  color: #fff;
+}
+.button-ingresos.green:hover{
+  background: #a6cb89;
+  color: #415e29;
+}
+
 .btn-default.blue{
   background: #1F5693;
   color: #fff;
@@ -400,27 +480,7 @@ hr {
   border-color:#9F2B4B;
 }
 
-.button-ingresos.orange{
-  background: #CE5637;
-  color: #fff;
-}
-.button-ingresos:hover{
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-.button-ingresos.pink:hover{
-  background: #d45c7f;
-  color: #8c2543;
-}
-.button-ingresos.blue:hover{
-  background: #286fbd;
-  color: #fff;
-}
-.button-ingresos.orange:hover{
-  background: #d87960;
-  color: #943b24;
-}
+
 
 .ingresos g.d3plus_title.sub text,
 .ingresos #d3plus_back_button{
@@ -491,7 +551,9 @@ hr {
 #corrientes .nav-clasificacion .nav-tabs li{
   width:50%;
 }
-
+#en-que .nav-clasificacion .nav-tabs li{
+  width:50%;
+}
 
 #propios ul li,
 #no-propios ul li{
@@ -501,10 +563,12 @@ hr {
 
 #afectacion-especifica-j,
 #afectacion-especifica-jm{
-  height: 500px;
+  height: 400px;
 }
 #afectacion-especifica-propios{
   height: 750px;
+    max-width: 1310px;
+    float: right;
 }
 /*#afectacion-especifica-propios #d3plus_graph_xgrid,
 #afectacion-especifica-propios #d3plus_graph_ygrid,
@@ -513,7 +577,10 @@ hr {
   display: none;
 }*/
 #afectacion-especifica-no_propios{
-  height: 500px;
+  height: 400px;
+  max-width: 1145px;
+  margin-right: -15px;
+  float: right;
 }
 #afectacion-especifica-propios,
 #afectacion-especifica-no_propios{
