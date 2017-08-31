@@ -19,6 +19,23 @@ body{
   transition: all 0.3s ease;
 }
 
+#gastos_corrientes a,
+#gastos_capital a{
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+#gastos_corrientes a:hover,
+#gastos_corrientes a:focus,
+#gastos_capital a:hover,
+#gastos_capital a:focus{
+  color:#00B2B0;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
 
 #capital a{
   -webkit-transition: all 0.3s ease;
@@ -390,6 +407,7 @@ hr {
 .graphContainer{
   min-width: 1000px;
 }
+
 .button-ingresos{
   width: 100%;
   min-height: 100px;
@@ -413,7 +431,10 @@ hr {
   -moz-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-
+.button-ingresos .aclaracion{
+  font-size: 0.6em;
+  display: inherit;
+}
 .button-ingresos.pink{
   background: #C83560;
   color: #fff;
@@ -495,6 +516,30 @@ hr {
   border-color:#CE5637;
 }
 
+.btn-default.sky{
+  background: #4FAEAD;
+  color: #fff;
+  border-color:#4FAEAD;
+}
+.btn-default.sky:hover,
+.btn-default.sky:focus{
+  background: #83c7c6;
+  color: #1f4444!important;
+  border-color:#4FAEAD;
+}
+
+.btn-default.green{
+  background: #7EB354;
+  color: #fff;
+  border-color:#7EB354;
+}
+.btn-default.green:hover,
+.btn-default.green:focus{
+  background: #a6cb89;
+  color: #415e29!important;
+  border-color:#7EB354;
+}
+
 
 .navbar-nav .year a.dropdown-toggle{
   color: #23CF5F;
@@ -505,7 +550,9 @@ hr {
 
 
 .ingresos g.d3plus_title.sub text,
-.ingresos #d3plus_back_button{
+.ingresos #d3plus_back_button,
+.gastos g.d3plus_title.sub text,
+.gastos #d3plus_back_button{
   font-size: 16px!important;
   padding-top: 2px;
   font-weight: 400!important;
@@ -516,9 +563,11 @@ hr {
   margin-top: 30px;
   margin-bottom: 10px;
 }
-.table-striped>tbody>tr:nth-of-type(odd).nivel-1 {
+.table-striped>tbody>tr:nth-of-type(odd).nivel-1,
+.table-striped>tbody>tr:nth-of-type(even).nivel-1 {
     background-color: #1F5693;
     color: #FFF;
+    font-weight: 500;
 }
 .table-striped>tbody>tr:nth-of-type(odd){
     background-color: #FFF;
@@ -528,12 +577,14 @@ hr {
 }
 .table-striped>tbody>tr.nivel-2 {
     background-color: #95bde8;
-    font-weight: 600;
+    font-weight: 500;
 }
 
-.table-striped.pink>tbody>tr:nth-of-type(odd).nivel-1 {
+.table-striped.pink>tbody>tr:nth-of-type(odd).nivel-1,
+.table-striped.pink>tbody>tr:nth-of-type(even).nivel-1 {
     background-color: #9F2B4B;
     color: #FFF;
+    font-weight: 500;
 }
 .table-striped.pink>tbody>tr:nth-of-type(odd){
     background-color: #FFF;
@@ -543,12 +594,14 @@ hr {
 }
 .table-striped.pink>tbody>tr.nivel-2 {
     background-color: #d9718d;
-    font-weight: 600;
+    font-weight: 500;
 }
 
-.table-striped.orange>tbody>tr:nth-of-type(odd).nivel-1 {
+.table-striped.orange>tbody>tr:nth-of-type(odd).nivel-1,
+.table-striped.orange>tbody>tr:nth-of-type(even).nivel-1 {
     background-color: #CE5637;
     color: #FFF;
+    font-weight: 500;
 }
 .table-striped.orange>tbody>tr:nth-of-type(odd){
     background-color: #FFF;
@@ -558,7 +611,43 @@ hr {
 }
 .table-striped.orange>tbody>tr.nivel-2 {
     background-color: #d87960;
-    font-weight: 600;
+    font-weight: 500;
+}
+
+.table-striped.sky>tbody>tr:nth-of-type(odd).nivel-1,
+.table-striped.sky>tbody>tr:nth-of-type(even).nivel-1 {
+    background-color: #4FAEAD;
+    color: #FFF;
+    font-weight: 500;
+}
+.table-striped.sky>tbody>tr:nth-of-type(odd){
+    background-color: #FFF;
+}
+.table-striped.sky>tbody>tr:nth-of-type(even){
+    background-color: #e3e3e3;
+}
+.table-striped.sky>tbody>tr.nivel-2 {
+    background-color: #83c7c6;
+    color:#1f4444;
+    font-weight: 500;
+}
+
+.table-striped.green>tbody>tr:nth-of-type(odd).nivel-1,
+.table-striped.green>tbody>tr:nth-of-type(even).nivel-1 {
+    background-color: #7EB354;
+    color: #FFF;
+    font-weight: 500;
+}
+.table-striped.green>tbody>tr:nth-of-type(odd){
+    background-color: #FFF;
+}
+.table-striped.green>tbody>tr:nth-of-type(even){
+    background-color: #e3e3e3;
+}
+.table-striped.green>tbody>tr.nivel-2 {
+    background-color: #a6cb89;
+    color:#415e29;
+    font-weight: 500;
 }
 
 .table.table-striped{
@@ -599,13 +688,19 @@ hr {
 
 
 #afectacion-especifica-j,
-#afectacion-especifica-jm{
+#afectacion-especifica-jm,
+#clasificacion-economica-gasto,
+#gastos-finalidad{
   height: 400px;
 }
 #afectacion-especifica-propios{
   height: 750px;
     max-width: 1310px;
     float: right;
+}
+#finalidadFuncionGraph{
+  height: 500px;
+  margin: 25px 0px;
 }
 /*#afectacion-especifica-propios #d3plus_graph_xgrid,
 #afectacion-especifica-propios #d3plus_graph_ygrid,
@@ -789,3 +884,9 @@ hr {
       background-color: #ccc;
 
     }
+.tab-pane ul li{
+  margin: 10px 0;
+}
+.tab-pane ul li ul{
+  margin: 20px 0;
+}
