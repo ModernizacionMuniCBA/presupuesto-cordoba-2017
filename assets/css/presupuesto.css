@@ -115,10 +115,11 @@ body{
 }
 
 .home div.text-infografia{
-  height: 200px;
+  height: 150px;
   display: inline-block;
   width: 100%;
   color: #1BA34B;
+  padding: 5px;
   background-color: #FFF;
   display: flex;
   justify-content: center;
@@ -130,7 +131,7 @@ body{
 }
 .home div.text-infografia h2{
   font-weight: 500;
-  font-size: 2.25em;
+  font-size: 2em;
   display: block;
 }
 .ingresos,
@@ -463,7 +464,8 @@ hr {
   color: #fff;
   border-color:#1F5693;
 }
-.btn-default.blue:hover{
+.btn-default.blue:hover,
+.btn-default.blue:focus{
   background: #34669C;
   color: #fff;
   border-color:#1F5693;
@@ -474,7 +476,8 @@ hr {
   color: #fff;
   border-color:#C83560;
 }
-.btn-default.pink:hover{
+.btn-default.pink:hover,
+.btn-default.pink:focus{
   background: #9F2B4B;
   color: #fff!important;
   border-color:#9F2B4B;
