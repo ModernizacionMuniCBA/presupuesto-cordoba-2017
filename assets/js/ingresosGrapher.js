@@ -118,7 +118,7 @@ function llenarTablas_ing(){
       if (partida_splited[1]==""){
         nivel -=1;
       }
-      if (nivel <= 3){
+      if (nivel <= 4){
         if(partida_splited[0] == "1" || partida_splited[0] == "01" ){
           if(partida_splited[1] == ""){
             $("#tbody-ingresos-corrientes-no-propios").append('<tr class="nivel-'+nivel+'"><th scope="row">'+partida+'</th><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
