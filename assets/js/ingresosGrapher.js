@@ -1,241 +1,343 @@
+
+window.already_printed_ae = false;
 function dibujarD3_ing() {
+  $.getJSON("https://spreadsheets.google.com/feeds/list/1jcG9GJScORYkrCyq5l5A9VojBng5Dzq7vDqpqWSBcQo/od6/public/values?alt=json", function( dataJSON ) {
   $("#ingresosGraph").empty();
-  d3.json("assets/data/ingresos/recursos-rentas-presupuesto-2017.json", function(err, res) {
-    if (!err) {
-        // console.log(res);
+    var datos = [];
+    var detalle = [];
+    $.each( dataJSON.feed.entry, function( key, val ) {
+      var partida = val.gsx$partidas.$t;
+      var partida_splited = partida.split('.');
+      var nivel = partida_splited.length;
+      var nivel_princ = parseInt(partida_splited[0]);
+      var nombre = val.gsx$concepto.$t;
+      var total = val.gsx$total.$t;
+      if (partida_splited[1]==""){
+        nivel -=1;
+      }
+      detalle[nivel] = nombre;
 
-        var data = d3.nest()
-                    .key(function(d) { return d.rec1; })
-                    .key(function(d) { return d.rec2; })
-                    .key(function(d) { return d.rec3; })
-                    .entries(res);
+      if (nivel_princ == 3){
+        nivel = 4
+        detalle[2] = detalle[1]
+        detalle[3] = detalle[1]
+        detalle[4] = detalle[1]
+      }else if (nivel_princ == 2 && nivel == 3) {
+        nivel = 4
+        detalle[4] = detalle[3]
+      }
 
-        // function getTooltipWidth(){
-        //   var wWidth = $( window ).width();
-        //   if (wWidth < 480){
-        //     return $( window ).width()-50;
-        //   }else if(wWidth < 768){
-        //     return 500;
-        //   }else if(wWidth < 1200){
-        //     return 700;
-        //   }else{
-        //     return 700;
-        //   }
-        // }
-        console.log(data);
-
-        var visualization = d3plus.viz()
-          .background("#EEEEEE")
-          .container("#ingresosGraph")
-          .legend({"size": 30})
-          // .labels({"align": "left", "valign": "top"})
-          .tooltip(true)
-          .tooltip({"children":0})
-          // .tooltip({"large":getTooltipWidth(), "small":getTooltipWidth()})
-          .data(res)
-          .type("tree_map")
-          .id(["rec1", "rec2", "rec3", "key"])
-          .size("valor")
-          .format("es_ES")
-          .format({
-              "number": function(number, key) {
-  		          var formatted = d3plus.number.format(number, key);
-  		          if (key.key === "valor") {
-                    var formatted = number.toLocaleString("es-AR")
-                    return "$" + formatted;
-  		          }
-  		          else {
-  		            return formatted
-  		          }
-  		        }
-  				})
-          .dev(true) //Uso esto como callback para el loader cuando hay viz
-          .draw();
-    }
+      if (nivel == 4){
+        var linea = {"key": detalle[4],
+                "rec1": detalle[1],
+                "rec2": detalle[2],
+                "rec3": detalle[3],
+               "valor": parseInt(total.split('.').join(""))
+             }
+          datos.push(linea);
+      }
     });
+    // console.log(datos);
+
+
+    var data = d3.nest()
+                .key(function(d) { return d.rec1; })
+                .key(function(d) { return d.rec2; })
+                .key(function(d) { return d.rec3; })
+                .entries(datos);
+
+    // console.log(data);
+    var visualization = d3plus.viz()
+      .background("#EEEEEE")
+      .container("#ingresosGraph")
+      .legend({"size": 30})
+      // .labels({"align": "left", "valign": "top"})
+      .tooltip(true)
+      .tooltip({"children":0})
+      // .tooltip({"large":getTooltipWidth(), "small":getTooltipWidth()})
+      .data(datos)
+      .type("tree_map")
+      .id(["rec1", "rec2", "rec3", "key"])
+      .size("valor")
+      .format("es_ES")
+      .format({
+          "number": function(number, key) {
+            var formatted = d3plus.number.format(number, key);
+            if (key.key === "valor") {
+                var formatted = number.toLocaleString("es-AR")
+                return "$" + formatted;
+            }
+            else {
+              return formatted
+            }
+          }
+      })
+      .dev(true)
+      .draw();
+
+  });
+
+
+
 }
 
 function llenarTablas_ing(){
-  $.getJSON( "assets/data/ingresos/recursos-totales-presupuesto-2017-tabla.json", function( data ) {
-  var items = [];
-  console.log(data);
-  $.each( data, function( key, val ) {
-    if(val.key_0 == "1"){
-      if(val.subnivel == ""){
-        $("#tbody-ingresos-corrientes-propios").append('<tr class="nivel-'+val.nivel+'"><th scope="row">'+val.key+'</th><td>'+val.concepto+'</td><td>$'+val.valor.toLocaleString("es-AR")+'</td></tr>');
-        $("#tbody-ingresos-corrientes-no-propios").append('<tr class="nivel-'+val.nivel+'"><th scope="row">'+val.key+'</th><td>'+val.concepto+'</td><td>$'+val.valor.toLocaleString("es-AR")+'</td></tr>');
+  //Llenar Tabla de Ingresos Corrientes Propios
+  $.getJSON("https://spreadsheets.google.com/feeds/list/1nkqXSu3MlK7uKDqaL-EqG4ZeZTNSDYPklNGS-YRrTnM/od6/public/values?alt=json", function( data ) {
+    var items = [];
+    $.each( data.feed.entry, function( key, val ) {
+      var partida = val.gsx$partidas.$t;
+      var partida_splited = partida.split('.');
+      var nivel = partida_splited.length;
+      var concepto = val.gsx$concepto.$t;
+      var total = val.gsx$total.$t;
+      if (partida_splited[1]==""){
+        nivel -=1;
       }
-      if(val.subnivel == "01"){
-        $("#tbody-ingresos-corrientes-propios").append('<tr class="nivel-'+val.nivel+'"><th scope="row">'+val.key+'</th><td>'+val.concepto+'</td><td>$'+val.valor.toLocaleString("es-AR")+'</td></tr>');
-      }else if(val.subnivel == "02"){
-        $("#tbody-ingresos-corrientes-no-propios").append('<tr class="nivel-'+val.nivel+'"><th scope="row">'+val.key+'</th><td>'+val.concepto+'</td><td>$'+val.valor.toLocaleString("es-AR")+'</td></tr>');
+      if (nivel <= 3){
+        if(partida_splited[0] == "1" || partida_splited[0] == "01" ){
+          if(partida_splited[1] == ""){
+            $("#tbody-ingresos-corrientes-propios").append('<tr class="nivel-'+nivel+'"><th scope="row">'+partida+'</th><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
+          }else if(partida_splited[1] == "01"){
+            $("#tbody-ingresos-corrientes-propios").append('<tr class="nivel-'+nivel+'"><th scope="row">'+partida+'</th><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
+          }
+        }
       }
-    }else if(val.key_0 == "2"){
-      $("#tbody-ingresos-capital").append('<tr class="nivel-'+val.nivel+'"><th scope="row">'+val.key+'</th><td>'+val.concepto+'</td><td>$'+val.valor.toLocaleString("es-AR")+'</td></tr>');
-    }
-    // console.log(val.concepto);
-    // console.log(val);
-    // items.push( "<li id='" + key + "'>" + val + "</li>" );
+    });
   });
-});
+  //Llenar tabla de Ingresos Corrientes No Propios
+  $.getJSON("https://spreadsheets.google.com/feeds/list/1mYqmTfiEEHJyofD636sojncI2UwAgFT_kQpIujkudMQ/od6/public/values?alt=json", function( data ) {
+    var items = [];
+    // console.log(data.feed.entry);
+    $.each( data.feed.entry, function( key, val ) {
+      var partida = val.gsx$partidas.$t;
+      var partida_splited = partida.split('.');
+      var nivel = partida_splited.length;
+      var concepto = val.gsx$concepto.$t;
+      var total = val.gsx$total.$t;
+      if (partida_splited[1]==""){
+        nivel -=1;
+      }
+      if (nivel <= 3){
+        if(partida_splited[0] == "1" || partida_splited[0] == "01" ){
+          if(partida_splited[1] == ""){
+            $("#tbody-ingresos-corrientes-no-propios").append('<tr class="nivel-'+nivel+'"><th scope="row">'+partida+'</th><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
+          }else if(partida_splited[1] == "02"){
+            $("#tbody-ingresos-corrientes-no-propios").append('<tr class="nivel-'+nivel+'"><th scope="row">'+partida+'</th><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
+          }
+        }
+      }
+    });
+  });
+
+  //Llenar tabla de Ingresos de Capital
+    $.getJSON("https://spreadsheets.google.com/feeds/list/1RJjQTHJEMeZ4KVwYrqylGJJqkw-QiY1eHSdDxdoDoFU/od6/public/values?alt=json", function( data ) {
+      var items = [];
+      // console.log(data.feed.entry);
+      $.each( data.feed.entry, function( key, val ) {
+        var partida = val.gsx$_cn6ca.$t;
+        var partida_splited = partida.split('.');
+        var nivel = partida_splited.length;
+        var concepto = val.gsx$concepto.$t;
+        var total = val.gsx$total.$t;
+        if (partida_splited[1]==""){
+          nivel -=1;
+        }
+        // console.log(partida_splited);
+        if (nivel <= 3){
+          if(partida_splited[0] == "2" || partida_splited[0] == "02" ){
+            if(partida_splited[0] == "2"){
+              $("#tbody-ingresos-capital").append('<tr class="nivel-'+nivel+'"><th scope="row">'+partida+'</th><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
+            }else{
+              $("#tbody-ingresos-capital").append('<tr class="nivel-'+nivel+'"><th scope="row">'+partida+'</th><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
+            }
+          }
+        }
+      });
+    });
+
 }
 
 function dibujarD3_AE() {
-  $("#afectacion-especifica-j").empty();
-  d3.json("assets/data/ingresos/recursos-afectacion-totales-presupuesto-2017.json", function(err, res) {
-    if (!err) {
-        // console.log(res);
 
-        var data = d3.nest()
-                    // .key(function(d) { return d.rec1; })
-                    .entries(res);
-
-        console.log(data);
-
-        var visualization = d3plus.viz()
-          .container("#afectacion-especifica-j")
-          .background("#EEEEEE")
-           .legend({"size": 50})
-          // .labels({"align": "left", "valign": "top"})
-          .tooltip(true)
-          .tooltip({"children":0})
-          // .tooltip({"large":getTooltipWidth(), "small":getTooltipWidth()})
-          .data(res)
-          .type("pie")
-          .id(["key"])
-          .size("valor")
-          .format("es_ES")
-          .format({
-              "number": function(number, key) {
-  		          var formatted = d3plus.number.format(number, key);
-  		          if (key.key === "valor") {
-                    var formatted = number.toLocaleString("es-AR")
-                    return "$" + formatted;
-  		          }
-  		          else {
-  		            return formatted
-  		          }
-  		        }
-  				})
-          .draw();
-    }
-    });
+  $.getJSON("https://spreadsheets.google.com/feeds/list/1lJgGTuLvAMulKx59cJckTzvIFlur-fs2Twyh1dUOKgU/od6/public/values?alt=json", function( data ) {
+    $("#afectacion-especifica-j").empty();
     $("#afectacion-especifica-jm").empty();
-    d3.json("assets/data/ingresos/recursos-afectacion-presupuesto-2017.json", function(err, res) {
-      if (!err) {
-          // console.log(res);
+    $("#afectacion-especifica-propios").empty();
+    $("#afectacion-especifica-no_propios").empty();
 
-          var data = d3.nest()
-                      // .key(function(d) { return d.rec1; })
-                      .entries(res);
-
-          console.log(data);
-
-          var visualization = d3plus.viz()
-            .container("#afectacion-especifica-jm")
-            .background("#EEEEEE")
-            .tooltip(true)
-            .tooltip({"children":0})
-            .data(res)
-            .type("pie")
-            .id(["key"])
-            .size("valor")
-            .format("es_ES")
-            .format({
-                "number": function(number, key) {
-                  var formatted = d3plus.number.format(number, key);
-                  if (key.key === "valor") {
-                      var formatted = number.toLocaleString("es-AR")
-                      return "$" + formatted;
-                  }
-                  else {
-                    return formatted
-                  }
-                }
-            })
-            .draw();
+    var items = [];
+    var datos = [];
+    var datos_jm = [];
+    var datos_propios = [];
+    var datos_no_propios = [];
+    $.each( data.feed.entry, function( key, val ) {
+      var partida = val.gsx$_cn6ca.$t;
+      var partida_splited = partida.split('.');
+      var nivel = partida_splited.length;
+      var concepto = val.gsx$concepto.$t;
+      var total = val.gsx$afectacionespecifica.$t;
+      if (partida_splited[1]==""){
+        nivel -=1;
       }
-      });
+
+      if(partida_splited[0] != "I -" && window.already_printed_ae === false){
+        $("#tbody-ingresos-afectacion").append('<tr class="nivel-'+nivel+'"><th scope="row">'+partida+'</th><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
+      }
+
+      if(nivel==2){
+        var linea = {"key": concepto,
+                "valor": parseInt(total.split('.').join(""))
+             }
+          datos.push(linea);
+      }
+      if(nivel==3){
+        var linea = {"key": concepto,
+                "valor": parseInt(total.split('.').join(""))
+             }
+          datos_jm.push(linea);
+      }
+      if(nivel==4 && partida_splited[1] == "01"){
+        var linea = {"Nombre": concepto,
+                        "key": concepto,
+                      "valor": parseInt(total.split('.').join(""))
+             }
+          datos_propios.push(linea);
+      }
+      if(nivel==4 && partida_splited[1] == "02"){
+        var linea = {"Nombre": concepto,
+                        "key": concepto,
+                      "valor": parseInt(total.split('.').join(""))
+             }
+          datos_no_propios.push(linea);
+      }
 
 
-      $("#afectacion-especifica-propios").empty();
-      d3.json("assets/data/ingresos/recursos-afectacion-propios-presupuesto-2017.json", function(err, res) {
-        if (!err) {
-            // console.log(res);
+    });
+    //Grafico de Afectacion Especifica - Totales
+    var data = d3.nest()
+                .entries(datos);
 
-            var data = d3.nest()
-                        // .key(function(d) { return d.rec1; })
-                        .entries(res);
 
-            console.log(data);
-
-            var visualization = d3plus.viz()
-              .container("#afectacion-especifica-propios")
-              .background("#EEEEEE")
-              .tooltip(true)
-              .tooltip({"children":0})
-              .data(res)
-              .type("bar")
-              .id(["key"])
-              .x("valor")
-              .x({"stacked": false, "value": "valor", "grid":false, "label": false, "scale": "discrete"})
-              .y("Nombre")
-              .y({"scale": "discrete", "grid":false, "label": false}) // Manually set Y-axis to be discrete
-              .format("es_ES")
-              .format({
-                  "number": function(number, key) {
-                    var formatted = d3plus.number.format(number, key);
-                    if (key.key === "valor") {
-                        var formatted = number.toLocaleString("es-AR")
-                        return "$" + formatted;
-                    }
-                    else {
-                      return formatted
-                    }
-                  }
-              })
-              .draw();
-        }
-        });
-        $("#afectacion-especifica-no_propios").empty();
-        d3.json("assets/data/ingresos/recursos-afectacion-no_propios-presupuesto-2017.json", function(err, res) {
-          if (!err) {
-              // console.log(res);
-
-              var data = d3.nest()
-                          // .key(function(d) { return d.rec1; })
-                          .entries(res);
-
-              console.log(data);
-
-              var visualization = d3plus.viz()
-                .container("#afectacion-especifica-no_propios")
-                .background("#EEEEEE")
-                .tooltip(true)
-                .tooltip({"children":0})
-                .data(res)
-                .type("bar")
-                .id(["key"])
-                .x("valor")
-                .x({"scale": "discrete", "stacked": false, "value": "valor", "grid":false, "label": false})
-                .y("Nombre")
-                .y({"scale": "discrete", "grid":false,  "label": false}) // Manually set Y-axis to be discrete
-                .format("es_ES")
-                .format({
-                    "number": function(number, key) {
-                      var formatted = d3plus.number.format(number, key);
-                      if (key.key === "valor") {
-                          var formatted = number.toLocaleString("es-AR")
-                          return "$" + formatted;
-                      }
-                      else {
-                        return formatted
-                      }
-                    }
-                })
-                .draw();
+    var visualization = d3plus.viz()
+      .container("#afectacion-especifica-j")
+      .background("#EEEEEE")
+       .legend({"size": 50})
+      .tooltip(true)
+      .tooltip({"children":0})
+      .data(datos)
+      .type("pie")
+      .id(["key"])
+      .size("valor")
+      .format("es_ES")
+      .format({
+          "number": function(number, key) {
+            var formatted = d3plus.number.format(number, key);
+            if (key.key === "valor") {
+                var formatted = number.toLocaleString("es-AR")
+                return "$" + formatted;
+            }
+            else {
+              return formatted
+            }
           }
-          });
+      })
+      .draw();
+
+    // Grafico de Afectacion Especifica Jurisdicciones
+    var data = d3.nest()
+                .entries(datos_jm);
+
+
+    var visualization = d3plus.viz()
+      .container("#afectacion-especifica-jm")
+      .background("#EEEEEE")
+      .tooltip(true)
+      .tooltip({"children":0})
+      .data(datos_jm)
+      .type("pie")
+      .id(["key"])
+      .size("valor")
+      .format("es_ES")
+      .format({
+          "number": function(number, key) {
+            var formatted = d3plus.number.format(number, key);
+            if (key.key === "valor") {
+                var formatted = number.toLocaleString("es-AR")
+                return "$" + formatted;
+            }
+            else {
+              return formatted
+            }
+          }
+      })
+      .draw();
+
+    // Grafico de Afectacion Especifica Propios
+
+    var data = d3.nest()
+                .entries(datos_propios);
+
+
+    var visualization = d3plus.viz()
+      .container("#afectacion-especifica-propios")
+      .background("#EEEEEE")
+      .tooltip(true)
+      .tooltip({"children":0})
+      .data(datos_propios)
+      .type("bar")
+      .id(["key"])
+      .x("valor")
+      .x({"stacked": false, "value": "valor", "grid":false, "label": false, "scale": "discrete"})
+      .y("Nombre")
+      .y({"scale": "discrete", "grid":false, "label": false}) // Manually set Y-axis to be discrete
+      .format("es_ES")
+      .format({
+          "number": function(number, key) {
+            var formatted = d3plus.number.format(number, key);
+            if (key.key === "valor") {
+                var formatted = number.toLocaleString("es-AR")
+                return "$" + formatted;
+            }
+            else {
+              return formatted
+            }
+          }
+      })
+      .draw();
+
+    // Grafico de Afectacion Especifica No Propios
+    var data = d3.nest()
+                .entries(datos_no_propios);
+
+    var visualization = d3plus.viz()
+      .container("#afectacion-especifica-no_propios")
+      .background("#EEEEEE")
+      .tooltip(true)
+      .tooltip({"children":0})
+      .data(datos_no_propios)
+      .type("bar")
+      .id(["key"])
+      .x("valor")
+      .x({"scale": "discrete", "stacked": false, "value": "valor", "grid":false, "label": false})
+      .y("Nombre")
+      .y({"scale": "discrete", "grid":false,  "label": false}) // Manually set Y-axis to be discrete
+      .format("es_ES")
+      .format({
+          "number": function(number, key) {
+            var formatted = d3plus.number.format(number, key);
+            if (key.key === "valor") {
+                var formatted = number.toLocaleString("es-AR")
+                return "$" + formatted;
+            }
+            else {
+              return formatted
+            }
+          }
+      })
+      .draw();
+    already_printed_ae = true;
+  });
 }
 
 
@@ -267,7 +369,7 @@ $(window).on('resize', function(){
 $( document ).ready(function() {
   var hash = window.location.hash;
   hash = hash.substring(hash.indexOf('#')+1).toLowerCase();
-  console.log(hash);
+  // console.log(hash);
   if(hash == "propios" || hash == "no-propios"){
     $('.nav-tabs a[href="#corrientes"]').tab('show');
     // $('.nav-tabs a[href="#'+hash+'"]').tab('show');

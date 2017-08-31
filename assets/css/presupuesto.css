@@ -483,6 +483,18 @@ hr {
   border-color:#9F2B4B;
 }
 
+.btn-default.orange{
+  background: #CE5637;
+  color: #fff;
+  border-color:#CE5637;
+}
+.btn-default.orange:hover,
+.btn-default.orange:focus{
+  background: #d87960;
+  color: #fff!important;
+  border-color:#CE5637;
+}
+
 
 
 .ingresos g.d3plus_title.sub text,
@@ -524,6 +536,21 @@ hr {
 }
 .table-striped.pink>tbody>tr.nivel-2 {
     background-color: #d9718d;
+    font-weight: 600;
+}
+
+.table-striped.orange>tbody>tr:nth-of-type(odd).nivel-1 {
+    background-color: #CE5637;
+    color: #FFF;
+}
+.table-striped.orange>tbody>tr:nth-of-type(odd){
+    background-color: #FFF;
+}
+.table-striped.orange>tbody>tr:nth-of-type(even){
+    background-color: #e3e3e3;
+}
+.table-striped.orange>tbody>tr.nivel-2 {
+    background-color: #d87960;
     font-weight: 600;
 }
 
