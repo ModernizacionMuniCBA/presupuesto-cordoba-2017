@@ -63,10 +63,7 @@ function dibujarD3_gastos() {
           }
       })
       .draw();
-      already_printed_corrientes=true;
-      already_printed_capital=true;
-      already_printed_finalidad=true;
-      already_printed_finalidad_funcion=true;
+
   });
 }
 function dibujarD3_gastos_corrientes() {
@@ -98,7 +95,8 @@ function dibujarD3_gastos_corrientes() {
           $("#tbody-gastos-corrientes").append('<tr class="nivel-3"><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
         }
 
-  });
+      });
+  already_printed_corrientes=true;
 });
 }
 
@@ -133,7 +131,8 @@ function dibujarD3_gastos_capital() {
         $("#tbody-gastos-capital").append('<tr class="nivel-3"><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
       }
 
-  });
+    });
+    already_printed_capital=true;
 });
 }
 
@@ -186,6 +185,8 @@ function dibujarD3_gastos_finalidad() {
           }
       })
       .draw();
+      already_printed_finalidad=true;
+
 });
 }
 
@@ -267,6 +268,8 @@ function dibujarD3_gastos_finalidad_funcion() {
       })
       .dev(true)
       .draw();
+      already_printed_finalidad_funcion=true;
+
 });
 }
 dibujarD3_gastos();
