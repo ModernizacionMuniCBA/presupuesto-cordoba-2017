@@ -496,6 +496,13 @@ hr {
 }
 
 
+.navbar-nav .year a.dropdown-toggle{
+  color: #23CF5F;
+  font-weight: 500!important;
+  font-size: 1.5em!important;
+}
+
+
 
 .ingresos g.d3plus_title.sub text,
 .ingresos #d3plus_back_button{

@@ -138,6 +138,14 @@ a:hover, a:focus{
   margin-left: 5px;
   padding: 5px;
 }
+.navbar-gaMuniCba .nav.navbar-nav.navbar-right .dropdown-menu li a{
+  text-transform: uppercase;
+  font-weight: 100;
+  font-size: 1.15em;
+  margin-top: 0px;
+  margin-left: 0px;
+  padding: 5px 10px;
+}
 
 .navbar-default .navbar-nav>li>a:focus,
 .navbar-default .navbar-nav>li>a:hover,
@@ -340,6 +348,16 @@ nav ul li a:before {
   background: #23CF5F;
   height: 3px;
   margin-top: -10px;
+}
+.stroke ul .dropdown-menu li a:after {
+    position: relative;
+    display: inherit;
+    margin: auto;
+    width: 0%;
+    content: '.';
+    color: transparent;
+    background: #23CF5F;
+    height: 3px;
 }
 .stroke ul li a:hover:after {
   width: 100%;
