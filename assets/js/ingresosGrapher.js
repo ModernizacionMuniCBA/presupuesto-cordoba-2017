@@ -378,7 +378,11 @@ $( document ).ready(function() {
     // $('.nav-tabs a[href="#'+hash+'"]').tab('show');
   }
   $('.nav-tabs a[href="#'+hash+'"]').tab('show');
-  $('html, body').animate({
-      scrollTop: $("#"+hash).offset().top-275
-    }, 1000);
+  if(hash!= ""){
+    $('html, body').animate({
+
+        scrollTop: $("#"+hash).offset().top-275
+      }, 1000);
+  }
+
 });
