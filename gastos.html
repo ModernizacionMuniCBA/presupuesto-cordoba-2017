@@ -141,9 +141,110 @@
               El gasto público es el total de gastos realizados por el Estado Municipal, tanto en la adquisición de bienes y servicios, en bienes de capital, en obras de infraestructura, como así también en la prestación de subsidios o transferencias.
             </p>
           </div>
-          <div class="col-xs-12">
-            <h3 class="text-center">VISUALIZACION DE CLASIFICACIONES</h3>
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <div class="row">
+          <div class="col-xs-12 hidden-xs">
+            <!-- <div id="viz-clasificacion-gasto"></div> -->
+            <div class="row">
+              <div class="col-xs-12 col-xs-offset-0 col-sm-4 col-sm-offset-4 col-md-2 col-md-offset-5">
+                <div class="circle-clasificacion" id="circle-institucional">
+                  <div class="texto">
+                    <h3 class="clasificacion-title">Institucional</h3>
+                    <p class="clasificacion-text">¿Quién?</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 col-xs-offset-0 col-sm-4 col-sm-offset-0 col-md-2 col-md-offset-3">
+                <div class="circle-clasificacion" id="circle-objeto">
+                  <div class="texto">
+                    <h3 class="clasificacion-title">Por Objeto</h3>
+                    <p class="clasificacion-text">¿En qué?</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-12 col-xs-offset-0 col-sm-4 col-md-2">
+                <div class="circle-clasificacion" id="circle-centro">
+                  <div class="texto">
+                    <h3 class="clasificacion-title">Clasificaciones del Gasto</h3>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-12 col-xs-offset-0 col-sm-4 col-md-2">
+                <div class="circle-clasificacion" id="circle-finalidad">
+                  <div class="texto">
+                    <h3 class="clasificacion-title">Por Finalidad y Función</h3>
+                    <p class="clasificacion-text">¿Para qué?</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 col-xs-offset-0 col-sm-4 col-sm-offset-4 col-md-2 col-md-offset-5">
+                <div class="circle-clasificacion" id="circle-economica">
+                  <div class="texto">
+                    <h3 class="clasificacion-title">Económica</h3>
+                    <p class="clasificacion-text">¿Cómo?</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
+          <div class="col-xs-12 visible-xs">
+            <!-- <div id="viz-clasificacion-gasto"></div> -->
+            <div class="row">
+              <div class="col-xs-8 col-xs-offset-2">
+                <div class="circle-clasificacion mob principal" id="circle-centro-mob">
+                  <div class="texto">
+                    <h3 class="clasificacion-title">Clasificaciones del Gasto</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-6">
+                <div class="circle-clasificacion mob" id="circle-objeto-mob">
+                  <div class="texto">
+                    <h3 class="clasificacion-title">Por Objeto</h3>
+                    <p class="clasificacion-text">¿En qué?</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-6">
+                <div class="circle-clasificacion mob" id="circle-institucional-mob">
+                  <div class="texto">
+                    <h3 class="clasificacion-title">Institucional</h3>
+                    <p class="clasificacion-text">¿Quién?</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-6">
+                <div class="circle-clasificacion mob" id="circle-finalidad-mob">
+                  <div class="texto">
+                    <h3 class="clasificacion-title">Por Finalidad y Función</h3>
+                    <p class="clasificacion-text">¿Para qué?</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-6">
+                <div class="circle-clasificacion mob" id="circle-economica-mob">
+                  <div class="texto">
+                    <h3 class="clasificacion-title">Económica</h3>
+                    <p class="clasificacion-text">¿Cómo?</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 gastos-body">
+        <div class="row">
           <div class="col-xs-12">
             <p class="definicion">
               Generalmente se fusionan estas 4 clasificaciones y se muestra al gasto por “Finalidad y Función” y otro por “Económica y por Objeto del Gasto”.
@@ -172,7 +273,7 @@
             </div>
           </div>
           <div class="tab-content">
-            <div class="col-xs-12 tableContainer tab-panel active" role="tabpanel" id="en-que">
+            <div class="col-xs-12 tableContainer tab-panel" role="tabpanel" id="en-que">
               <h2 class="sky">¿En qué se gasta?</h2>
               <p class="definicion">
                 Resulta útil clasificar las transacciones que realiza el Municipio por su naturaleza, es decir,
@@ -377,6 +478,17 @@
   <script src="assets/js/d3.js"></script>
   <script src="assets/js/d3plus.js"></script>
   <script src="assets/js/gastosGrapher.js"></script>
+  <script src="assets/js/jquery.connections.js"></script>
 
+  <script>
+  $(document).ready(function() {
+      $('#circle-centro').connections({ to: '.circle-clasificacion' });
+      $('#circle-centro-mob').connections({ to: '.circle-clasificacion.mob' });
+  });
+  $(window).on('resize', function(){
+    $('#circle-centro').connections('update');
+    $('#circle-centro-mob').connections('update');
+  });
+  </script>
 </body>
 </html>

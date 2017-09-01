@@ -705,15 +705,89 @@ hr {
   height: 450px;
   float: right;
 }
+#viz-clasificacion-gasto{
+  height: 600px;
+}
 #afectacion-especifica-propios,
 #afectacion-especifica-no_propios{
   width: 100%;
 }
 
 
+.connection{
+  z-index: -1;
+}
+.circle-clasificacion.principal {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: #1F5693;
+    line-height: 140px;
+    text-align: center;
+    margin: 10px auto;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.circle-clasificacion.principal:hover {
+  cursor: pointer;
+  transform:scale(1.05);
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.circle-clasificacion.principal .texto {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+    padding: 5px;
+}
 
+.circle-clasificacion.principal h3.clasificacion-title {
+    font-size: 1em;
+    color: #FFFFFF;
+    font-weight: 500;
+}
+.circle-clasificacion.principal p.clasificacion-text{
+  font-size: 0.75em;
+  color: #FFFFFF;
+}
 
+.circle-clasificacion {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: #1F5693;
+    line-height: 120px;
+    text-align: center;
+    margin: 10px auto;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.circle-clasificacion:hover {
+  cursor: pointer;
+  transform:scale(1.05);
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.circle-clasificacion .texto {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+    padding: 5px;
+}
 
+.circle-clasificacion h3.clasificacion-title {
+    font-size: 0.9em;
+    color: #FFFFFF;
+    font-weight: 500;
+}
+.circle-clasificacion p.clasificacion-text{
+  font-size: 0.75em;
+  color: #FFFFFF;
+}
 
 /* LOADER */
 

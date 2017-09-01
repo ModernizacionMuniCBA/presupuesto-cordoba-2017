@@ -15,6 +15,46 @@
 /*Small devices (landscape phones, 544px and up)*/
 @media (min-width: 544px) {
 
+  .circle-clasificacion,
+  .circle-clasificacion.principal {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: #1F5693;
+      line-height: 160px;
+      text-align: center;
+      margin: 10px auto;
+      -webkit-transition: all 0.3s ease;
+      -moz-transition: all 0.3s ease;
+      transition: all 0.3s ease;
+  }
+  .circle-clasificacion:hover,
+  .circle-clasificacion.principal:hover {
+    cursor: pointer;
+    transform:scale(1.05);
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  .circle-clasificacion .texto,
+  .circle-clasificacion.principal .texto {
+      display: inline-block;
+      vertical-align: middle;
+      line-height: normal;
+      padding: 5px;
+  }
+
+  .circle-clasificacion h3.clasificacion-title,
+  .circle-clasificacion.principal h3.clasificacion-title {
+      font-size: 1.1em;
+      color: #FFFFFF;
+      font-weight: 500;
+  }
+  .circle-clasificacion p.clasificacion-text,
+  .circle-clasificacion.principal p.clasificacion-text{
+    font-size: 0.75em;
+    color: #FFFFFF;
+  }
 }
 
 /*Medium devices (tablets, 768px and up)*/

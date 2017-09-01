@@ -22,32 +22,69 @@ function dibujarD3_gastos() {
     $.each( dataJSON.feed.entry, function( key, val ) {
       i += 1;
       var partida = val.gsx$partida.$t;
+      var nivel_tabla = val.gsx$nivel.$t;
       var partida_splited = partida.split('.');
       var nivel = partida_splited.length;
       var nivel_princ = parseInt(partida_splited[0]);
       var concepto = val.gsx$concepto.$t;
       var total = val.gsx$total.$t;
-      if (partida_splited[1]==""){
-        nivel -=1;
-      }
-      detalle[nivel] = concepto;
+      if(nivel_tabla != -2){
+        if (partida_splited[1]==""){
+          nivel -=1;
+        }
+        detalle[nivel] = concepto;
+        if (nivel_princ == 3){
+          nivel = 4
+          detalle[2] = detalle[1]
+          detalle[3] = detalle[1]
+          detalle[4] = detalle[1]
+        }else if (nivel_princ == 2 && nivel == 3) {
+          nivel = 4
+          detalle[4] = detalle[3]
+        }
 
-      if (partida_splited[0] == "-1" && i>1){
-        var linea = {"key": concepto,
-                "valor": parseInt(total.split('.').join(""))}
-        datos_clasif_econo.push(linea);
+        if (nivel == 4){
+          var linea = {"key": detalle[4],
+                  "rec1": detalle[1],
+                  "rec2": detalle[2],
+                  "rec3": detalle[3],
+                 "valor": parseInt(total.split('.').join(""))
+               }
+            datos.push(linea);
+        }
+
+        if(nivel == 6){
+            var linea = {  "key": concepto,
+                          "rec1": detalle[1],
+                          "rec2": detalle[2],
+                          "rec3": detalle[3],
+                          "rec4": detalle[4],
+                          "rec5": detalle[5],
+                         "value": parseInt(total.split('.').join(""))}
+            datos.push(linea);
+        }
       }
     });
-    // Grafico Gastos por Clasificacion Economica
+
+    console.log(datos);
+    var data = d3.nest()
+                .key(function(d) { return d.rec1; })
+                .key(function(d) { return d.rec2; })
+                .key(function(d) { return d.rec3; })
+                .key(function(d) { return d.rec4; })
+                .key(function(d) { return d.rec5; })
+                .entries(datos);
+
+    // console.log(data);
     var visualization = d3plus.viz()
-      .container("#clasificacion-economica-gasto")
       .background("#EEEEEE")
-      .legend({"size": 50})
+      .container("#clasificacion-economica-gasto")
+      .legend({"size": 30})
       .tooltip(true)
       .tooltip({"children":0})
-      .data(datos_clasif_econo)
-      .type("pie")
-      .id(["key"])
+      .data(datos)
+      .type("tree_map")
+      .id(["rec1", "rec2", "rec3", "rec4", "rec5", "key"])
       .size("valor")
       .format("es_ES")
       .format({
@@ -62,6 +99,7 @@ function dibujarD3_gastos() {
             }
           }
       })
+      .dev(true)
       .draw();
 
   });
@@ -232,7 +270,7 @@ function dibujarD3_gastos_finalidad_funcion() {
       }
 
     });
-    console.log(datos);
+    // console.log(datos);
 
 
 
@@ -271,6 +309,46 @@ function dibujarD3_gastos_finalidad_funcion() {
       already_printed_finalidad_funcion=true;
 
 });
+  // create list of node positions
+  // $("#viz-clasificacion-gasto").empty();
+  // var positions = [
+  //   {"name": "Clasificaciones del Gasto", "x": 0, "y": 0, "size":100},
+  //   {"name": "Institucional", "x": 0, "y": -50, "size":20},
+  //   {"name": "Por Objeto", "x": 0, "y": 50, "size":20},
+  //   {"name": "Económica", "x": -50, "y": 0, "size":20},
+  //   {"name": "Por Finalidad y Función", "x": 50, "y": 0, "size":20}
+  // ]
+  // // create list of node connections
+  // var connections = [
+  //   {"source": "Clasificaciones del Gasto", "target": "Institucional"},
+  //   {"source": "Clasificaciones del Gasto", "target": "Por Objeto"},
+  //   {"source": "Clasificaciones del Gasto", "target": "Económica"},
+  //   {"source": "Clasificaciones del Gasto", "target": "Por Finalidad y Función"},
+  // ]
+  // var attributes = [
+  //   {"name": "Clasificaciones del Gasto", "hex":"#1F5693"},
+  //   {"name": "Institucional", "hex":"#1F5693"},
+  //   {"name": "Por Objeto", "hex":"#1F5693"},
+  //   {"name": "Económica", "hex":"#1F5693"},
+  //   {"name": "Por Finalidad y Función", "hex":"#1F5693"},
+  // ]
+  // // instantiate d3plus
+  // var visualization = d3plus.viz()
+  //   .container("#viz-clasificacion-gasto")
+  //   .type("network")
+  //   .background("#EEEEEE")
+  //   .attrs(attributes)
+  //   .color("hex")
+  //   .nodes(positions)
+  //   .edges(connections)
+  //   .edges({"color":"#000"})
+  //   .focus({
+  //      "tooltip" : false
+  //    })
+  //   // .zoom(false)
+  //   .id("name")
+  //   .size(20)
+  //   .draw()
 }
 dibujarD3_gastos();
 
