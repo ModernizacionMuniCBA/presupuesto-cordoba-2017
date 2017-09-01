@@ -8,6 +8,7 @@ console.log(Cookies.get('openedBefore'));
 if(Cookies.get('openedBefore') == "true"){
   $('.prs-loader').addClass('hidden');
   $('#loader').removeClass('hidden');
+  finishedDrawing();
 }else{
   Cookies.set('openedBefore', 'true');
 
