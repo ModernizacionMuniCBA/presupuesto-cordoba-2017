@@ -10,6 +10,8 @@ if(Cookies.get('openedBefore') == "true"){
   $('#loader').removeClass('hidden');
   finishedDrawing();
 }else{
+  $('.prs-loader').removeClass('hidden');
+  $('#loader').addClass('hidden');
   Cookies.set('openedBefore', 'true');
 
   var fireworks = (function() {
