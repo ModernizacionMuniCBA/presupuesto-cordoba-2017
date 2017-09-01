@@ -199,14 +199,14 @@ function dibujarD3_AE() {
       }
       if(nivel==4 && partida_splited[1] == "01"){
         var linea = {"Nombre": concepto,
-                        "key": concepto,
+                        "key": partida,
                       "valor": parseInt(total.split('.').join(""))
              }
           datos_propios.push(linea);
       }
       if(nivel==4 && partida_splited[1] == "02"){
         var linea = {"Nombre": concepto,
-                        "key": concepto,
+                        "key": partida,
                       "valor": parseInt(total.split('.').join(""))
              }
           datos_no_propios.push(linea);
@@ -278,7 +278,7 @@ function dibujarD3_AE() {
     var data = d3.nest()
                 .entries(datos_propios);
 
-
+    console.log(datos_propios);
     var visualization = d3plus.viz()
       .container("#afectacion-especifica-propios")
       .background("#EEEEEE")
@@ -286,11 +286,12 @@ function dibujarD3_AE() {
       .tooltip({"children":0})
       .data(datos_propios)
       .type("bar")
-      .id(["key"])
-      .x("valor")
-      .x({"stacked": false, "value": "valor", "grid":false, "label": false, "scale": "discrete"})
-      .y("Nombre")
-      .y({"scale": "discrete", "grid":false, "label": false}) // Manually set Y-axis to be discrete
+      .id("key")
+      .text("Nombre")
+      .y("valor")
+      .y({"stacked": false, "value": "valor", "grid":false, "label": false, "scale": "discrete"})
+      .x("key")
+      .x({"scale": "discrete", "grid":false, "label": false}) // Manually set Y-axis to be discrete
       .format("es_ES")
       .format({
           "number": function(number, key) {
@@ -304,6 +305,7 @@ function dibujarD3_AE() {
             }
           }
       })
+      .order({"sort": "desc","value": "valor"})
       .draw();
 
     // Grafico de Afectacion Especifica No Propios
@@ -317,11 +319,12 @@ function dibujarD3_AE() {
       .tooltip({"children":0})
       .data(datos_no_propios)
       .type("bar")
-      .id(["key"])
-      .x("valor")
-      .x({"scale": "discrete", "stacked": false, "value": "valor", "grid":false, "label": false})
-      .y("Nombre")
-      .y({"scale": "discrete", "grid":false,  "label": false}) // Manually set Y-axis to be discrete
+      .id("key")
+      .text("Nombre")
+      .y("valor")
+      .y({"scale": "discrete", "stacked": false, "value": "valor", "grid":false, "label": false})
+      .x("key")
+      .x({"scale": "discrete", "grid":false,  "label": false}) // Manually set Y-axis to be discrete
       .format("es_ES")
       .format({
           "number": function(number, key) {
@@ -335,6 +338,7 @@ function dibujarD3_AE() {
             }
           }
       })
+      .order({"sort": "desc","value": "valor"})
       .draw();
     already_printed_ae = true;
   });
