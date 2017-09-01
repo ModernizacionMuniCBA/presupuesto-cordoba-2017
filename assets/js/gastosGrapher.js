@@ -26,6 +26,7 @@ function dibujarD3_gastos() {
       var partida_splited = partida.split('.');
       var nivel = partida_splited.length;
       var nivel_princ = parseInt(partida_splited[0]);
+      var subnivel = parseInt(partida_splited[1]);
       var concepto = val.gsx$concepto.$t;
       var total = val.gsx$total.$t;
       if(nivel_tabla != -2){
@@ -33,34 +34,19 @@ function dibujarD3_gastos() {
           nivel -=1;
         }
         detalle[nivel] = concepto;
-        if (nivel_princ == 3){
-          nivel = 4
-          detalle[2] = detalle[1]
-          detalle[3] = detalle[1]
-          detalle[4] = detalle[1]
-        }else if (nivel_princ == 2 && nivel == 3) {
-          nivel = 4
-          detalle[4] = detalle[3]
-        }
 
-        if (nivel == 4){
-          var linea = {"key": detalle[4],
-                  "rec1": detalle[1],
-                  "rec2": detalle[2],
-                  "rec3": detalle[3],
-                 "valor": parseInt(total.split('.').join(""))
-               }
-            datos.push(linea);
+        if(nivel == 3 && nivel_princ==2 && subnivel==4){
+          nivel = 4;
+          detalle[3] = concepto
         }
+        if(nivel == 4){
 
-        if(nivel == 6){
             var linea = {  "key": concepto,
-                          "rec1": detalle[1],
+                          "rec1": detalle[3],
                           "rec2": detalle[2],
-                          "rec3": detalle[3],
-                          "rec4": detalle[4],
-                          "rec5": detalle[5],
-                         "value": parseInt(total.split('.').join(""))}
+                          "rec3": detalle[1],
+                         "valor": parseInt(total.split('.').join(""))}
+
             datos.push(linea);
         }
       }
@@ -71,8 +57,6 @@ function dibujarD3_gastos() {
                 .key(function(d) { return d.rec1; })
                 .key(function(d) { return d.rec2; })
                 .key(function(d) { return d.rec3; })
-                .key(function(d) { return d.rec4; })
-                .key(function(d) { return d.rec5; })
                 .entries(datos);
 
     // console.log(data);
@@ -84,7 +68,7 @@ function dibujarD3_gastos() {
       .tooltip({"children":0})
       .data(datos)
       .type("tree_map")
-      .id(["rec1", "rec2", "rec3", "rec4", "rec5", "key"])
+      .id(["rec3", "rec2", "rec1",  "key"])
       .size("valor")
       .format("es_ES")
       .format({
@@ -99,7 +83,7 @@ function dibujarD3_gastos() {
             }
           }
       })
-      .dev(true)
+      // .dev(true)
       .draw();
 
   });

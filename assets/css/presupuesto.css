@@ -231,7 +231,8 @@ body{
 }
 
 
-#ingresosGraph{
+#ingresosGraph,
+#clasificacion-economica-gasto{
   height: 500px;
   margin-bottom: 25px;
 }
@@ -691,7 +692,6 @@ hr {
 
 #afectacion-especifica-j,
 #afectacion-especifica-jm,
-#clasificacion-economica-gasto,
 #gastos-finalidad{
   height: 400px;
 }
