@@ -24,15 +24,17 @@ function llenar_tabla_ejecutivo(datos, juris){
     if(total == ""){
       total = 0;
     }
-    if(nivel < 3 ){
-      $("#tbody-gastos-ejecutivo").append('<tr class="nivel-'+nivel+'"><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
+    $("#tbody-gastos-ejecutivo").append('<tr class="nivel-'+nivel+'"><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
 
-    }else if(nivel == 3){
-      $("#tbody-gastos-ejecutivo").append('<tr class="table-clickable nivel-'+nivel+' '+detalle[(nivel-1)]+'" data-toggle="collapse" data-target=".nivel-'+(nivel+1)+'.'+detalle[nivel]+'"><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
-    }
-    if(nivel > 3){
-      $("#tbody-gastos-ejecutivo").append('<tr class="table-clickable nivel-'+nivel+' '+detalle[(nivel-1)]+' collapse" data-toggle="collapse" data-target=".nivel-'+(nivel+1)+'.'+detalle[nivel]+'"><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
-    }
+    // if(nivel < 3 ){
+    //   $("#tbody-gastos-ejecutivo").append('<tr class="nivel-'+nivel+'"><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
+    //
+    // }else if(nivel == 3){
+    //   $("#tbody-gastos-ejecutivo").append('<tr class="table-clickable nivel-'+nivel+' '+detalle[(nivel-1)]+'" data-toggle="collapse" data-target=".nivel-'+(nivel+1)+'.'+detalle[nivel]+'"><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
+    // }
+    // if(nivel > 3){
+    //   $("#tbody-gastos-ejecutivo").append('<tr class="table-clickable nivel-'+nivel+' '+detalle[(nivel-1)]+' collapse" data-toggle="collapse" data-target=".nivel-'+(nivel+1)+'.'+detalle[nivel]+'"><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
+    // }
     });
     $('.table-ejecutivo').slideDown();
 }
