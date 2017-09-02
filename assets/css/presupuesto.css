@@ -130,7 +130,7 @@ body{
   border-bottom: 1px solid #d0d0d0;
   display: inline-block;
   width: 100%;
-  color: #2CBE99;
+  color: #23CF5F;
   background-color: #FFF;
   display: flex;
   justify-content: center;
@@ -139,7 +139,7 @@ body{
 }
 
 .home div.link-infografia:hover{
-  color: #229578;
+  color: #1BA34B;
   background-color: #EEEEEE;
 }
 .home div.link-infografia h2{
@@ -147,21 +147,25 @@ body{
   font-size: 2.25em;
   display: block;
 }
-
+.navbar-gaMuniCba{
+  border-color: #d0d0d0;
+}
 .home div.text-infografia{
   height: 150px;
   display: inline-block;
   width: 100%;
-  color: #1BA34B;
+  color: #23CF5F;
   padding: 5px;
   background-color: #FFF;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  border-bottom: 1px solid #d0d0d0;
 }
 .home div.text-infografia:hover{
   background-color: #EEEEEE;
+  color:#1BA34B;
 }
 .home div.text-infografia h2{
   font-weight: 500;
@@ -182,6 +186,9 @@ body{
 .gastos .gastos-body,
 .deudas .deudas-body{
   padding: 0 50px;
+}
+.gastos .gastos-body.pEjecutivo{
+  margin-top: 10px;
 }
 /* INGRESOS, GASTOS, DEUDAS*/
 .ingresos .bg-overlay,
@@ -216,6 +223,13 @@ body{
     rgba(0, 0, 0, 0.8)
     ),
     url('../images/tramas/trama3.png');
+}
+.gastos .img-gastos.img-especial{
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.8)
+    ),
+    url('../images/tramas/trama5.png');
 }
 .deudas .img-deudas{
   background: linear-gradient(
@@ -497,6 +511,10 @@ hr {
   background: #a6cb89;
   color: #415e29;
 }
+.btn-default.btn-ejecutivo{
+  margin:5px;
+  padding: 10px 20px;
+}
 
 .btn-default.blue{
   background: #1F5693;
@@ -602,7 +620,10 @@ hr {
     font-weight: 500;
 }
 
-
+.table-ejecutivo{
+  margin-top: 20px;
+  display: none;
+}
 .table-striped.pink>tbody>tr:nth-of-type(odd).nivel-1,
 .table-striped.pink>tbody>tr:nth-of-type(even).nivel-1 {
     background-color: #9F2B4B;
@@ -659,24 +680,45 @@ hr {
     background-color: #b8dfde;
     font-weight: 500;
 }
+.table-clickable:hover{
+  cursor: pointer;
+}
+.table.especial.deeper .table-clickable.nivel-6:hover{
+  cursor: default;
+}
 
+.tabla-ayuda{
+  font-size: 0.8em;
+}
 
-.table-striped.green>tbody>tr:nth-of-type(odd).nivel-1,
-.table-striped.green>tbody>tr:nth-of-type(even).nivel-1 {
-    background-color: #7EB354;
+.table.green>tbody>tr:nth-of-type(odd).nivel-1,
+.table.green>tbody>tr:nth-of-type(even).nivel-1 {
+    background-color: #74a44a;
     color: #FFF;
     font-weight: 500;
 }
 .table-striped.green>tbody>tr:nth-of-type(odd){
     background-color: #FFF;
 }
-.table-striped.green>tbody>tr.nivel-2 {
-    background-color: #a6cb89;
+.table-striped>tbody>tr>td,
+.table-striped>tbody>tr>th{
+  border: none;
+}
+.table.green>tbody>tr.nivel-2 {
+    background-color: #8eba67;
     color:#415e29;
     font-weight: 500;
 }
-.table-striped.especial.green>tbody>tr.nivel-3 {
-    background-color: #cee2be;
+.table.especial.green>tbody>tr.nivel-3 {
+    background-color: #a8ca8a;
+    font-weight: 500;
+}
+.table.especial.deeper.green>tbody>tr.nivel-4 {
+    background-color: #c2daad;
+    font-weight: 500;
+}
+.table.especial.deeper.green>tbody>tr.nivel-5 {
+    background-color: #dcead0;
     font-weight: 500;
 }
 
