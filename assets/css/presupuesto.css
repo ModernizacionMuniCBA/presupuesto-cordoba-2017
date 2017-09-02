@@ -626,6 +626,30 @@ hr {
     font-weight: 500;
 }
 
+.table.blue>tbody>tr:nth-of-type(odd).nivel-1,
+.table.blue>tbody>tr:nth-of-type(even).nivel-1 {
+    background-color: #1F5693;
+    color: #FFF;
+    font-weight: 500;
+}
+.table.blue{
+  border: 1px solid #d0d0d0;
+}
+.table.blue>tbody>tr{
+    background-color: #FFF;
+}
+.table.blue>tbody>tr.gray{
+    background-color: #efefef;
+}
+.table.blue>tbody>tr.nivel-2 {
+    background-color: #95bde8;
+    font-weight: 500;
+}
+.table.blue.especial>tbody>tr.nivel-3 {
+    background-color: #bfd7f2;
+    font-weight: 500;
+}
+
 .table-ejecutivo{
   margin-top: 20px;
   display: none;

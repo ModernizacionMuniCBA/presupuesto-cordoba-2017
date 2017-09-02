@@ -47,6 +47,7 @@ function dibujarD3_participativo() {
     $.getJSON("https://spreadsheets.google.com/feeds/list/1uA9UbORQPEpzDVBpvq4UsmiA0eOvAdFCMg31iXd1XoE/or4ki2f/public/values?alt=json", function( dataJSON2 ) {
       var datos = [];
       console.log(dataJSON2.feed.entry);
+      var detalle = []
       $.each( dataJSON2.feed.entry, function( key, val ) {
 
         var concepto = val.gsx$programa.$t;
@@ -55,12 +56,19 @@ function dibujarD3_participativo() {
         var monto = val.gsx$monto.$t;
         var nivel_tabla_splited = nivel_tabla.split('.');
         var nivel = nivel_tabla_splited.length + 1;
+        var texto = val.gsx$texto.$t;
+        detalle[nivel] = concepto.toLowerCase().split(' ').join('_');
+
         if(nivel_tabla == "9"){
           $("#tbody-participativo").append('<tr class="nivel-1"><th scope="row">'+nivel_tabla+'</th><td>'+concepto+'</td><td>'+porcentaje+'</td><td>$'+monto.toLocaleString("es-AR")+'</td></tr>');
-
         }else{
-          $("#tbody-participativo").append('<tr class="nivel-'+nivel+'"><th scope="row">'+nivel_tabla+'</th><td>'+concepto+'</td><td>'+porcentaje+'</td><td>$'+monto.toLocaleString("es-AR")+'</td></tr>');
+          if(nivel == 3){
+            $("#tbody-participativo").append('<tr class="table-clickable nivel-'+nivel+'" data-toggle="collapse" data-target="#texto-'+detalle[2]+'-'+detalle[3]+'"><th scope="row">'+nivel_tabla+'</th><td>'+concepto+'</td><td>'+porcentaje+'</td><td>$'+monto.toLocaleString("es-AR")+'</td></tr>');
+            $("#tbody-participativo").append('<tr class="collapse gray" id="texto-'+detalle[2]+'-'+detalle[3]+'"><td colspan="4">'+texto+'</td></tr>');
+          }else{
+            $("#tbody-participativo").append('<tr class="nivel-'+nivel+'"><th scope="row">'+nivel_tabla+'</th><td>'+concepto+'</td><td>'+porcentaje+'</td><td>$'+monto.toLocaleString("es-AR")+'</td></tr>');
 
+          }
         }
 
       });
