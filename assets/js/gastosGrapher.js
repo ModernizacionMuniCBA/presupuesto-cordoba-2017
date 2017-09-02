@@ -3,6 +3,8 @@ window.already_printed_corrientes = false;
 window.already_printed_capital = false;
 window.already_printed_finalidad_funcion = false;
 window.already_printed_finalidad = false;
+window.already_printed_clasificacion = false;
+
 function dibujarD3_gastos() {
   if(already_printed_corrientes == false){
     dibujarD3_gastos_corrientes();
@@ -49,6 +51,21 @@ function dibujarD3_gastos() {
 
             datos.push(linea);
         }
+        if(already_printed_clasificacion == false){
+          if(nivel <=4){
+            var partida
+            if(partida=="-2"){
+              $("#tbody-clasificacion-gasto").append('<tr class="nivel-'+nivel+'"><th scope="row"> </th><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
+            }else{
+              if(i>1){
+                $("#tbody-clasificacion-gasto").append('<tr class="nivel-'+nivel+'"><th scope="row">'+partida+'</th><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
+              }else{
+                $("#tbody-clasificacion-gasto").append('<tr class="nivel-1"><th scope="row">'+partida+'</th><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
+              }
+            }
+
+          }
+        }
       }
     });
 
@@ -85,7 +102,7 @@ function dibujarD3_gastos() {
       })
       // .dev(true)
       .draw();
-
+already_printed_clasificacion=true;
   });
 }
 function dibujarD3_gastos_corrientes() {
@@ -293,46 +310,7 @@ function dibujarD3_gastos_finalidad_funcion() {
       already_printed_finalidad_funcion=true;
 
 });
-  // create list of node positions
-  // $("#viz-clasificacion-gasto").empty();
-  // var positions = [
-  //   {"name": "Clasificaciones del Gasto", "x": 0, "y": 0, "size":100},
-  //   {"name": "Institucional", "x": 0, "y": -50, "size":20},
-  //   {"name": "Por Objeto", "x": 0, "y": 50, "size":20},
-  //   {"name": "Económica", "x": -50, "y": 0, "size":20},
-  //   {"name": "Por Finalidad y Función", "x": 50, "y": 0, "size":20}
-  // ]
-  // // create list of node connections
-  // var connections = [
-  //   {"source": "Clasificaciones del Gasto", "target": "Institucional"},
-  //   {"source": "Clasificaciones del Gasto", "target": "Por Objeto"},
-  //   {"source": "Clasificaciones del Gasto", "target": "Económica"},
-  //   {"source": "Clasificaciones del Gasto", "target": "Por Finalidad y Función"},
-  // ]
-  // var attributes = [
-  //   {"name": "Clasificaciones del Gasto", "hex":"#1F5693"},
-  //   {"name": "Institucional", "hex":"#1F5693"},
-  //   {"name": "Por Objeto", "hex":"#1F5693"},
-  //   {"name": "Económica", "hex":"#1F5693"},
-  //   {"name": "Por Finalidad y Función", "hex":"#1F5693"},
-  // ]
-  // // instantiate d3plus
-  // var visualization = d3plus.viz()
-  //   .container("#viz-clasificacion-gasto")
-  //   .type("network")
-  //   .background("#EEEEEE")
-  //   .attrs(attributes)
-  //   .color("hex")
-  //   .nodes(positions)
-  //   .edges(connections)
-  //   .edges({"color":"#000"})
-  //   .focus({
-  //      "tooltip" : false
-  //    })
-  //   // .zoom(false)
-  //   .id("name")
-  //   .size(20)
-  //   .draw()
+
 }
 dibujarD3_gastos();
 
