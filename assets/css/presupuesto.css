@@ -99,12 +99,27 @@ body{
 
 .home .infografia{
   height: 600px;
-  background-color: #1BA34B;
+  background-color: #FFF;
   color: #FFF;
   display: inline-block;
   width: 100%;
+  text-align: center;
 }
 
+.home .infografia .img-infografia{
+  display: inline-block;
+  max-height: 600px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.border-right{
+  border-right: 1px solid #d0d0d0;
+}
+
+.border-left{
+  border-left: 1px solid #d0d0d0;
+}
 .home .infografia h1{
   margin-top: 40px;
   margin-left: 20px;
@@ -576,12 +591,17 @@ hr {
     background-color: #FFF;
 }
 .table-striped>tbody>tr:nth-of-type(even){
-    background-color: #e3e3e3;
+    background-color: #f0f0f0;
 }
 .table-striped>tbody>tr.nivel-2 {
     background-color: #95bde8;
     font-weight: 500;
 }
+.table-striped.especial>tbody>tr.nivel-3 {
+    background-color: #bfd7f2;
+    font-weight: 500;
+}
+
 
 .table-striped.pink>tbody>tr:nth-of-type(odd).nivel-1,
 .table-striped.pink>tbody>tr:nth-of-type(even).nivel-1 {
@@ -592,13 +612,15 @@ hr {
 .table-striped.pink>tbody>tr:nth-of-type(odd){
     background-color: #FFF;
 }
-.table-striped.pink>tbody>tr:nth-of-type(even){
-    background-color: #e3e3e3;
-}
 .table-striped.pink>tbody>tr.nivel-2 {
     background-color: #d9718d;
     font-weight: 500;
 }
+.table-striped.especial.pink>tbody>tr.nivel-3 {
+    background-color: #e9adbd;
+    font-weight: 500;
+}
+
 
 .table-striped.orange>tbody>tr:nth-of-type(odd).nivel-1,
 .table-striped.orange>tbody>tr:nth-of-type(even).nivel-1 {
@@ -609,13 +631,15 @@ hr {
 .table-striped.orange>tbody>tr:nth-of-type(odd){
     background-color: #FFF;
 }
-.table-striped.orange>tbody>tr:nth-of-type(even){
-    background-color: #e3e3e3;
-}
 .table-striped.orange>tbody>tr.nivel-2 {
     background-color: #d87960;
     font-weight: 500;
 }
+.table-striped.especial.orange>tbody>tr.nivel-3 {
+    background-color: #e7ad9d;
+    font-weight: 500;
+}
+
 
 .table-striped.sky>tbody>tr:nth-of-type(odd).nivel-1,
 .table-striped.sky>tbody>tr:nth-of-type(even).nivel-1 {
@@ -626,14 +650,16 @@ hr {
 .table-striped.sky>tbody>tr:nth-of-type(odd){
     background-color: #FFF;
 }
-.table-striped.sky>tbody>tr:nth-of-type(even){
-    background-color: #e3e3e3;
-}
 .table-striped.sky>tbody>tr.nivel-2 {
     background-color: #83c7c6;
     color:#1f4444;
     font-weight: 500;
 }
+.table-striped.especial.sky>tbody>tr.nivel-3 {
+    background-color: #b8dfde;
+    font-weight: 500;
+}
+
 
 .table-striped.green>tbody>tr:nth-of-type(odd).nivel-1,
 .table-striped.green>tbody>tr:nth-of-type(even).nivel-1 {
@@ -644,14 +670,16 @@ hr {
 .table-striped.green>tbody>tr:nth-of-type(odd){
     background-color: #FFF;
 }
-.table-striped.green>tbody>tr:nth-of-type(even){
-    background-color: #e3e3e3;
-}
 .table-striped.green>tbody>tr.nivel-2 {
     background-color: #a6cb89;
     color:#415e29;
     font-weight: 500;
 }
+.table-striped.especial.green>tbody>tr.nivel-3 {
+    background-color: #cee2be;
+    font-weight: 500;
+}
+
 
 .table.table-striped{
   border: 1px solid #ddd;
