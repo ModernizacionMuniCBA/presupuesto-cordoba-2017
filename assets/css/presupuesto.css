@@ -68,8 +68,35 @@ body{
 }
 
 .footer-gaMuniCba{
-  height: 100px;
+  margin-top: 100px;
+  background-color: #FFFFFF;
+  border-top: 5px solid #23CF5F;
+  padding-top: 20px;
+  height: 350px;
 }
+.footer-module{
+  height: 300px;
+  display: flex;
+  align-items: center;
+}
+.twitter-footer{
+  max-height: 300px;
+  overflow: scroll;
+}
+.contacto-footer{
+  font-size: 1.1em;
+}
+.presupuesto-abierto-footer{
+    font-size: 1.05em;
+    margin: 0px;
+    padding-left: 10px;
+    font-family: "Gotham Rounded", sans-serif;
+    color:#23CF5F;
+    border-left: 4px solid #23CF5F;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
 .no-padding {
     padding-right: 0 !important;
     padding-left: 0 !important;
@@ -201,8 +228,8 @@ body{
 .gastos .img-gastos,
 .img-deudas{
   background-color: #1BA34B;
-  background-repeat: repeat;
-  /*background-size: 300px;*/
+  background-repeat: no-repeat;
+  background-size: cover;
   width: 100%;
   height: 250px;
   margin-top: 75px;
@@ -212,31 +239,31 @@ body{
 }
 .ingresos .img-ingresos{
   background: linear-gradient(
-    rgba(0, 0, 0, 0.3),
-    rgba(0, 0, 0, 0.8)
+    rgba(0, 0, 0, 0.25),
+    rgba(0, 0, 0, 0.05)
     ),
-    url('../images/tramas/trama2.png');
+    url('../images/fondo1.jpg');
 }
 .gastos .img-gastos{
   background: linear-gradient(
-    rgba(0, 0, 0, 0.3),
-    rgba(0, 0, 0, 0.8)
+    rgba(0, 0, 0, 0.25),
+    rgba(0, 0, 0, 0.05)
     ),
-    url('../images/tramas/trama3.png');
+    url('../images/fondo1.jpg');
 }
 .gastos .img-gastos.img-especial{
   background: linear-gradient(
-    rgba(0, 0, 0, 0.3),
-    rgba(0, 0, 0, 0.8)
+    rgba(0, 0, 0, 0.25),
+    rgba(0, 0, 0, 0.05)
     ),
-    url('../images/tramas/trama5.png');
+    url('../images/fondo1.jpg');
 }
 .deudas .img-deudas{
   background: linear-gradient(
-      rgba(0, 0, 0, 0.3),
-      rgba(0, 0, 0, 0.8)
+    rgba(0, 0, 0, 0.25),
+    rgba(0, 0, 0, 0.05)
     ),
-    url('../images/tramas/trama1.png');
+    url('../images/fondo1.jpg');
 }
 
 .ingresos .img-ingresos h1,

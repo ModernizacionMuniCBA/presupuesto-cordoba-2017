@@ -60,13 +60,13 @@ function dibujarD3_participativo() {
         detalle[nivel] = concepto.toLowerCase().split(' ').join('_');
 
         if(nivel_tabla == "9"){
-          $("#tbody-participativo").append('<tr class="nivel-1"><th scope="row">'+nivel_tabla+'</th><td>'+concepto+'</td><td>'+porcentaje+'</td><td>$'+monto.toLocaleString("es-AR")+'</td></tr>');
+          $("#tbody-participativo").append('<tr class="nivel-1"><td>'+concepto+'</td><td>'+porcentaje+'</td><td>$'+monto.toLocaleString("es-AR")+'</td></tr>');
         }else{
           if(nivel == 3){
-            $("#tbody-participativo").append('<tr class="table-clickable nivel-'+nivel+'" data-toggle="collapse" data-target="#texto-'+detalle[2]+'-'+detalle[3]+'"><th scope="row">'+nivel_tabla+'</th><td>'+concepto+'</td><td>'+porcentaje+'</td><td>$'+monto.toLocaleString("es-AR")+'</td></tr>');
-            $("#tbody-participativo").append('<tr class="collapse gray" id="texto-'+detalle[2]+'-'+detalle[3]+'"><td colspan="4">'+texto+'</td></tr>');
+            $("#tbody-participativo").append('<tr class="table-clickable nivel-'+nivel+'" data-toggle="collapse" data-target="#texto-'+detalle[2]+'-'+detalle[3]+'"><td>'+concepto+'</td><td>'+porcentaje+'</td><td>$'+monto.toLocaleString("es-AR")+'</td></tr>');
+            $("#tbody-participativo").append('<tr class="collapse gray" id="texto-'+detalle[2]+'-'+detalle[3]+'"><td colspan="3">'+texto+'</td></tr>');
           }else{
-            $("#tbody-participativo").append('<tr class="nivel-'+nivel+'"><th scope="row">'+nivel_tabla+'</th><td>'+concepto+'</td><td>'+porcentaje+'</td><td>$'+monto.toLocaleString("es-AR")+'</td></tr>');
+            $("#tbody-participativo").append('<tr class="nivel-'+nivel+'"><td>'+concepto+'</td><td>'+porcentaje+'</td><td>$'+monto.toLocaleString("es-AR")+'</td></tr>');
 
           }
         }

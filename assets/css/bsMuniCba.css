@@ -366,6 +366,118 @@ nav ul li a:before {
   width: 100%;
 }
 
+/* FOOTER */
+footer{
+  padding-bottom: 20px;
+}
+.footer-logos{
+  display: flex;
+  align-items: center;
+  margin-top: 100px;
+}
+.footer-logos-row{
+  margin: 0 auto;
+}
+.texto-derecha{
+  text-align: right;
+}
+.footer-derecha{
+  border-left: 4px solid #23CF5F;
+}
+.tituloGA-footer{
+  color: #23CF5F;
+  font-family: "Gotham Rounded";
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1.5em;
+  line-height: 1em;
+  margin-bottom: 5px;
+}
+.redesSociales{
+    padding-bottom: 15px;
+}
+.redesSociales a{
+  color: #23CF5F;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+}
+.redesSociales a:hover{
+  color: #FFF;
+}
+.redesSociales a:hover span{
+  border: 7px solid #23CF5F;
+  border-radius: 50%;
+}
+.redesSociales a:hover .fa-stack-2x{
+  margin-top: -4px;
+  font-size: 1.75em;
+  margin-left: -2.5px;
+}
+.redesSociales a:hover .fa-stack-1x{
+  color: #23CF5F;
+  margin-top: -6.5px;
+}
+
+.redesSociales a:hover .github .fa-stack-2x{
+  margin-top: -5px;
+  font-size: 1.85em;
+  margin-left: -3px;
+}
+.redesSociales a:hover .github .fa-stack-1x{
+  color: #23CF5F;
+  margin-top: -7px;
+}
+
+.redesSociales .fa-stack-1x{
+  margin-top: 1px;
+}
+
+.redesSociales .github .fa-stack-1x{
+  margin-top: 0px;
+}
+
+
+.lista-links a{
+  color: #3A3A3A;
+  text-transform: uppercase;
+  font-size: 1.25em;
+  font-weight: 700;
+}
+
+.lista-links a:hover{
+  color: #23CF5F;
+}
+
+.lista-links .link{
+    margin: 20px 0px;
+}
+.lista-links .link.tyc{
+  margin-bottom: 10px;
+}
+.lista-links .link.licencias-btn-holder{
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+.lista-links .separador-link{
+  height: 3px;
+  width: 15px;
+  background-color: #3A3A3A;
+}
+
+footer .copyr{
+  color: #23CF5F;
+  font-size: 1.3em;
+  margin-top: 20px;
+}
+.licenses-close-btn{
+  font-size: 1.5em;
+  margin-top: 10px;
+}
+.licenses-close-btn:hover{
+  cursor: pointer;
+}
+
 
 
 /*		4. Botones		*/

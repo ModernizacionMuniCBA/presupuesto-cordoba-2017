@@ -93,10 +93,10 @@
   .deudas .img-deudas h1{
     font-size: 5em;
   }
-  .ingresos .img-ingresos, .gastos .img-gastos, .deudas .img-deudas {
+  .ingresos .img-ingresos, .gastos .img-gastos,  .img-deudas {
     background-color: #1BA34B;
-    background-repeat: repeat;
-    /* background-size: 300px; */
+    background-repeat: no-repeat;
+    background-size: cover;
     width: 100%;
     height: 350px;
     margin-top: 0px;
