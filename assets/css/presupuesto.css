@@ -721,7 +721,7 @@ hr {
 
 .table-striped.sky>tbody>tr:nth-of-type(odd).nivel-1,
 .table-striped.sky>tbody>tr:nth-of-type(even).nivel-1 {
-    background-color: #4FAEAD;
+    background-color: #3f8b8a;
     color: #FFF;
     font-weight: 500;
 }
@@ -729,14 +729,24 @@ hr {
     background-color: #FFF;
 }
 .table-striped.sky>tbody>tr.nivel-2 {
-    background-color: #83c7c6;
+    background-color: #4faead;
     color:#1f4444;
     font-weight: 500;
 }
 .table-striped.especial.sky>tbody>tr.nivel-3 {
-    background-color: #b8dfde;
+    background-color: #71bfbe;
     font-weight: 500;
 }
+
+.table.especial.deeper.sky>tbody>tr.nivel-4 {
+    background-color: #94cfce;
+    font-weight: 500;
+}
+.table.especial.deeper.sky>tbody>tr.nivel-5 {
+    background-color: #b7dfde;
+    font-weight: 500;
+}
+
 .table-clickable:hover{
   cursor: pointer;
 }

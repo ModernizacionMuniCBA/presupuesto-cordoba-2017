@@ -5,14 +5,15 @@ function dibujarD3_gastos_tribunal_faltas() {
     var detalle = [];
     // console.log(dataJSON.feed.entry);
     $.each( dataJSON.feed.entry, function( key, val ) {
-      var partida = val.gsx$partidas.$t;
-      var nivel_princ = parseInt(partida) + 2;
+      var partida = val.gsx$partida.$t;
+      var nivel = val.gsx$nivel.$t;
+      var nivel_princ = parseInt(nivel) + 2;
       var concepto = val.gsx$concepto.$t;
       var total = val.gsx$tribunaldecuentas.$t;
       if(total == ""){
         total= 0 ;
       }
-      $("#tbody-gastos-tribunal-cuentas").append('<tr class="nivel-'+nivel_princ+'"><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
+      $("#tbody-gastos-tribunal-cuentas").append('<tr class="nivel-'+nivel_princ+'"><th>'+partida+'</th><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
       });
 });
 }

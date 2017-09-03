@@ -17,14 +17,15 @@ function llenar_tabla_ejecutivo(datos, juris){
   var detalle = []
   $.each( datos, function( key, val ) {
     var partida = val.gsx$partida.$t;
-    var nivel = parseInt(partida) + 2;
+    var nivel = val.gsx$nivel.$t;
+    var nivel_princ = parseInt(nivel) + 2;
     var concepto = val.gsx$concepto.$t;
     var total = val['gsx$'+juris].$t;
     detalle[nivel]=concepto.toLowerCase().split(' ').join('_');
     if(total == ""){
       total = 0;
     }
-    $("#tbody-gastos-ejecutivo").append('<tr class="nivel-'+nivel+'"><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
+    $("#tbody-gastos-ejecutivo").append('<tr class="nivel-'+nivel_princ+'"><th>'+partida+'</th><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
 
     // if(nivel < 3 ){
     //   $("#tbody-gastos-ejecutivo").append('<tr class="nivel-'+nivel+'"><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
