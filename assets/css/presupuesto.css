@@ -68,7 +68,7 @@ body{
 }
 
 .footer-gaMuniCba{
-  margin-top: 100px;
+  margin-top: 50px;
   background-color: #FFFFFF;
   border-top: 5px solid #23CF5F;
   padding-top: 20px;
@@ -205,7 +205,7 @@ body{
   font-size: 1.3em;
 }
 .home .home-body{
-  padding: 50px 15px;
+  padding: 50px 15px 0px 15px;
   font-size: 1.3em;
 }
 
@@ -841,6 +841,10 @@ hr {
 #afectacion-especifica-propios{
   height: 450px;
   float: right;
+}
+#afectacion-especifica-no_propios #d3plus_graph_xticks .tick,
+#afectacion-especifica-propios #d3plus_graph_xticks .tick{
+  display: none;
 }
 #viz-clasificacion-gasto{
   height: 600px;
