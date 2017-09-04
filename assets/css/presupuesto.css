@@ -154,20 +154,22 @@ body{
 
 .home div.link-infografia{
   height: 200px;
-  border-bottom: 1px solid #d0d0d0;
+  border-bottom: 1px solid rgba(0,0,0,.2);
   display: inline-block;
   width: 100%;
-  color: #23CF5F;
-  background-color: #FFF;
+  color: #FFF;
+  background-color: #6fcacf;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
+.home .col-xs-12:nth-child(odd) .link-infografia {
+  background-color: #a7c23d;
+}
 
 .home div.link-infografia:hover{
   color: #1BA34B;
-  background-color: #EEEEEE;
 }
 .home div.link-infografia h2{
   font-weight: 500;
@@ -181,17 +183,19 @@ body{
   height: 150px;
   display: inline-block;
   width: 100%;
-  color: #23CF5F;
+  color: #FFF;
   padding: 5px;
-  background-color: #FFF;
+  background-color: #6fcacf;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  border-bottom: 1px solid #d0d0d0;
+  border-bottom: 1px solid rgba(0,0,0,.2);
+}
+.home .col-xs-12:nth-child(even) .text-infografia {
+  background-color: #a7c23d;
 }
 .home div.text-infografia:hover{
-  background-color: #EEEEEE;
   color:#1BA34B;
 }
 .home div.text-infografia h2{
