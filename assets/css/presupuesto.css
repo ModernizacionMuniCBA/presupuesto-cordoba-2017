@@ -613,6 +613,26 @@ hr {
   border-color:#7EB354;
 }
 
+#navbar .navbar-nav .bajar-datos a {
+  text-align: center;
+  margin-top: 38px;
+  color: #FFFFFF;
+  line-height: 1em;
+  background-color: #f8931d;
+  padding: 14px 18px;
+}
+#navbar .navbar-nav .bajar-datos a:hover {
+  background-color: #6fcacf;
+}
+#navbar .navbar-nav .bajar-datos a::after {
+  display: none;
+}
+#navbar .navbar-nav .bajar-datos a span:first-child {
+  letter-spacing: 1px;
+}
+#navbar .navbar-nav .bajar-datos a span:last-child {
+  font-size: 11px;
+}
 
 .navbar-nav .year a.dropdown-toggle{
   color: #23CF5F;
