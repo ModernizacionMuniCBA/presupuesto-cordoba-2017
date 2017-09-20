@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>Gastos: Concejo Deliberante - Presupuesto - Municipalidad de Córdoba</title>
+  <title>Ejecuciones Presupuestarias - Presupuesto - Municipalidad de Córdoba</title>
 
   <!-- Bootstrap -->
   <link href="assets/css/bootstrap.min.css" rel="stylesheet">
@@ -48,7 +48,7 @@
       <a href="ingresos.html"><li>Ingresos <span class="icon"></span></li></a>
       <a href="gastos.html"><li>Gastos <span class="icon"></span></li></a>
       <a href="presupuesto-participativo.html"><li>Presupuesto Participativo <span class="icon"></span></li></a>
-      <a href="ejecuciones-presupuestarias.html"><li>Ejecuciones Presupuestarias <span class="icon"></span></li></a>
+      <a href="ejecuciones-presupuestarias.html" class="active"><li>Ejecuciones Presupuestarias <span class="icon"></span></li></a>
       <a target="_blank" href="https://gobiernoabierto.cordoba.gob.ar/data/datos-abiertos/categoria/economia/presupuestos/14"><li>Descargá todos los datos <span class="icon"></span></li></a>
     </ul>
   </nav>
@@ -102,7 +102,7 @@
               </a>
             </li>
             <li class="dos-lineas">
-              <a href="ejecuciones-presupuestarias.html">
+              <a href="ejecuciones-presupuestarias.html" class="active">
                 Ejecuciones<br/>Presupuestarias
               </a>
             </li>
@@ -142,24 +142,35 @@
   <div class="container-fluid inFContainer gastos">
     <div class="row">
       <div class="col-xs-12 img-gastos img-especial">
-        <h1>Gastos: Concejo Deliberante</h1>
+        <h1>Ejecuciones Presupuestarias</h1>
       </div>
-      <div class="col-xs-12 gastos-body pEjecutivo">
+      <div class="col-xs-12">
+        <p class="definicion">
+          Los siguientes datos corresponden a las ejecuciones del presupuesto del 2º trimestre de 2017. Esta información se actualiza de manera trimestral.
+        </p>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-md-6">
+          <div id="grafico-gastos-corrientes"></div>
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <div id="grafico-gastos-capital"></div>
+        </div>
+      </div>
+      <div class="col-xs-12">
         <div class="table-responsive">
-          <table class="table table-striped sky especial deeper">
+          <table class="table table-striped green">
             <thead>
               <tr>
-                <th style="width: 10%;"></th>
-                <th style="width: 70%;">Concepto</th>
-                <th style="width: 20%;">Total</th>
+                <th style="width: 60%;">Clasificación</th>
+                <th style="width: 20%;">Ejecutado *</th>
+                <th style="width: 20%;">Definitivo</th>
               </tr>
             </thead>
-            <tbody id="tbody-gastos-concejo-deliberante">
-            </tbody>
+            <tbody id="tbody-ejecuciones"></tbody>
           </table>
         </div>
-        <a target="_blank" href="https://docs.google.com/spreadsheets/d/1ggtT2Mv0OnAtSASEvg_LTVthzehuotx8_GvrdY58Kaw/export?exportFormat=xlsx" class="btn btn-default sky">Descargar Excel</a>
-        <a target="_blank" href="https://docs.google.com/spreadsheets/d/1ggtT2Mv0OnAtSASEvg_LTVthzehuotx8_GvrdY58Kaw/export?format=csv&id=12aHIOCmpAYYOx2mBoO_IzAqfjeOUX0AnX7BheISd4go" class="btn btn-default sky">Descargar CSV</a>
+        <p>(*) Corresponde al Compromiso depurado</p>
       </div>
     </div>
   </div>
@@ -222,6 +233,9 @@
   <script src="assets/js/menuController.js"></script>
   <script src="assets/js/loader.js"></script>
   <script src="assets/js/index.js"></script>
-  <script src="assets/js/deliberanteGrapher.js"></script>
+  
+  <script src="assets/js/d3.js"></script>
+  <script src="assets/js/d3plus.js"></script>
+  <script src="assets/js/ejecucionesGrapher.js"></script>
 </body>
 </html>

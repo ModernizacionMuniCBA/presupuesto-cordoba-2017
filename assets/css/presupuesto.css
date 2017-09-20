@@ -192,6 +192,12 @@ body{
   text-align: center;
   border-bottom: 1px solid rgba(0,0,0,.2);
 }
+.dos-lineas{
+  text-align: center;
+}
+.navbar-gaMuniCba .dos-lineas a{
+  margin-top: 50px !important;
+}
 .home .col-xs-12:nth-child(even) .text-infografia {
   background-color: #a7c23d;
 }
@@ -211,6 +217,10 @@ body{
 .home .home-body{
   padding: 50px 15px 0px 15px;
   font-size: 1.3em;
+}
+
+.botones-quien {
+  padding: 20px 0;
 }
 
 .ingresos .ingresos-body,

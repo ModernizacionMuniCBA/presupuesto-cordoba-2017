@@ -48,6 +48,7 @@
       <a href="ingresos.html"><li>Ingresos <span class="icon"></span></li></a>
       <a href="gastos.html" class="active"><li>Gastos <span class="icon"></span></li></a>
       <a href="presupuesto-participativo.html"><li>Presupuesto Participativo <span class="icon"></span></li></a>
+      <a href="ejecuciones-presupuestarias.html"><li>Ejecuciones Presupuestarias <span class="icon"></span></li></a>
       <a target="_blank" href="https://gobiernoabierto.cordoba.gob.ar/data/datos-abiertos/categoria/economia/presupuestos/14"><li>Descargá todos los datos <span class="icon"></span></li></a>
     </ul>
   </nav>
@@ -96,9 +97,14 @@
                 Gastos
               </a>
             </li>
-            <li>
+            <li class="dos-lineas">
               <a href="presupuesto-participativo.html">
-                Presupuesto Participativo
+                Presupuesto<br/>Participativo
+              </a>
+            </li>
+            <li class="dos-lineas">
+              <a href="ejecuciones-presupuestarias.html">
+                Ejecuciones<br/>Presupuestarias
               </a>
             </li>
             <li class="dropdown year">
@@ -157,7 +163,7 @@
                 <div class="circle-clasificacion" id="circle-institucional">
                   <div class="texto">
                     <h3 class="clasificacion-title">Institucional</h3>
-                    <p class="clasificacion-text">¿Quién?</p>
+                    <p class="clasificacion-text">¿Quién gasta?</p>
                   </div>
                 </div>
               </div>
@@ -167,7 +173,7 @@
                 <div class="circle-clasificacion" id="circle-objeto">
                   <div class="texto">
                     <h3 class="clasificacion-title">Por Objeto</h3>
-                    <p class="clasificacion-text">¿En qué?</p>
+                    <p class="clasificacion-text">¿En qué gasta?</p>
                   </div>
                 </div>
               </div>
@@ -182,17 +188,17 @@
                 <div class="circle-clasificacion" id="circle-finalidad">
                   <div class="texto">
                     <h3 class="clasificacion-title">Por Finalidad y Función</h3>
-                    <p class="clasificacion-text">¿Para qué?</p>
+                    <p class="clasificacion-text">¿Para qué se gasta?</p>
                   </div>
                 </div>
               </div>
             </div>
             <div class="row">
               <div class="col-xs-12 col-xs-offset-0 col-sm-4 col-sm-offset-4 col-md-2 col-md-offset-5">
-                <div class="circle-clasificacion" id="circle-economica">
+                <div class="circle-clasificacion" id="circle-ejecucion">
                   <div class="texto">
-                    <h3 class="clasificacion-title">Económica</h3>
-                    <p class="clasificacion-text">¿Cómo?</p>
+                    <h3 class="clasificacion-title">Ejecución del gasto</h3>
+                    <p class="clasificacion-text">¿Cuánto se gasta?</p>
                   </div>
                 </div>
               </div>
@@ -213,7 +219,7 @@
                 <div class="circle-clasificacion mob" id="circle-objeto-mob">
                   <div class="texto">
                     <h3 class="clasificacion-title">Por Objeto</h3>
-                    <p class="clasificacion-text">¿En qué?</p>
+                    <p class="clasificacion-text">¿En qué se gasta?</p>
                   </div>
                 </div>
               </div>
@@ -221,7 +227,7 @@
                 <div class="circle-clasificacion mob" id="circle-institucional-mob">
                   <div class="texto">
                     <h3 class="clasificacion-title">Institucional</h3>
-                    <p class="clasificacion-text">¿Quién?</p>
+                    <p class="clasificacion-text">¿Quién gasta?</p>
                   </div>
                 </div>
               </div>
@@ -231,15 +237,15 @@
                 <div class="circle-clasificacion mob" id="circle-finalidad-mob">
                   <div class="texto">
                     <h3 class="clasificacion-title">Por Finalidad y Función</h3>
-                    <p class="clasificacion-text">¿Para qué?</p>
+                    <p class="clasificacion-text">¿Para qué se gasta?</p>
                   </div>
                 </div>
               </div>
               <div class="col-xs-6">
-                <div class="circle-clasificacion mob" id="circle-economica-mob">
+                <div class="circle-clasificacion mob" id="circle-ejecucion-mob">
                   <div class="texto">
-                    <h3 class="clasificacion-title">Económica</h3>
-                    <p class="clasificacion-text">¿Cómo?</p>
+                    <h3 class="clasificacion-title">Ejecución del Gasto</h3>
+                    <p class="clasificacion-text">¿Cuánto se gasta?</p>
                   </div>
                 </div>
               </div>
@@ -249,14 +255,49 @@
       </div>
       <div class="col-xs-12 gastos-body">
         <div class="row">
-          <div class="col-xs-12">
-            <p class="definicion">
-              Generalmente se fusionan estas 4 clasificaciones y se muestra ¿En qué se gasta? y ¿Por qué se gasta?.
-            </p>
+          <div id="quien-gasta" class="col-xs-12" style="display:none">
+            <div class="row botones-quien">
+              <div class="col-xs-3">
+                <a href="gastos-poder-ejecutivo.html">
+                  <div class="button-ingresos sky">
+                    <div class="texto">
+                      <span>Poder Ejecutivo</span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-xs-3">
+                <a href="gastos-concejo-deliberante.html">
+                  <div class="button-ingresos green">
+                    <div class="texto">
+                      <span>Concejo Deliberante</span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-xs-3">
+                <a href="gastos-tribunal-de-cuentas.html">
+                  <div class="button-ingresos sky">
+                    <div class="texto">
+                      <span>Tribunal de Cuentas</span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-xs-3">
+                <a href="gastos-tribunal-de-faltas.html">
+                  <div class="button-ingresos green">
+                    <div class="texto">
+                      <span>Tribunal de Faltas</span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
           </div>
           <div class="nav-tabs">
             <div class="col-xs-12 col-xs-offset-0 col-md-4 col-md-offset-2">
-              <a href="#en-que" aria-controls="en-que" role="tab" data-toggle="tab">
+              <a id="link-en-que" href="#en-que" aria-controls="en-que" role="tab" data-toggle="tab">
                 <div class="button-ingresos sky">
                   <div class="texto">
                     <span>¿En qué se gasta?</span>
@@ -266,7 +307,7 @@
               </a>
             </div>
             <div class="col-xs-12 col-md-4">
-              <a href="#para-que" aria-controls="para-que" role="tab" data-toggle="tab">
+              <a id="link-para-que" href="#para-que" aria-controls="para-que" role="tab" data-toggle="tab">
                 <div class="button-ingresos green">
                   <div class="texto">
                     <span>¿Para qué se gasta?</span>
@@ -545,13 +586,45 @@
 
   <script>
   $(document).ready(function() {
+    var $quien = $("#quien-gasta");
+
       $('#circle-centro').connections({ to: '.circle-clasificacion' });
       $('#circle-centro-mob').connections({ to: '.circle-clasificacion.mob' });
+
+      $('#circle-objeto-mob,#circle-objeto').click(function(){
+        $quien.hide();
+        $("#link-en-que").click();
+        window.location = "#en-que";
+        window.scrollBy(0,-100);
+      });
+      $('#circle-finalidad-mob,#circle-finalidad').click(function(){
+        $quien.hide();
+        $("#link-para-que").click();
+        window.location = "#para-que";
+        window.scrollBy(0,-100);
+      });
+      $('#circle-institucional-mob,#circle-institucional').click(function(){
+        $quien.fadeIn();
+        window.location = "#quien-gasta";
+        window.scrollBy(0,-150);
+      });
+      $('#circle-ejecucion-mob,#circle-ejecucion').click(function(){
+        window.location = "/presupuesto-cordoba-2017/ejecuciones-presupuestarias.html";
+      });
+
+      $("#link-en-que,#link-para-que").click(function(){
+        $quien.hide();
+      });
   });
   $(window).on('resize', function(){
     $('#circle-centro').connections('update');
     $('#circle-centro-mob').connections('update');
   });
+  if (window.location.hash == "#quien-gasta") {
+    setTimeout(function(){
+      $("#circle-institucional").click();
+    }, 2000);
+  }
   </script>
 </body>
 </html>

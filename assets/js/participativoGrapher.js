@@ -46,7 +46,7 @@ function dibujarD3_participativo() {
 
     $.getJSON("https://spreadsheets.google.com/feeds/list/1uA9UbORQPEpzDVBpvq4UsmiA0eOvAdFCMg31iXd1XoE/or4ki2f/public/values?alt=json", function( dataJSON2 ) {
       var datos = [];
-      console.log(dataJSON2.feed.entry);
+      // console.log(dataJSON2.feed.entry);
       var detalle = []
       $.each( dataJSON2.feed.entry, function( key, val ) {
 

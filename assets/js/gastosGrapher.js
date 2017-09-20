@@ -69,7 +69,7 @@ function dibujarD3_gastos() {
       }
     });
 
-    console.log(datos);
+    //console.log(datos);
     var data = d3.nest()
                 .key(function(d) { return d.rec1; })
                 .key(function(d) { return d.rec2; })
@@ -180,12 +180,16 @@ function dibujarD3_gastos_finalidad() {
     $("#gastos-finalidad").empty();
     var datos = [];
     var i = 0;
-    $.each( dataJSON.feed.entry, function( key, val ) {
+    var entradas = dataJSON.feed.entry;
+    $.each( entradas, function( key, val ) {
       i += 1;
 
       var concepto = val.gsx$clasificaciónporfinalidadyfunción.$t;
       var total = val.gsx$total.$t;
-      if(i>1){
+      if (concepto.toLowerCase == "total") {
+console.log(i);
+      }
+      if(i>1 && (i+1) !== entradas.length){
         var linea = {"key": concepto,
                 "valor": parseInt(total.split('.').join(""))}
         datos.push(linea);
@@ -305,7 +309,7 @@ function dibujarD3_gastos_finalidad_funcion() {
             }
           }
       })
-      .dev(true)
+      // .dev(true)
       .draw();
       already_printed_finalidad_funcion=true;
 
