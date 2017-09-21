@@ -19,6 +19,7 @@ function dibujarD3_ejecuciones_presupuestarias() {
       var concepto = val.gsx$denominacion.$t;
       var ejecutado = val.gsx$ejecutado.$t.split('.').join("");
       var definitivo = val.gsx$presupuestodefinitivo.$t.split('.').join("");
+      var porcentajeEjecucion = val.gsx$deejecución.$t;
 
       if(i != entradas.length){
         var linea = {
@@ -32,11 +33,11 @@ function dibujarD3_ejecuciones_presupuestarias() {
           capital.push(linea);
         }
         if(!already_printed_ejecuciones){
-          $("#tbody-ejecuciones").append('<tr class="nivel-3"><td>'+concepto+'</td><td>$'+Number(ejecutado).toLocaleString("es-AR")+'</td><td>$'+Number(definitivo).toLocaleString("es-AR")+'</td></tr>');
+          $("#tbody-ejecuciones").append('<tr class="nivel-3"><td>'+concepto+'</td><td>$'+Number(ejecutado).toLocaleString("es-AR")+'</td><td>$'+Number(definitivo).toLocaleString("es-AR")+'</td><td>'+porcentajeEjecucion+'</td></tr>');
         }
       }else{
         if(!already_printed_ejecuciones){
-          $("#tbody-ejecuciones").append('<tr class="nivel-2"><td>'+concepto+'</td><td>$'+Number(ejecutado).toLocaleString("es-AR")+'</td><td>$'+Number(definitivo).toLocaleString("es-AR")+'</td></tr>');
+          $("#tbody-ejecuciones").append('<tr class="nivel-2"><td>'+concepto+'</td><td>$'+Number(ejecutado).toLocaleString("es-AR")+'</td><td>$'+Number(definitivo).toLocaleString("es-AR")+'</td><td>'+porcentajeEjecucion+'</td></tr>');
         }
       }
     });
@@ -52,7 +53,6 @@ function dibujarD3_ejecuciones_presupuestarias() {
       .id(["key"])
       .size("valor")
       .height(400)
-      .title("Gastos Corrientes")
       .format("es_ES")
       .format({
           "number": function(number, key) {
@@ -76,7 +76,6 @@ function dibujarD3_ejecuciones_presupuestarias() {
       .tooltip({"children":0})
       .data(capital)
       .type("pie")
-      .title("Gastos de Capital")
       .id(["key"])
       .size("valor")
       .height(400)
