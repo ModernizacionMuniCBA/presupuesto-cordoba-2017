@@ -714,6 +714,9 @@ hr {
     background-color: #bfd7f2;
     font-weight: 500;
 }
+.colapsable .nivel-3,.pointer {
+  cursor: pointer;
+}
 
 .table-ejecutivo{
   margin-top: 20px;

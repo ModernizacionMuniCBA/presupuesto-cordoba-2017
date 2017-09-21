@@ -331,7 +331,7 @@
                 </div>
                 <div class="col-xs-12 col-md-12">
                   <div class="table-responsive">
-                    <table class="table table-striped sky especial">
+                    <table class="table colapsable table-striped sky especial">
                       <thead>
                         <tr>
                           <th style="width: 10%;"></th>
@@ -620,6 +620,24 @@
 
       $("#link-en-que,#link-para-que").click(function(){
         $quien.hide();
+      });
+
+      $("#tbody-clasificacion-gasto").on("click", ".nivel-3", function(){
+        $filas = $(this).nextUntil(".nivel-3,.nivel-2");
+        if ($filas.length > 0) {
+          $filas.slideToggle();
+        }
+      });
+
+      $("#tbody-clasificacion-gasto").on("click", ".nivel-2", function(){
+        let $this = $(this);
+        if ($this.next().hasClass('nivel-4')) {
+          $this.addClass('pointer');
+          $filas = $this.nextUntil(".nivel-3,.nivel-2");
+          if ($filas.length > 0) {
+            $filas.slideToggle();
+          }
+        }
       });
   });
   $(window).on('resize', function(){

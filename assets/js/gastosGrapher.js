@@ -53,14 +53,14 @@ function dibujarD3_gastos() {
         }
         if(already_printed_clasificacion == false){
           if(nivel <=4){
-            var partida
             if(partida=="-2"){
               $("#tbody-clasificacion-gasto").append('<tr class="nivel-'+nivel+'"><th scope="row"> </th><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
             }else{
+              var mostrar = nivel == 4 ? " style='display:none'":'';
               if(i>1){
-                $("#tbody-clasificacion-gasto").append('<tr class="nivel-'+nivel+'"><th scope="row">'+partida+'</th><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
+                $("#tbody-clasificacion-gasto").append('<tr'+mostrar+' class="nivel-'+nivel+'"><th scope="row">'+partida+'</th><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
               }else{
-                $("#tbody-clasificacion-gasto").append('<tr class="nivel-1"><th scope="row">'+partida+'</th><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
+                $("#tbody-clasificacion-gasto").append('<tr'+mostrar+' class="nivel-1"><th scope="row">'+partida+'</th><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
               }
             }
 
