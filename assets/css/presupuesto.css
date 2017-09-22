@@ -697,6 +697,9 @@ hr {
     color: #FFF;
     font-weight: 500;
 }
+.table .total {
+  background-color:#666 !important;
+}
 .table.blue{
   border: 1px solid #d0d0d0;
 }
