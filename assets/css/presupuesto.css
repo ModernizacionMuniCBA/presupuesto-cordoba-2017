@@ -153,7 +153,7 @@ body{
 }
 
 .home div.link-infografia{
-  height: 200px;
+  height: 150px;
   border-bottom: 1px solid rgba(0,0,0,.2);
   display: inline-block;
   width: 100%;
@@ -163,6 +163,10 @@ body{
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+.home div.link-infografia .menor{
+  font-size: 2.1em;
+  letter-spacing: -1px;
 }
 .home .col-xs-12:nth-child(odd) .link-infografia {
   background-color: #a7c23d;
@@ -192,6 +196,12 @@ body{
   text-align: center;
   border-bottom: 1px solid rgba(0,0,0,.2);
 }
+.dos-lineas{
+  text-align: center;
+}
+.navbar-gaMuniCba .dos-lineas a{
+  margin-top: 50px !important;
+}
 .home .col-xs-12:nth-child(even) .text-infografia {
   background-color: #a7c23d;
 }
@@ -211,6 +221,10 @@ body{
 .home .home-body{
   padding: 50px 15px 0px 15px;
   font-size: 1.3em;
+}
+
+.botones-quien {
+  padding: 20px 0;
 }
 
 .ingresos .ingresos-body,
@@ -699,6 +713,9 @@ hr {
 .table.blue.especial>tbody>tr.nivel-3 {
     background-color: #bfd7f2;
     font-weight: 500;
+}
+.colapsable .nivel-3,.pointer {
+  cursor: pointer;
 }
 
 .table-ejecutivo{

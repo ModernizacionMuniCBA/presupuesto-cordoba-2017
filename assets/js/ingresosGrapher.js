@@ -278,7 +278,7 @@ function dibujarD3_AE() {
     var data = d3.nest()
                 .entries(datos_propios);
 
-    console.log(datos_propios);
+    // console.log(datos_propios);
     var visualization = d3plus.viz()
       .container("#afectacion-especifica-propios")
       .background("#EEEEEE")

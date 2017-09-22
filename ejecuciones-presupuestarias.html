@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>Presupuesto Participativo - Municipalidad de Córdoba</title>
+  <title>Ejecuciones Presupuestarias - Presupuesto - Municipalidad de Córdoba</title>
 
   <!-- Bootstrap -->
   <link href="assets/css/bootstrap.min.css" rel="stylesheet">
@@ -47,8 +47,8 @@
       <a href="index.html"><li>Inicio <span class="icon"></span></li></a>
       <a href="ingresos.html"><li>Ingresos <span class="icon"></span></li></a>
       <a href="gastos.html"><li>Gastos <span class="icon"></span></li></a>
-      <a href="ejecuciones-presupuestarias.html"><li>Ejecuciones Presupuestarias <span class="icon"></span></li></a>
-      <a href="presupuesto-participativo.html" class="active"><li>Presupuesto Participativo <span class="icon"></span></li></a>
+      <a href="ejecuciones-presupuestarias.html" class="active"><li>Ejecuciones Presupuestarias <span class="icon"></span></li></a>
+      <a href="presupuesto-participativo.html"><li>Presupuesto Participativo <span class="icon"></span></li></a>
       <a target="_blank" href="https://gobiernoabierto.cordoba.gob.ar/data/datos-abiertos/categoria/economia/presupuestos/14"><li>Descargá todos los datos <span class="icon"></span></li></a>
     </ul>
   </nav>
@@ -97,12 +97,12 @@
               </a>
             </li>
             <li class="dos-lineas">
-              <a href="ejecuciones-presupuestarias.html">
+              <a href="ejecuciones-presupuestarias.html" class="active">
                 Ejecuciones<br/>Presupuestarias
               </a>
             </li>
             <li class="dos-lineas">
-              <a href="presupuesto-participativo.html" class="active">
+              <a href="presupuesto-participativo.html">
                 Presupuesto<br/>Participativo
               </a>
             </li>
@@ -141,76 +141,39 @@
   <!-- Begin page content -->
   <div class="container-fluid inFContainer gastos">
     <div class="row">
-      <div class="col-xs-12 img-gastos">
-        <h1>Presupuesto Participativo</h1>
+      <div class="col-xs-12 img-gastos img-especial">
+        <h1>Ejecuciones Presupuestarias</h1>
       </div>
-      <div class="col-xs-12 gastos-body">
-        <div class="col-sm-6 text-participativoGraph">
-          <p class="definicion">
-            El Presupuesto Participativo de la ciudad de Córdoba, según normativa vigente, cuenta
-hasta con el diez por ciento (10%) del presupuesto propio destinado a obra
-pública (Plan de trabajos públicos) y se complementa con lo no ejecutado del presupuesto participativo del año anterior. Para el año 2017, este monto asciende a $ 167.445.426. Dicho monto se compone por
-$118.766.010 que representa el 10% del Plan de Trabajos Públicos con fondos propios previstos para el ejercicio 2017 y $ 48.679.516 que representa al saldo del presupuesto
-participativo de 2016.
-            <br />
-            <br />
-            Todo gasto en presupuesto participativo se realiza para inversión en obra nueva y no así para tareas de mantenimiento
-            y/o reparación.
-          </p>
-
+      <div class="col-xs-12">
+        <p class="definicion">
+          Los siguientes datos corresponden a las ejecuciones del presupuesto del 2º trimestre de 2017. Esta información se actualiza de manera trimestral.
+        </p>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-md-6">
+          <h3 class="text-center">Gastos Corrientes</h3>
+          <div id="grafico-gastos-corrientes"></div>
         </div>
-        <div class="col-sm-6">
-          <div id="participativoGraph"></div>
+        <div class="col-xs-12 col-md-6">
+          <h3 class="text-center">Gastos de Capital</h3>
+          <div id="grafico-gastos-capital"></div>
         </div>
-        <div class="col-xs-12">
-          <h3>¿Cómo se decide el destino de ese monto?</h3>
-          <p>
-            En los talleres de presupuesto participativo que se llevan a cabo en los distintos
-            Centros de Participación Comunal (CPC) de la ciudad. De estos encuentros surge la matriz presupuestaria con
-            la distribución del monto asignado por rubro.
-            <br />
-            <br />
-            Existen índices de distribución presupuestaria que toman como referencia el índice poblacional por Centros
-             de Participación Comunal (CPC).
-            <br />
-            <br />
-            Como resultado de los talleres y de los índices de distribución presupuestaria se elabora la MATRIZ PRESUPUESTARIA.
-             Dicha Matriz es la consecuencia del trabajo compartido entre los vecino, los técnicos municipales y la votación
-            de los proyectos.
-          </p>
-            <h3>Metodología de los talleres</h3>
-            <p>
-              Lo vecinos llegan a la instancia del taller con las demandas barriales ya detectadas en el diagnóstico previo.
-              Luego del trabajo conjunto entre vecinos y técnicos municipales, se determina un rango de prioridades en equilibrio entre las necesidades detectadas y el monto establecido por barrio.
-           
-              <br />
-              <br />
-              La decisión es trabajada mediante consenso y votación, tomando como base el principio de solidaridad entre los barrios
-              
-              <br />
-              <br />
-              Los talleres se realizan en el segundo semestre de cada año, para tomar decisiones sobre el presupuesto participativo del año siguiente.
-            </p>
-
-            <div class="table-responsive">
-              <table class="table blue">
-                <thead>
-                  <tr>
-                    <th style="width: 65%;">Programa</th>
-                    <th style="width: 15%;">Porcentaje</th>
-                    <th style="width: 20%;">Monto</th>
-                  </tr>
-                </thead>
-                <tbody id="tbody-participativo">
-                </tbody>
-              </table>
-            </div>
-            <a target="_blank" href="https://docs.google.com/spreadsheets/d/1uA9UbORQPEpzDVBpvq4UsmiA0eOvAdFCMg31iXd1XoE/export?exportFormat=xlsx" class="btn btn-default blue">Descargar Excel</a>
-            <a target="_blank" href="https://docs.google.com/spreadsheets/d/1uA9UbORQPEpzDVBpvq4UsmiA0eOvAdFCMg31iXd1XoE/export?format=csv&id=1uA9UbORQPEpzDVBpvq4UsmiA0eOvAdFCMg31iXd1XoE&gid=1640262061" class="btn btn-default blue">Descargar CSV</a>
-
+      </div>
+      <div class="col-xs-12">
+        <div class="table-responsive">
+          <table class="table table-striped green">
+            <thead>
+              <tr>
+                <th style="width: 50%;">Clasificación</th>
+                <th style="width: 20%;">Ejecutado *</th>
+                <th style="width: 20%;">Definitivo</th>
+                <th style="width: 10%;">Porc. de ejecución</th>
+              </tr>
+            </thead>
+            <tbody id="tbody-ejecuciones"></tbody>
+          </table>
         </div>
-
-        </div>
+        <p>(*) Corresponde al Compromiso depurado</p>
       </div>
     </div>
   </div>
@@ -273,9 +236,9 @@ participativo de 2016.
   <script src="assets/js/menuController.js"></script>
   <script src="assets/js/loader.js"></script>
   <script src="assets/js/index.js"></script>
-
+  
   <script src="assets/js/d3.js"></script>
   <script src="assets/js/d3plus.js"></script>
-  <script src="assets/js/participativoGrapher.js"></script>
+  <script src="assets/js/ejecucionesGrapher.js"></script>
 </body>
 </html>
