@@ -91,8 +91,10 @@ function generar_gafico(datos, juris){
 
 function llenar_tabla_ejecutivo(datos, juris){
   var dat = datos;
-  var detalle = []; 
-  $.each( dat, function( key, val ) {
+  var detalle = [];
+  var $tabla = $("#tbody-gastos-ejecutivo");
+  for (var key = 0; key < dat.length; key++) {
+    var val = dat[key];
     var partida = val.gsx$partida.$t;
     var nivel = val.gsx$nivel.$t;
     var nivel_princ = parseInt(nivel) + 2;
@@ -102,7 +104,13 @@ function llenar_tabla_ejecutivo(datos, juris){
     if(total == ""){
       total = 0;
     }
-    $("#tbody-gastos-ejecutivo").append('<tr class="nivel-'+nivel_princ+'"><th>'+partida+'</th><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
+
+    var mostrar = nivel >= 2 ? " style='display:none'":'';
+    var nivelProximoDato = key+1 !== dat.length ? dat[key+1].gsx$nivel.$t : false;
+    var esColapsable = nivel_princ >= 3 && nivelProximoDato > nivel;
+    var plus = esColapsable ? ' <button class="btn btn-sm btn-default pull-right"><i class="fa fa-plus "><i></button>' : '';
+    var claseColapsable = esColapsable ? ' pointer' : '';
+    $tabla.append('<tr'+mostrar+' class="nivel-'+nivel_princ+claseColapsable+'"><td>'+plus+'</td><th scope="row">'+partida+'</th><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
 
     // if(nivel < 3 ){
     //   $("#tbody-gastos-ejecutivo").append('<tr class="nivel-'+nivel+'"><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
@@ -113,13 +121,44 @@ function llenar_tabla_ejecutivo(datos, juris){
     // if(nivel > 3){
     //   $("#tbody-gastos-ejecutivo").append('<tr class="table-clickable nivel-'+nivel+' '+detalle[(nivel-1)]+' collapse" data-toggle="collapse" data-target=".nivel-'+(nivel+1)+'.'+detalle[nivel]+'"><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
     // }
-    });
-    $('.table-ejecutivo').slideDown();
+  }
+  var $ultimaFila = $tabla.find('tr').last().detach().addClass('total');
+  $tabla.prepend($ultimaFila);
+
+  $('.table-ejecutivo').show();
 }
+
 botones.click(function(){
     var $boton = $(this);
     botones.removeClass('active');
     $boton.addClass('active');
     $("#secretaria-actual").html("<h2 class='text-center'>"+$boton.html()+"<h2>");
     dibujarD3_gastos_ejecutivo($boton.attr('id'));
+});
+
+$("#tbody-gastos-ejecutivo").on("click", ".nivel-3", function(){
+  var $boton = $(this);
+  $filas = $boton.nextUntil(".nivel-3,.nivel-2").filter(".nivel-4");
+  if ($filas.length > 0) {
+    $boton.find('button>i').toggleClass("fa-plus fa-minus");
+    $filas.slideToggle();
+  }
+});
+
+$("#tbody-gastos-ejecutivo").on("click", ".nivel-4", function(){
+  var $boton = $(this);
+  $filas = $(this).nextUntil(".nivel-4,.nivel-3").filter(".nivel-5");
+  if ($filas.length > 0) {
+    $boton.find('button>i').toggleClass("fa-plus fa-minus");
+    $filas.slideToggle();
+  }
+});
+
+$("#tbody-gastos-ejecutivo").on("click", ".nivel-5", function(){
+  var $boton = $(this);
+  $filas = $(this).nextUntil(".nivel-5,.nivel-4").filter(".nivel-6");
+  if ($filas.length > 0) {
+    $boton.find('button>i').toggleClass("fa-plus fa-minus");
+    $filas.slideToggle();
+  }
 });

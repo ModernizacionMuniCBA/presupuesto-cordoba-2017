@@ -3,6 +3,7 @@ function dibujarD3_gastos_tribunal_faltas() {
     var datos = [];
     var datos_clasif_econo = [];
     var detalle = [];
+    var $tabla = $("#tbody-gastos-tribunal-cuentas");
     // console.log(dataJSON.feed.entry);
     $.each( dataJSON.feed.entry, function( key, val ) {
       var partida = val.gsx$partida.$t;
@@ -13,8 +14,11 @@ function dibujarD3_gastos_tribunal_faltas() {
       if(total == ""){
         total= 0 ;
       }
-      $("#tbody-gastos-tribunal-cuentas").append('<tr class="nivel-'+nivel_princ+'"><th>'+partida+'</th><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
-      });
+      $tabla.append('<tr class="nivel-'+nivel_princ+'"><th>'+partida+'</th><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
+    });
+    
+    var $ultimaFila = $tabla.find('tr').last().detach().addClass('total');
+    $tabla.prepend($ultimaFila);
 });
 }
 dibujarD3_gastos_tribunal_faltas();

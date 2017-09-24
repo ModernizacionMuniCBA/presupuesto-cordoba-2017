@@ -620,8 +620,10 @@
       });
 
       $("#tbody-clasificacion-gasto").on("click", ".nivel-3", function(){
+        var $boton = $(this);
         $filas = $(this).nextUntil(".nivel-3,.nivel-2");
         if ($filas.length > 0) {
+          $boton.find('button>i').toggleClass("fa-plus fa-minus");
           $filas.slideToggle();
         }
       });
@@ -632,6 +634,7 @@
           $this.addClass('pointer');
           $filas = $this.nextUntil(".nivel-3,.nivel-2");
           if ($filas.length > 0) {
+            $this.find('button>i').toggleClass("fa-plus fa-minus");
             $filas.slideToggle();
           }
         }
