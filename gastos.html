@@ -296,7 +296,7 @@
             </div>
           </div>
           <div id="tabs">
-            <div class="nav-tabs">
+            <div class="nav-tabs hidden">
               <div class="col-xs-12 col-xs-offset-0 col-md-4 col-md-offset-2">
                 <a id="link-en-que" href="#en-que" aria-controls="en-que" role="tab" data-toggle="tab">
                   <div class="button-ingresos sky">
@@ -590,27 +590,23 @@
   <script>
   $(document).ready(function() {
     var $quien = $("#quien-gasta");
-    var $tabs = $("#tabs");
 
       $('#circle-centro').connections({ to: '.circle-clasificacion' });
       $('#circle-centro-mob').connections({ to: '.circle-clasificacion.mob' });
 
       $('#circle-objeto-mob,#circle-objeto').click(function(){
         $quien.hide();
-        $tabs.show();
         $("#link-en-que").click();
         window.location = "#en-que";
         window.scrollBy(0,-100);
       });
       $('#circle-finalidad-mob,#circle-finalidad').click(function(){
         $quien.hide();
-        $tabs.show();
         $("#link-para-que").click();
         window.location = "#para-que";
         window.scrollBy(0,-100);
       });
       $('#circle-institucional-mob,#circle-institucional').click(function(){
-        $tabs.hide();
         $quien.fadeIn();
         window.location = "#quien-gasta";
         window.scrollBy(0,-150);
@@ -649,8 +645,6 @@
     setTimeout(function(){
       $("#circle-institucional").click();
     }, 2000);
-  } else if (!window.location.hash) {
-    $("#tabs").hide();
   }
   </script>
 </body>
