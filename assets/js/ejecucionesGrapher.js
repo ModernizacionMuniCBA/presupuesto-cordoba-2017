@@ -7,6 +7,7 @@ function dibujarD3_ejecuciones_presupuestarias() {
     var corrientes = [];
     var capital = [];
     var entradas = dataJSON.feed.entry;
+    var $tabla = $("#tbody-ejecuciones");
 
     var i = 0;
     $.each(entradas, function( key, val ) {
@@ -33,11 +34,11 @@ function dibujarD3_ejecuciones_presupuestarias() {
           capital.push(linea);
         }
         if(!already_printed_ejecuciones){
-          $("#tbody-ejecuciones").append('<tr class="nivel-3"><td>'+concepto+'</td><td>$'+Number(ejecutado).toLocaleString("es-AR")+'</td><td>$'+Number(definitivo).toLocaleString("es-AR")+'</td><td>'+porcentajeEjecucion+'</td></tr>');
+          $tabla.append('<tr class="nivel-3"><td>'+concepto+'</td><td>$'+Number(ejecutado).toLocaleString("es-AR")+'</td><td>$'+Number(definitivo).toLocaleString("es-AR")+'</td><td>'+porcentajeEjecucion+'</td></tr>');
         }
       }else{
         if(!already_printed_ejecuciones){
-          $("#tbody-ejecuciones").append('<tr class="nivel-2"><td>'+concepto+'</td><td>$'+Number(ejecutado).toLocaleString("es-AR")+'</td><td>$'+Number(definitivo).toLocaleString("es-AR")+'</td><td>'+porcentajeEjecucion+'</td></tr>');
+          $tabla.append('<tr class="nivel-2"><td>'+concepto+'</td><td>$'+Number(ejecutado).toLocaleString("es-AR")+'</td><td>$'+Number(definitivo).toLocaleString("es-AR")+'</td><td>'+porcentajeEjecucion+'</td></tr>');
         }
       }
     });
