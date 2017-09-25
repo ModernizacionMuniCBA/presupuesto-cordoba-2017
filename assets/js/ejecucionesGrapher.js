@@ -39,12 +39,12 @@ function dibujarD3_ejecuciones_presupuestarias_grafico() {
       con_deuda.push({
         id: "Resultado Económico con intereses de la deuda",
         año: concepto,
-        valor: parseInt(val.gsx$coninteresesdedeuda.$t)
+        "millones de pesos": parseInt(val.gsx$coninteresesdedeuda.$t)
       });
       sin_deuda.push({
         id: "Resultado Económico sin intereses de la deuda",
         año: concepto,
-        valor: parseInt(val.gsx$sininteresesdedeuda.$t)
+        "millones de pesos": parseInt(val.gsx$sininteresesdedeuda.$t)
       });
     });
 
@@ -55,14 +55,20 @@ function dibujarD3_ejecuciones_presupuestarias_grafico() {
       .type("bar")
       .height(400)
       .id("id")
-      .x("año")
-      .y("valor")
+      .x({
+        value: "año",
+        grid: false
+      })
+      .y({
+        value: "millones de pesos",
+        grid: false
+      })
       .format("es_ES")
       .format({
           "number": function(number, key) {
             var formatted = d3plus.number.format(number, key);
-            if (key.key === "valor") {
-                return number.toLocaleString("es-AR");
+            if (key.key === "millones de pesos") {
+                return "$"+ number.toLocaleString("es-AR") + " millones";
             }
             else {
               return formatted
