@@ -6,13 +6,16 @@ function dibujarD3_participativo() {
   $.getJSON("https://spreadsheets.google.com/feeds/list/1uA9UbORQPEpzDVBpvq4UsmiA0eOvAdFCMg31iXd1XoE/o69vy0y/public/values?alt=json", function( dataJSON ) {
     $("#participativoGraph").empty();
     var datos = [];
+    var totalTodo = 167445426;
     // console.log(dataJSON.feed);
     $.each( dataJSON.feed.entry, function( key, val ) {
 
       var concepto = val.gsx$nombre.$t;
       var total = val.gsx$porcentaje.$t;
-        var linea = {"key": concepto,
-                "Porcentaje": parseFloat(total.split(',').join('.'))}
+      console.log(parseFloat(total.split(',').join('.')),total,totalTodo * parseFloat(total.split(',').join(''))/100);
+        var linea = {
+          "key": concepto,
+          "valor": (totalTodo * parseFloat(total.split(',').join('')) / 100)}
         datos.push(linea);
 
     });
@@ -22,18 +25,18 @@ function dibujarD3_participativo() {
       .background("#EEEEEE")
       .legend({"size": 50})
       .tooltip(true)
-      .tooltip({"children":0, "share":false})
+      .tooltip({"children":0})
       .data(datos)
       .type("pie")
       .id(["key"])
-      .size("Porcentaje")
+      .size("valor")
       .format("es_ES")
       .format({
           "number": function(number, key) {
             var formatted = d3plus.number.format(number, key);
-            if (key.key === "Porcentaje") {
+            if (key.key === "valor") {
                 var formatted = number.toLocaleString("es-AR")
-                return formatted+"%";
+                return "$" + formatted;
             }
             else {
               return formatted
