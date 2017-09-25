@@ -1,16 +1,82 @@
-window.already_printed_ejecuciones = false;
+window.already_read_data_grafico = false;
+window.already_read_data_tabla = false;
+window.datos_tabla = [];
+window.datos_grafico = [];
+window.con_deuda = [];
+window.sin_deuda = [];
+window.visualizationCorrientes = null;
+window.$btnConIntereses = $("#con-intereses");
+window.$btnSinIntereses = $("#sin-intereses");
 
-function dibujarD3_ejecuciones_presupuestarias() {
-  $.getJSON("https://spreadsheets.google.com/feeds/list/1Lu7tzYu5bMwJ-Yib3pGAbWDqkufov8BJP27HKzx8wEE/od6/public/values?alt=json", function( dataJSON ) {
-    $("#grafico-gastos-corrientes").empty();
-    $("#grafico-gastos-capital").empty();
+function dibujarD3() {
+  if(!already_read_data_grafico){
+    $.getJSON("https://spreadsheets.google.com/feeds/list/1bb72z4oCul0FWPDfoMoV_pfI_pbzGbQO7PT-Ukqm94o/ocwg0jj/public/values?alt=json", function( dataJSON ) {
+      datos_grafico = dataJSON.feed.entry;
+      already_read_data_grafico = true;
+      dibujarD3();
+    });
+  } else if(!already_read_data_tabla) {
+    $.getJSON("https://spreadsheets.google.com/feeds/list/1Lu7tzYu5bMwJ-Yib3pGAbWDqkufov8BJP27HKzx8wEE/od6/public/values?alt=json", function( dataJSON ) {
+      datos_tabla = dataJSON.feed.entry;
+      already_read_data_tabla = true;
+      dibujarD3();
+    });
+  }else{
+    dibujarD3_ejecuciones_presupuestarias_grafico();
+    dibujarD3_ejecuciones_presupuestarias_tabla();
+  }
+}
+
+function dibujarD3_ejecuciones_presupuestarias_grafico() {
+  $("#grafico-ejecuciones").empty();
     var corrientes = [];
     var capital = [];
-    var entradas = dataJSON.feed.entry;
-    var $tabla = $("#tbody-ejecuciones");
+    con_deuda = [];
+    sin_deuda = [];
+    $.each(datos_grafico, function( key, val ) {
+      var concepto = val.gsx$_cokwr.$t;
+      concepto = concepto == "2017" ? "2017 *" : concepto;
+      con_deuda.push({
+        id: "Resultado Económico con intereses de la deuda",
+        año: concepto,
+        valor: parseInt(val.gsx$coninteresesdedeuda.$t)
+      });
+      sin_deuda.push({
+        id: "Resultado Económico sin intereses de la deuda",
+        año: concepto,
+        valor: parseInt(val.gsx$sininteresesdedeuda.$t)
+      });
+    });
 
+    visualizationCorrientes = d3plus.viz()
+      .container("#grafico-ejecuciones")
+      .background("#EEEEEE")
+      .data(con_deuda)
+      .type("bar")
+      .height(400)
+      .id("id")
+      .x("año")
+      .y("valor")
+      .format("es_ES")
+      .format({
+          "number": function(number, key) {
+            var formatted = d3plus.number.format(number, key);
+            if (key.key === "valor") {
+                return number.toLocaleString("es-AR");
+            }
+            else {
+              return formatted
+            }
+          }
+      })
+      .draw();
+}
+
+function dibujarD3_ejecuciones_presupuestarias_tabla() {
+  var $tabla = $("#tbody-ejecuciones");
+  $tabla.empty();
     var i = 0;
-    $.each(entradas, function( key, val ) {
+    $.each(datos_tabla, function( key, val ) {
       i += 1;
       var partida = val.gsx$partida.$t;
       var partida_splited = partida.split('.');
@@ -21,85 +87,31 @@ function dibujarD3_ejecuciones_presupuestarias() {
       var ejecutado = val.gsx$ejecutado.$t.split('.').join("");
       var definitivo = val.gsx$presupuestodefinitivo.$t.split('.').join("");
       var porcentajeEjecucion = val.gsx$deejecución.$t;
-
-      if(i != entradas.length){
-        var linea = {
-          "key": concepto,
-          "valor": parseInt(ejecutado)
-        };
-        
-        if (nivel_princ < 10) { // es gasto corriente
-          corrientes.push(linea);
-        } else { // es de capital
-          capital.push(linea);
-        }
-        if(!already_printed_ejecuciones){
+      if(i != datos_tabla.length){
           $tabla.append('<tr class="nivel-3"><td>'+concepto+'</td><td>$'+Number(ejecutado).toLocaleString("es-AR")+'</td><td>$'+Number(definitivo).toLocaleString("es-AR")+'</td><td>'+porcentajeEjecucion+'</td></tr>');
-        }
       }else{
-        if(!already_printed_ejecuciones){
           $tabla.append('<tr class="nivel-2"><td>'+concepto+'</td><td>$'+Number(ejecutado).toLocaleString("es-AR")+'</td><td>$'+Number(definitivo).toLocaleString("es-AR")+'</td><td>'+porcentajeEjecucion+'</td></tr>');
-        }
       }
     });
-
-    var visualizationCorrientes = d3plus.viz()
-      .container("#grafico-gastos-corrientes")
-      .background("#EEEEEE")
-      .legend({"size": 50})
-      .tooltip(true)
-      .tooltip({"children":0})
-      .data(corrientes)
-      .type("pie")
-      .id(["key"])
-      .size("valor")
-      .height(400)
-      .format("es_ES")
-      .format({
-          "number": function(number, key) {
-            var formatted = d3plus.number.format(number, key);
-            if (key.key === "valor") {
-                var formatted = number.toLocaleString("es-AR")
-                return "$" + formatted;
-            }
-            else {
-              return formatted
-            }
-          }
-      })
-      .draw();
-
-    var visualizationCapital = d3plus.viz()
-      .container("#grafico-gastos-capital")
-      .background("#EEEEEE")
-      .legend({"size": 50})
-      .tooltip(true)
-      .tooltip({"children":0})
-      .data(capital)
-      .type("pie")
-      .id(["key"])
-      .size("valor")
-      .height(400)
-      .format("es_ES")
-      .format({
-          "number": function(number, key) {
-            var formatted = d3plus.number.format(number, key);
-            if (key.key === "valor") {
-                var formatted = number.toLocaleString("es-AR")
-                return "$" + formatted;
-            }
-            else {
-              return formatted
-            }
-          }
-      })
-      .draw();
-    already_printed_ejecuciones=true;
-  });
 }
 
 $(window).on('resize', function(){
-  dibujarD3_ejecuciones_presupuestarias();
+  dibujarD3();
 });
 
-dibujarD3_ejecuciones_presupuestarias();
+$btnSinIntereses.click(function(){
+  if(visualizationCorrientes) {
+    $btnSinIntereses.toggleClass("btn-default btn-primary");
+    $btnConIntereses.toggleClass("btn-default btn-primary");
+    visualizationCorrientes.data(sin_deuda).draw();
+  }
+});
+$btnConIntereses.click(function(){
+  if(visualizationCorrientes) {
+    $btnConIntereses.toggleClass("btn-default btn-primary");
+    $btnSinIntereses.toggleClass("btn-default btn-primary");
+    visualizationCorrientes.data(con_deuda).draw();
+  }
+});
+
+dibujarD3();
