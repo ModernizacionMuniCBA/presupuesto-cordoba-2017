@@ -48,6 +48,7 @@ function dibujarD3_participativo() {
       var datos = [];
       // console.log(dataJSON2.feed.entry);
       var detalle = []
+      var $tabla = $("#tbody-participativo");
       $.each( dataJSON2.feed.entry, function( key, val ) {
 
         var concepto = val.gsx$programa.$t;
@@ -60,24 +61,26 @@ function dibujarD3_participativo() {
         detalle[nivel] = concepto.toLowerCase().split(' ').join('_');
 
         if(nivel_tabla == "9"){
-          $("#tbody-participativo").append('<tr class="nivel-1"><td>'+concepto+'</td><td>'+porcentaje+'</td><td>$'+monto.toLocaleString("es-AR")+'</td></tr>');
+          $tabla.append('<tr class="nivel-1"><td></td><td>'+concepto+'</td><td>'+porcentaje+'</td><td>$'+monto.toLocaleString("es-AR")+'</td></tr>');
         }else{
           if(nivel == 3){
-            $("#tbody-participativo").append('<tr class="table-clickable nivel-'+nivel+'" data-toggle="collapse" data-target="#texto-'+detalle[2]+'-'+detalle[3]+'"><td>'+concepto+'</td><td>'+porcentaje+'</td><td>$'+monto.toLocaleString("es-AR")+'</td></tr>');
-            $("#tbody-participativo").append('<tr class="collapse gray" id="texto-'+detalle[2]+'-'+detalle[3]+'"><td colspan="3">'+texto+'</td></tr>');
+            $tabla.append('<tr class="table-clickable nivel-3" data-toggle="collapse" data-target="#texto-'+detalle[2]+'-'+detalle[3]+'"><td><button class="btn btn-xs btn-default pull-right"><i class="fa fa-plus "></i></button></td><td>'+concepto+'</td><td>'+porcentaje+'</td><td>$'+monto.toLocaleString("es-AR")+'</td></tr>');
+            $tabla.append('<tr class="collapse gray" id="texto-'+detalle[2]+'-'+detalle[3]+'"><td></td><td colspan="3">'+texto+'</td></tr>');
           }else{
-            $("#tbody-participativo").append('<tr class="nivel-'+nivel+'"><td>'+concepto+'</td><td>'+porcentaje+'</td><td>$'+monto.toLocaleString("es-AR")+'</td></tr>');
-
+            $tabla.append('<tr class="nivel-'+nivel+'"><td></td><td>'+concepto+'</td><td>'+porcentaje+'</td><td>$'+monto.toLocaleString("es-AR")+'</td></tr>');
           }
         }
-
       });
       already_printed_participativo=true;
     });
+  
 }
 
 dibujarD3_participativo();
 
+$("#tbody-participativo").on("click", ".nivel-3", function() {
+  $(this).find("button>i").toggleClass("fa-plus fa-minus");
+});
 
 // $(window).on('resize', function(){
 //   dibujarD3_participativo();
