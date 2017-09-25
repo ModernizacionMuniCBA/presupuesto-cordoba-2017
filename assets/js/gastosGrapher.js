@@ -113,6 +113,8 @@ function dibujarD3_gastos_corrientes() {
     var datos_clasif_econo = [];
     var detalle = [];
     var $tabla = $("#tbody-gastos-corrientes");
+    $tabla.empty();
+    var regexDosNumeros = /[0-9]{2}/;
     // console.log(dataJSON.feed.entry);
     var i = 0;
     $.each( dataJSON.feed.entry, function( key, val ) {
@@ -133,11 +135,15 @@ function dibujarD3_gastos_corrientes() {
           $tabla.append('<tr class="nivel-1"><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
         }
       }
-        if (partida_splited[0] == "0"){
-          $tabla.append('<tr class="nivel-3"><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
+      if (partida_splited[0] == "0"){
+        $tabla.append('<tr class="nivel-2"><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
+      } else if (nivel_princ ==  1) {
+        if(regexDosNumeros.test(concepto.substr(0,2))) {
+          concepto = concepto.substr(2,concepto.length-1);
         }
-
-      });
+        $tabla.append('<tr class="nivel-3"><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
+      }
+    });
     already_printed_corrientes=true;
   });
 }
