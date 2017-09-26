@@ -57,20 +57,30 @@ function dibujarD3_ejecuciones_presupuestarias_grafico() {
       .id("id")
       .x({
         value: "año",
-        grid: false
+        grid: false,
+        label: {
+          padding: 8
+        }
       })
       .y({
         value: "millones de pesos",
-        grid: false
+        grid: false,
+        range: [0,1200],
+        label: {
+          padding: 8
+        },
+        ticks: [0,200,400,600,800,1000,1200]
       })
       .format("es_ES")
       .format({
           "number": function(number, key) {
             var formatted = d3plus.number.format(number, key);
             if (key.key === "millones de pesos") {
-                return "$"+ number.toLocaleString("es-AR") + " millones";
-            }
-            else {
+              if (key.labels == false) {
+                return "$"+ number.toLocaleString("es-AR");
+              }
+              return "$"+ number.toLocaleString("es-AR") + " millones";
+            } else {
               return formatted
             }
           }
