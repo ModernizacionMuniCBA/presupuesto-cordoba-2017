@@ -34,6 +34,7 @@ function generar_gafico(datos, juris){
     var nivel_princ = parseInt(partida_splited[0]);
     var subnivel = parseInt(partida_splited[1]);
     var concepto = val.gsx$concepto.$t;
+    console.log(val,juris,'secretariadegobiernoparticipacionciudadanaydesarrollosocial');
     var total = val['gsx$'+juris].$t;
     if(nivel_tabla != -2){
       if (partida_splited[1]==""){
