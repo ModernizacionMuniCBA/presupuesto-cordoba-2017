@@ -108,7 +108,7 @@ function llenar_tabla_ejecutivo(datos, juris){
     var mostrar = nivel >= 2 ? " style='display:none'":'';
     var nivelProximoDato = key+1 !== dat.length ? dat[key+1].gsx$nivel.$t : false;
     var esColapsable = nivel_princ >= 3 && nivelProximoDato > nivel;
-    var plus = esColapsable ? ' <button class="btn btn-sm btn-default pull-right"><i class="fa fa-plus "></i></button>' : '';
+    var plus = esColapsable ? ' <button class="btn btn-xs btn-default pull-right"><i class="fa fa-plus "></i></button>' : '';
     var claseColapsable = esColapsable ? ' pointer' : '';
     $tabla.append('<tr'+mostrar+' class="nivel-'+nivel_princ+claseColapsable+'"><td>'+plus+'</td><th scope="row">'+partida+'</th><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
 

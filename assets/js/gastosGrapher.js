@@ -58,7 +58,7 @@ function dibujarD3_gastos() {
               $tabla.append('<tr class="nivel-'+nivel+' total"><td></td><th scope="row"> </th><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
             }else{
               var mostrar = nivel == 4 ? " style='display:none'":'';
-              var plus = nivel == 3 ? ' <button class="btn btn-sm btn-default pull-right"><i class="fa fa-plus "><i></button>' : '';
+              var plus = nivel == 3 ? ' <button class="btn btn-xs btn-default pull-right"><i class="fa fa-plus "><i></button>' : '';
               if(i>1){
                 $tabla.append('<tr'+mostrar+' class="nivel-'+nivel+'"><td>'+plus+'</td><th scope="row">'+partida+'</th><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
               }else{
