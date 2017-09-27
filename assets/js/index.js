@@ -10,3 +10,7 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
 ga('create', uuid_analytics, 'auto');
+
+window.touchAnalytics = function(page, title){
+    ga('send', 'pageview', {'page': page,'title': title});
+};
