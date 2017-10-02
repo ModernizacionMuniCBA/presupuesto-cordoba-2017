@@ -649,6 +649,28 @@
       $("#circle-institucional").click();
     }, 2000);
   }
+  function locationHashChanged() {
+    if (location.hash === "") {
+      $quien.hide();
+      $("#en-que").removeClass("active");
+      $("#para-que").removeClass("active");
+    }
+    else if (window.location.hash == "#quien-gasta") {
+      $("#en-que").removeClass("active");
+      $("#para-que").removeClass("active");
+    }
+    else if (window.location.hash == "#en-que") {
+      $quien.hide();
+      $("#link-en-que").click();
+    }
+    else if (window.location.hash == "#para-que") {
+      $quien.hide();
+      $("#link-para-que").click();
+    }
+  }
+
+  window.onhashchange = locationHashChanged;
+
   </script>
 
   <script>
