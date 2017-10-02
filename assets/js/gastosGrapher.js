@@ -195,7 +195,7 @@ function dibujarD3_gastos_finalidad() {
 
       var concepto = val.gsx$clasificaciónporfinalidadyfunción.$t;
       var total = val.gsx$total.$t;
-      if(i>1 && (i+1) !== entradas.length){
+      if(i>1){
         var linea = {"key": concepto,
                 "valor": parseInt(total.split('.').join(""))}
         datos.push(linea);
