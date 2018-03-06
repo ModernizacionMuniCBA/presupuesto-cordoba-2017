@@ -11,7 +11,7 @@ body {
   background-color: #FFF;
   margin: 0;
   min-height: 100%;
-  font-family: "Rubik", sans-serif;
+  font-family: "Lato", sans-serif;
 }
 .push-footer{
   min-height: 100%;
@@ -366,20 +366,53 @@ nav ul li a:before {
   width: 100%;
 }
 
+
+
+
+/* Vecino */
+.vecinoBg{
+  background-color: #23CF5F;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 0px 0px 20px 0px;
+  margin-top: 50px;
+}
+
+.vecinoBg h2{
+  font-size: 1.75em;
+  text-transform: uppercase;
+  font-weight: 900;
+  text-align: center;
+}
+.vecinoBg h3{
+  font-size: 1.5em;
+  font-weight: 700;
+}
+.vecinoBg a{
+  color: #FFFFFF;
+  font-size: 1em;
+  font-weight: 900;
+}
+.vecinoBg a:hover{
+  text-decoration: underline;
+}
+
 /* FOOTER */
 footer{
   padding-bottom: 20px;
+  background-color: #FFF;
 }
 .footer-logos{
   display: flex;
   align-items: center;
-  margin-top: 100px;
+  margin-top: 35px;
 }
 .footer-logos-row{
   margin: 0 auto;
 }
 .texto-derecha{
   text-align: right;
+  margin-top: 20px;
 }
 .footer-derecha{
   border-left: 4px solid #23CF5F;
@@ -404,7 +437,7 @@ footer{
 .redesSociales a:hover{
   color: #FFF;
 }
-.redesSociales a:hover span{
+.redesSociales a:hover span.fa-stack{
   border: 7px solid #23CF5F;
   border-radius: 50%;
 }
@@ -441,34 +474,38 @@ footer{
   color: #3A3A3A;
   text-transform: uppercase;
   font-size: 1.25em;
-  font-weight: 700;
+  font-weight: 500;
 }
-
+.linksFooter{
+  margin-top: 20px;
+}
 .lista-links a:hover{
   color: #23CF5F;
 }
 
 .lista-links .link{
-    margin: 20px 0px;
+    margin: 10px 0px;
 }
-.lista-links .link.tyc{
-  margin-bottom: 10px;
-}
-.lista-links .link.licencias-btn-holder{
-  margin-top: 10px;
-  margin-bottom: 40px;
-}
+
 
 .lista-links .separador-link{
   height: 3px;
   width: 15px;
   background-color: #3A3A3A;
 }
-
+.logoFooter{
+  max-width: 100%;
+  margin-top: 6px;
+}
 footer .copyr{
   color: #23CF5F;
   font-size: 1.3em;
-  margin-top: 20px;
+  margin-top: 30px;
+  float:left;
+}
+footer .copyr p{
+
+  float: right;
 }
 .licenses-close-btn{
   font-size: 1.5em;
@@ -477,7 +514,33 @@ footer .copyr{
 .licenses-close-btn:hover{
   cursor: pointer;
 }
-
+footer .rowConvenios{
+  margin-top: 40px;
+}
+footer .rowConvenios .titConvenios{
+  background-color: #23CF5F;
+  color: #FFF;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: 5px 15px;
+  font-size: 1.5em;
+  text-align: right;
+}
+footer .rowConvenios a{
+  margin: 0 auto;
+  display: inherit;
+  opacity: 0.75;
+}
+footer .rowConvenios a:hover{
+  opacity: 1;
+}
+footer .rowConvenios .imgLogoFooter{
+  max-height: 50px!important;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 15px;
+  display: inherit;
+}
 
 
 /*		4. Botones		*/
