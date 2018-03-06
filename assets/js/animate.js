@@ -4,7 +4,7 @@ var tap = ('ontouchstart' in window || navigator.msMaxTouchPoints) ? 'touchstart
 if (iOS) document.body.classList.add('iOS');
 
 
-console.log(Cookies.get('openedBefore'));
+//console.log(Cookies.get('openedBefore'));
 if(Cookies.get('openedBefore') == "true"){
   $('.prs-loader').addClass('hidden');
   $('#loader').removeClass('hidden');

@@ -19,6 +19,7 @@ function dibujarD3_gastos() {
     var datos = [];
     var datos_clasif_econo = [];
     var detalle = [];
+    var $tabla = $("#tbody-clasificacion-gasto");
     // console.log(dataJSON.feed.entry);
     var i = 0;
     $.each( dataJSON.feed.entry, function( key, val ) {
@@ -53,14 +54,15 @@ function dibujarD3_gastos() {
         }
         if(already_printed_clasificacion == false){
           if(nivel <=4){
-            var partida
             if(partida=="-2"){
-              $("#tbody-clasificacion-gasto").append('<tr class="nivel-'+nivel+'"><th scope="row"> </th><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
+              $tabla.append('<tr class="nivel-'+nivel+' total"><td></td><th scope="row"> </th><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
             }else{
+              var mostrar = nivel == 4 ? " style='display:none'":'';
+              var plus = nivel == 3 ? ' <button class="btn btn-xs btn-default pull-right"><i class="fa fa-plus "><i></button>' : '';
               if(i>1){
-                $("#tbody-clasificacion-gasto").append('<tr class="nivel-'+nivel+'"><th scope="row">'+partida+'</th><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
+                $tabla.append('<tr'+mostrar+' class="nivel-'+nivel+'"><td>'+plus+'</td><th scope="row">'+partida+'</th><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
               }else{
-                $("#tbody-clasificacion-gasto").append('<tr class="nivel-1"><th scope="row">'+partida+'</th><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
+                $tabla.append('<tr'+mostrar+' class="nivel-1"><td>'+plus+'</td><th scope="row">'+partida+'</th><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
               }
             }
 
@@ -69,7 +71,7 @@ function dibujarD3_gastos() {
       }
     });
 
-    console.log(datos);
+    //console.log(datos);
     var data = d3.nest()
                 .key(function(d) { return d.rec1; })
                 .key(function(d) { return d.rec2; })
@@ -102,7 +104,7 @@ function dibujarD3_gastos() {
       })
       // .dev(true)
       .draw();
-already_printed_clasificacion=true;
+    already_printed_clasificacion=true;
   });
 }
 function dibujarD3_gastos_corrientes() {
@@ -110,6 +112,9 @@ function dibujarD3_gastos_corrientes() {
     var datos = [];
     var datos_clasif_econo = [];
     var detalle = [];
+    var $tabla = $("#tbody-gastos-corrientes");
+    $tabla.empty();
+    var regexDosNumeros = /[0-9]{2}/;
     // console.log(dataJSON.feed.entry);
     var i = 0;
     $.each( dataJSON.feed.entry, function( key, val ) {
@@ -127,16 +132,20 @@ function dibujarD3_gastos_corrientes() {
 
       if (partida_splited[0] == "-1" && i>1){
         if(concepto.toUpperCase() != "EROGACIONES DE CAPITAL"){
-          $("#tbody-gastos-corrientes").append('<tr class="nivel-1"><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
+          $tabla.append('<tr class="nivel-1"><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
         }
       }
-        if (partida_splited[0] == "0"){
-          $("#tbody-gastos-corrientes").append('<tr class="nivel-3"><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
+      if (partida_splited[0] == "0"){
+        $tabla.append('<tr class="nivel-2"><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
+      } else if (nivel_princ ==  1) {
+        if(regexDosNumeros.test(concepto.substr(0,2))) {
+          concepto = concepto.substr(2,concepto.length-1);
         }
-
-      });
-  already_printed_corrientes=true;
-});
+        $tabla.append('<tr class="nivel-3"><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
+      }
+    });
+    already_printed_corrientes=true;
+  });
 }
 
 function dibujarD3_gastos_capital() {
@@ -180,7 +189,8 @@ function dibujarD3_gastos_finalidad() {
     $("#gastos-finalidad").empty();
     var datos = [];
     var i = 0;
-    $.each( dataJSON.feed.entry, function( key, val ) {
+    var entradas = dataJSON.feed.entry;
+    $.each( entradas, function( key, val ) {
       i += 1;
 
       var concepto = val.gsx$clasificaciónporfinalidadyfunción.$t;
@@ -305,7 +315,7 @@ function dibujarD3_gastos_finalidad_funcion() {
             }
           }
       })
-      .dev(true)
+      // .dev(true)
       .draw();
       already_printed_finalidad_funcion=true;
 

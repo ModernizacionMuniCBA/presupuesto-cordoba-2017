@@ -67,35 +67,6 @@ body{
   transition: all 0.3s ease;
 }
 
-.footer-gaMuniCba{
-  margin-top: 50px;
-  background-color: #FFFFFF;
-  border-top: 5px solid #23CF5F;
-  padding-top: 20px;
-  height: 350px;
-}
-.footer-module{
-  height: 300px;
-  display: flex;
-  align-items: center;
-}
-.twitter-footer{
-  max-height: 300px;
-  overflow: scroll;
-}
-.contacto-footer{
-  font-size: 1.1em;
-}
-.presupuesto-abierto-footer{
-    font-size: 1.05em;
-    margin: 0px;
-    padding-left: 10px;
-    font-family: "Gotham Rounded", sans-serif;
-    color:#23CF5F;
-    border-left: 4px solid #23CF5F;
-    font-weight: 500;
-    text-transform: uppercase;
-}
 
 .no-padding {
     padding-right: 0 !important;
@@ -153,21 +124,27 @@ body{
 }
 
 .home div.link-infografia{
-  height: 200px;
-  border-bottom: 1px solid #d0d0d0;
+  height: 150px;
+  border-bottom: 1px solid rgba(0,0,0,.2);
   display: inline-block;
   width: 100%;
-  color: #23CF5F;
-  background-color: #FFF;
+  color: #FFF;
+  background-color: #6fcacf;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
+.home div.link-infografia .menor{
+  font-size: 2.1em;
+  letter-spacing: -1px;
+}
+.home .col-xs-12:nth-child(odd) .link-infografia {
+  background-color: #a7c23d;
+}
 
 .home div.link-infografia:hover{
-  color: #1BA34B;
-  background-color: #EEEEEE;
+  color: #555;
 }
 .home div.link-infografia h2{
   font-weight: 500;
@@ -181,18 +158,26 @@ body{
   height: 150px;
   display: inline-block;
   width: 100%;
-  color: #23CF5F;
+  color: #FFF;
   padding: 5px;
-  background-color: #FFF;
+  background-color: #6fcacf;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  border-bottom: 1px solid #d0d0d0;
+  border-bottom: 1px solid rgba(0,0,0,.2);
+}
+.dos-lineas{
+  text-align: center;
+}
+.navbar-gaMuniCba .dos-lineas a{
+  margin-top: 50px !important;
+}
+.home .col-xs-12:nth-child(even) .text-infografia {
+  background-color: #a7c23d;
 }
 .home div.text-infografia:hover{
-  background-color: #EEEEEE;
-  color:#1BA34B;
+  color:#555;
 }
 .home div.text-infografia h2{
   font-weight: 500;
@@ -207,6 +192,10 @@ body{
 .home .home-body{
   padding: 50px 15px 0px 15px;
   font-size: 1.3em;
+}
+
+.botones-quien {
+  padding: 20px 0;
 }
 
 .ingresos .ingresos-body,
@@ -609,6 +598,27 @@ hr {
   border-color:#7EB354;
 }
 
+#navbar .navbar-nav .bajar-datos a {
+  text-align: center;
+  margin-top: 38px;
+  color: #FFFFFF;
+  line-height: 1em;
+  background-color: #009059;
+  padding: 14px 18px;
+  font-weight: 500;
+}
+#navbar .navbar-nav .bajar-datos a:hover {
+  background-color: #23CF5F;
+}
+#navbar .navbar-nav .bajar-datos a::after {
+  display: none;
+}
+#navbar .navbar-nav .bajar-datos a span:first-child {
+  letter-spacing: 1px;
+}
+#navbar .navbar-nav .bajar-datos a span:last-child {
+  font-size: 11px;
+}
 
 .navbar-nav .year a.dropdown-toggle{
   color: #23CF5F;
@@ -659,6 +669,9 @@ hr {
     color: #FFF;
     font-weight: 500;
 }
+.table .total {
+  background-color:#666 !important;
+}
 .table.blue{
   border: 1px solid #d0d0d0;
 }
@@ -675,6 +688,9 @@ hr {
 .table.blue.especial>tbody>tr.nivel-3 {
     background-color: #bfd7f2;
     font-weight: 500;
+}
+.colapsable .nivel-3,.pointer {
+  cursor: pointer;
 }
 
 .table-ejecutivo{
@@ -1127,16 +1143,12 @@ hr {
 }
 
 
-.logoGA{
-  font-size: 1.05em;
-  line-height: 1em;
-  margin-left: 10px;
-  padding-top: 30px;
-  margin: 0px;
-  padding-left: 10px;
-  font-family: "Gotham Rounded", sans-serif;
-  font-weight: 500;
-  text-transform: uppercase;
-  padding-bottom: 3px;
-  background-color: #23CF5F;
+.stLogo{fill:#23CF5F;}{
+
+#grafico-ejecuciones #d3plus_graph_xlabel,
+#grafico-ejecuciones #d3plus_graph_ylabel {
+  font-size: 16px;
+  font-weight: bold;
+  font-family: sans-serif;
+
 }
