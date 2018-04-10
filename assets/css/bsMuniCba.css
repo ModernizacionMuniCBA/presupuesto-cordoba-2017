@@ -25,7 +25,7 @@ body {
 }
 
 a:hover, a:focus{
-  color: #23CF5F;
+  color: #00a665;
   text-decoration: none;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
@@ -83,7 +83,7 @@ a:hover, a:focus{
 .sqGA{
   width: 100px;
   height: 100px;
-  background-color: #23CF5F;
+  background-color: #00a665;
   display: inline-block;
   color: #FFF;
   overflow: hidden;
@@ -99,7 +99,7 @@ a:hover, a:focus{
   font-weight: 500;
   text-transform: uppercase;
   padding-bottom: 3px;
-  background-color: #23CF5F;
+  background-color: #00a665;
 }
 .logoGA.abierto{
   font-size: 1em;
@@ -112,7 +112,7 @@ a:hover, a:focus{
   text-transform: uppercase;
   padding-bottom: 60px;
   margin-bottom: 11px;
-  background-color: #23CF5F;
+  background-color: #00a665;
   padding-top: 1px;
 }
 .logoGABar{
@@ -228,20 +228,20 @@ a:hover, a:focus{
 .hamburger.is-open .hamb-top {
   -webkit-transform: rotate(45deg);
   -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.73, 1, 0.28, 0.08);
-  background-color: #23CF5F;
+  background-color: #00a665;
   margin-top: -2px;
   top: 50%;
 }
 
 .hamburger.is-open .hamb-middle {
-  background-color: #23CF5F;
+  background-color: #00a665;
   display: none;
 }
 
 .hamburger.is-open .hamb-bottom {
   -webkit-transform: rotate(-45deg);
   -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.73, 1, 0.28, 0.08);
-  background-color: #23CF5F;
+  background-color: #00a665;
   margin-top: -2px;
   top: 50%;
 }
@@ -249,7 +249,7 @@ a:hover, a:focus{
 .hamburger.is-open:before {
   -webkit-transform: translate3d(0, 0, 0);
   -webkit-transition: all 0.35s ease-in-out;
-  color: #23CF5F;
+  color: #00a665;
   content: '';
   display: block;
   font-size: 14px;
@@ -269,7 +269,7 @@ a:hover, a:focus{
 
 .nav-buscar {
     float: left;
-    background-color: #23CF5F;
+    background-color: #00a665;
     height: 90px;
     display: none;
 }
@@ -280,7 +280,7 @@ a:hover, a:focus{
   font-size: 2em;
 }
 .nav-buscar .form-control{
-  background-color: #23CF5F;
+  background-color: #00a665;
   color: #FFFFFF;
   height: 40px;
   font-size: 1.1em;
@@ -293,7 +293,7 @@ a:hover, a:focus{
   border-radius: 0px;
 }
 .nav-buscar .btn-default{
-  background-color: #23CF5F;
+  background-color: #00a665;
   color: #FFFFFF;
   height: 60px;
   width: 60px;
@@ -302,7 +302,7 @@ a:hover, a:focus{
 }
 .nav-buscar .btn-default:active,
 .nav-buscar .btn-default:focus{
-  background-color: #23CF5F;
+  background-color: #00a665;
   color: #2CBE99;
   outline: none;
   box-shadow: none;
@@ -345,7 +345,7 @@ nav ul li a:before {
   width: 0%;
   content: '.';
   color: transparent;
-  background: #23CF5F;
+  background: #00a665;
   height: 3px;
   margin-top: -10px;
 }
@@ -356,7 +356,7 @@ nav ul li a:before {
     width: 0%;
     content: '.';
     color: transparent;
-    background: #23CF5F;
+    background: #00a665;
     height: 3px;
 }
 .stroke ul li a:hover:after {
@@ -371,7 +371,7 @@ nav ul li a:before {
 
 /* Vecino */
 .vecinoBg{
-  background-color: #23CF5F;
+  background-color: #00a665;
   color: #FFFFFF;
   text-align: center;
   padding: 0px 0px 20px 0px;
@@ -415,10 +415,10 @@ footer{
   margin-top: 20px;
 }
 .footer-derecha{
-  border-left: 4px solid #23CF5F;
+  border-left: 4px solid #00a665;
 }
 .tituloGA-footer{
-  color: #23CF5F;
+  color: #00a665;
   font-family: "Gotham Rounded";
   font-weight: 600;
   text-transform: uppercase;
@@ -430,7 +430,7 @@ footer{
     padding-bottom: 15px;
 }
 .redesSociales a{
-  color: #23CF5F;
+  color: #00a665;
   transition: all .2s ease-in-out;
   -webkit-transition: all .2s ease-in-out;
 }
@@ -438,7 +438,7 @@ footer{
   color: #FFF;
 }
 .redesSociales a:hover span.fa-stack{
-  border: 7px solid #23CF5F;
+  border: 7px solid #00a665;
   border-radius: 50%;
 }
 .redesSociales a:hover .fa-stack-2x{
@@ -447,7 +447,7 @@ footer{
   margin-left: -2.5px;
 }
 .redesSociales a:hover .fa-stack-1x{
-  color: #23CF5F;
+  color: #00a665;
   margin-top: -6.5px;
 }
 
@@ -457,7 +457,7 @@ footer{
   margin-left: -3px;
 }
 .redesSociales a:hover .github .fa-stack-1x{
-  color: #23CF5F;
+  color: #00a665;
   margin-top: -7px;
 }
 
@@ -480,7 +480,7 @@ footer{
   margin-top: 20px;
 }
 .lista-links a:hover{
-  color: #23CF5F;
+  color: #00a665;
 }
 
 .lista-links .link{
@@ -498,7 +498,7 @@ footer{
   margin-top: 6px;
 }
 footer .copyr{
-  color: #23CF5F;
+  color: #00a665;
   font-size: 1.3em;
   margin-top: 30px;
   float:left;
@@ -518,7 +518,7 @@ footer .rowConvenios{
   margin-top: 40px;
 }
 footer .rowConvenios .titConvenios{
-  background-color: #23CF5F;
+  background-color: #00a665;
   color: #FFF;
   font-weight: 500;
   text-transform: uppercase;
@@ -546,7 +546,7 @@ footer .rowConvenios .imgLogoFooter{
 /*		4. Botones		*/
 .btn.btn-muniCba {
     color: #fff;
-    background-color: #23CF5F;
+    background-color: #00a665;
     border-color: #1BA34B;
 }
 
